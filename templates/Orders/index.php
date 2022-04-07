@@ -11,7 +11,6 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('cost') ?></th>
                     <th><?= $this->Paginator->sort('payment') ?></th>
                     <th><?= $this->Paginator->sort('address') ?></th>
@@ -25,7 +24,6 @@
             <tbody>
                 <?php foreach ($orders as $order): ?>
                 <tr>
-                    <td><?= h($order->id) ?></td>
                     <td><?= $this->Number->format($order->cost) ?></td>
                     <td><?= h($order->payment) ?></td>
                     <td><?= h($order->address) ?></td>
