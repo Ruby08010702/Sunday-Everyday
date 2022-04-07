@@ -18,7 +18,7 @@ class CustomersController extends AppController
      */
     public function index()
     {
-        $customers = $this->paginate($this->Customers);
+        $customers = $this->Customers->find()->contain(['Orders']);
 
         $this->set(compact('customers'));
     }
