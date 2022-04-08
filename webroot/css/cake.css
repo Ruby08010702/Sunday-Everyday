@@ -2,20 +2,17 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    background-color: #ffffff;
 }
 
 .top-nav-links,
 .side-nav,
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
-    
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    color: #5c92AD;
-    font-weight: bold;
+    color: #363637;
 }
 
 a {
@@ -33,13 +30,10 @@ a:active  {
 }
 
 .side-nav a,
+.top-nav-links a,
 th a,
 .actions a {
-    color: #fbc5d7;  /* COLUMN COLOUR: */
-}
-
-.top-nav-links a {
-    color: #88Cee7;   /* NAV BAR FONT COLOUR */
+    color: #606c76;
 }
 
 .side-nav a:hover,
@@ -85,15 +79,13 @@ th {
     max-width: 112rem;
     padding: 2rem;
     margin: 0 auto 2rem;
-    background-color: #03256c;
-    
 }
 .top-nav-title a {
     font-size: 2.4rem;
-    color: #88Cee7;
+    color: #d33c43;
 }
 .top-nav-title span {
-    color: #ffffff;
+    color: #404041;
 }
 .top-nav-links a {
     margin: 0 0.5rem;
