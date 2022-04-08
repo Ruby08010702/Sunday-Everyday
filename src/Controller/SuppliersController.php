@@ -18,8 +18,7 @@ class SuppliersController extends AppController
      */
     public function index()
     {
-        $suppliers = $this->paginate($this->Suppliers);
-
+        $suppliers = $this->Suppliers->find()->contain(['Products', 'RestockingOrders']);
         $this->set(compact('suppliers'));
     }
 

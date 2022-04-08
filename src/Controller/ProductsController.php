@@ -18,10 +18,8 @@ class ProductsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Suppliers'],
-        ];
-        $products = $this->paginate($this->Products);
+
+        $products = $this->Products->find()->contain(['Suppliers']);
 
         $this->set(compact('products'));
     }

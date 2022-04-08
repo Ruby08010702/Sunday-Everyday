@@ -18,10 +18,8 @@ class RestockingOrdersController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Suppliers'],
-        ];
-        $restockingOrders = $this->paginate($this->RestockingOrders);
+
+        $restockingOrders = $this->RestockingOrders->find()->contain(['Suppliers']);
 
         $this->set(compact('restockingOrders'));
     }

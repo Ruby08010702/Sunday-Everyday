@@ -7,23 +7,21 @@
 <div class="staffs index content">
     <?= $this->Html->link(__('New Staff'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Staffs') ?></h3>
-    <div class="table-responsive">
-        <table>
+
+        <table id="staffs_table">
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('first_name') ?></th>
-                    <th><?= $this->Paginator->sort('last_name') ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('phone') ?></th>
-                    <th><?= $this->Paginator->sort('role') ?></th>
+                    <th><?= h('First Name') ?></th>
+                    <th><?= h('Last Name') ?></th>
+                    <th><?= h('Email') ?></th>
+                    <th><?= h('Phone') ?></th>
+                    <th><?= h('Role') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($staffs as $staff): ?>
                 <tr>
-                    <td><?= h($staff->id) ?></td>
                     <td><?= h($staff->first_name) ?></td>
                     <td><?= h($staff->last_name) ?></td>
                     <td><?= h($staff->email) ?></td>
@@ -38,15 +36,10 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
 </div>
+
+<script>
+    $(document).ready( function () {
+        $('#staffs_table').DataTable();
+    } );
+</script>

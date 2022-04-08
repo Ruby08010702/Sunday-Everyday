@@ -7,23 +7,21 @@
 <div class="products index content">
     <?= $this->Html->link(__('New Product'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Products') ?></h3>
-    <div class="table-responsive">
-        <table>
+
+        <table id="products_table">
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('cost') ?></th>
-                    <th><?= $this->Paginator->sort('retail_price') ?></th>
-                    <th><?= $this->Paginator->sort('stock') ?></th>
-                    <th><?= $this->Paginator->sort('supplier_id') ?></th>
+                    <th><?= h('Name') ?></th>
+                    <th><?= h('Cost') ?></th>
+                    <th><?= h('Retail Price') ?></th>
+                    <th><?= h('Stock') ?></th>
+                    <th><?= h('supplier_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($products as $product): ?>
                 <tr>
-                    <td><?= h($product->id) ?></td>
                     <td><?= h($product->name) ?></td>
                     <td><?= $this->Number->format($product->cost) ?></td>
                     <td><?= $this->Number->format($product->retail_price) ?></td>
@@ -38,15 +36,11 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
+
 </div>
+<script>
+    $(document).ready( function () {
+        $('#products_table').DataTable();
+    } );
+</script>
+

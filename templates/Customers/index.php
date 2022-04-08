@@ -3,17 +3,14 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Customer[]|\Cake\Collection\CollectionInterface $customers
  */
-echo $this->Html->css('//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css',['block'=>true]);
-echo $this->Html->script('//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js',['block'=>true]);
+
 ?>
 <div class="customers index content">
     <?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Customers') ?></h3>
-
-        <table id="customer_table">
+        <table id="customers_table">
             <thead>
                 <tr>
-                    <th><?= h('id') ?></th>
                     <th><?= h('first_name') ?></th>
                     <th><?= h('last_name') ?></th>
                     <th><?= h('address') ?></th>
@@ -26,7 +23,6 @@ echo $this->Html->script('//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.j
             <tbody>
                 <?php foreach ($customers as $customer): ?>
                 <tr>
-                    <td><?= h($customer->id) ?></td>
                     <td><?= h($customer->first_name) ?></td>
                     <td><?= h($customer->last_name) ?></td>
                     <td><?= h($customer->address) ?></td>
@@ -42,10 +38,9 @@ echo $this->Html->script('//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.j
                 <?php endforeach; ?>
             </tbody>
         </table>
-
 </div>
 <script>
     $(document).ready( function () {
-        $('#customer_table').DataTable();
+        $('#customers_table').DataTable();
     } );
 </script>

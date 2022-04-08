@@ -18,8 +18,8 @@ class StaffsController extends AppController
      */
     public function index()
     {
-        $staffs = $this->paginate($this->Staffs);
 
+        $staffs = $this->Staffs->find()->contain([]);
         $this->set(compact('staffs'));
     }
 

@@ -13,7 +13,8 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
-
+echo $this->Html->css('//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css',['block'=>true]);
+echo $this->Html->script('//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js',['block'=>true]);
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>

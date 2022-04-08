@@ -7,17 +7,16 @@
 <div class="orders index content">
     <?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Orders') ?></h3>
-    <div class="table-responsive">
-        <table>
+        <table id="orders_table">
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('cost') ?></th>
-                    <th><?= $this->Paginator->sort('payment') ?></th>
-                    <th><?= $this->Paginator->sort('address') ?></th>
-                    <th><?= $this->Paginator->sort('item_count') ?></th>
-                    <th><?= $this->Paginator->sort('date') ?></th>
-                    <th><?= $this->Paginator->sort('po_id') ?></th>
-                    <th><?= $this->Paginator->sort('customer_id') ?></th>
+                    <th><?= h('Cost') ?></th>
+                    <th><?= h('Payment') ?></th>
+                    <th><?= h('Address') ?></th>
+                    <th><?= h('Item Count') ?></th>
+                    <th><?= h('Date') ?></th>
+                    <th><?= h('po_id') ?></th>
+                    <th><?= h('customer_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -40,15 +39,9 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
 </div>
+<script>
+    $(document).ready( function () {
+        $('#orders_table').DataTable();
+    } );
+</script>
