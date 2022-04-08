@@ -67,6 +67,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </a>
 
         </li>
+        <!-- Staffs -->
+        <li class="nav-item">
+            <a class="nav-link " <?= $this->Html->link(__('Staffs'), ['controller' => 'Staffs','action' => 'index']) ?>
+            </a>
+
+        </li>
+        <!-- Suppliers -->
+        <li class="nav-item">
+            <a class="nav-link "<?= $this->Html->link(__('Suppliers'), ['controller' => 'Suppliers','action' => 'index']) ?>
+            </a>
+        </li>
 
         <!-- Products -->
         <li class="nav-item">
@@ -74,11 +85,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </a>
         </li>
 
-        <!-- Suppliers -->
-        <li class="nav-item">
-            <a class="nav-link "<?= $this->Html->link(__('Suppliers'), ['controller' => 'Suppliers','action' => 'index']) ?>
-            </a>
-        </li>
 
         <!-- Orders -->
         <li class="nav-item">

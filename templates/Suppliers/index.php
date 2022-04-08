@@ -5,8 +5,11 @@
  */
 ?>
 <div class="suppliers index content">
-    <?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Suppliers') ?></h3>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800"><?= __('Suppliers') ?></h1>
+        <a href="<?=$this->Url->build(['action'=>'add'])?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-user-plus fa-sm text-white-50"></i> New Supplier</a>
+    </div>
         <table id="suppliers_table">
             <thead>
                 <tr>
