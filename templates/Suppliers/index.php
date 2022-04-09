@@ -33,8 +33,8 @@
                     <td><?= $this->Number->format($supplier->abn) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $supplier->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $supplier->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id)]) ?>
+                        <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $supplier->id],['escape' => false,]) ?>
+                        <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $supplier->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$supplier->business_name)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

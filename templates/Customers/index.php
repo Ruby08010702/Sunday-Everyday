@@ -14,12 +14,12 @@
         <table id="customers_table">
             <thead>
                 <tr>
-                    <th><?= h('first_name') ?></th>
-                    <th><?= h('last_name') ?></th>
-                    <th><?= h('address') ?></th>
-                    <th><?= h('contact') ?></th>
-                    <th><?= h('order_count') ?></th>
-                    <th><?= h('abn') ?></th>
+                    <th><?= h('First Name') ?></th>
+                    <th><?= h('Last Name') ?></th>
+                    <th><?= h('Address') ?></th>
+                    <th><?= h('Contact') ?></th>
+                    <th><?= h('Order Count') ?></th>
+                    <th><?= h('ABN') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -34,8 +34,8 @@
                     <td><?= $this->Number->format($customer->abn) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $customer->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $customer->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id)]) ?>
+                        <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
+                        <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

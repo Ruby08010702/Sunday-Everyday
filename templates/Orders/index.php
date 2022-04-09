@@ -35,8 +35,8 @@
                     <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete # {0}?', $order->id)]) ?>
+                        <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $order->id],['escape' => false,]) ?>
+                        <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order?')]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

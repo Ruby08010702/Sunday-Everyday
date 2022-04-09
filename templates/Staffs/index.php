@@ -32,8 +32,8 @@
                     <td><?= h($staff->role) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $staff->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $staff->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $staff->id], ['confirm' => __('Are you sure you want to delete # {0}?', $staff->id)]) ?>
+                        <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $staff->id],['escape' => false,]) ?>
+                        <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $staff->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$staff->first_name,$staff->last_name)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
