@@ -8,20 +8,23 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Customer'), ['action' => 'edit', $customer->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Customer'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <h5>
+            <?= $this->Html->link("<i class=\"far fa-edit\"></i> Edit", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
+            </h5>
+            <h5>
+            <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i> Delete", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
+            </h5>
+            <h5>
+            <?= $this->Html->link("List Customers", ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            </h5>
+            <h5>
+                <?= $this->Html->link("Add Customer", ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            </h5>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="customers view content">
-            <h3><?= h($customer->id) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($customer->id) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('First Name') ?></th>
                     <td><?= h($customer->first_name) ?></td>
@@ -53,28 +56,23 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
                             <th><?= __('Cost') ?></th>
                             <th><?= __('Payment') ?></th>
                             <th><?= __('Address') ?></th>
                             <th><?= __('Item Count') ?></th>
                             <th><?= __('Date') ?></th>
-                            <th><?= __('Po Id') ?></th>
-                            <th><?= __('Customer Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($customer->orders as $orders) : ?>
                         <tr>
-                            <td><?= h($orders->id) ?></td>
                             <td><?= h($orders->cost) ?></td>
                             <td><?= h($orders->payment) ?></td>
                             <td><?= h($orders->address) ?></td>
                             <td><?= h($orders->item_count) ?></td>
                             <td><?= h($orders->date) ?></td>
-                            <td><?= h($orders->po_id) ?></td>
-                            <td><?= h($orders->customer_id) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $orders->id]) ?>
+                              <!--- so far not implement this
+                                 $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $orders->id]) !--->
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Orders', 'action' => 'edit', $orders->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orders->id)]) ?>
                             </td>

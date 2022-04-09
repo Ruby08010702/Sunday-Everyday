@@ -31,10 +31,6 @@
                     <td><?= h($order->address) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Po Id') ?></th>
-                    <td><?= h($order->po_id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Customer') ?></th>
                     <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                 </tr>
@@ -70,7 +66,8 @@
                             <td><?= h($productOrders->product_id) ?></td>
                             <td><?= h($productOrders->order_id) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'ProductOrders', 'action' => 'view', $productOrders->id]) ?>
+                                <!--not implement this so far
+                                $this->Html->link(__('View'), ['controller' => 'ProductOrders', 'action' => 'view', $productOrders->id])!-->
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'ProductOrders', 'action' => 'edit', $productOrders->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'ProductOrders', 'action' => 'delete', $productOrders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $productOrders->id)]) ?>
                             </td>

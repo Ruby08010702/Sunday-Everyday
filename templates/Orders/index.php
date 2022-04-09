@@ -18,8 +18,7 @@
                     <th><?= h('Address') ?></th>
                     <th><?= h('Item Count') ?></th>
                     <th><?= h('Date') ?></th>
-                    <th><?= h('po_id') ?></th>
-                    <th><?= h('customer_id') ?></th>
+                    <th><?= h('Customer Name') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -31,10 +30,10 @@
                     <td><?= h($order->address) ?></td>
                     <td><?= $this->Number->format($order->item_count) ?></td>
                     <td><?= h($order->date) ?></td>
-                    <td><?= h($order->po_id) ?></td>
-                    <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
+                    <td><?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
+                        <!--not implement this so far
+                       $this->Html->link(__('View'), ['action' => 'view', $order->id]) !-->
                         <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $order->id],['escape' => false,]) ?>
                         <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order?')]) ?>
                     </td>
