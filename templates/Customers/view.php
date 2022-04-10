@@ -84,7 +84,7 @@
                                 </div>
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
                                 <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
-                                <?= $this->Html->link("List Customers", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Customers List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">

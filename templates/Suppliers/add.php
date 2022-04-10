@@ -7,7 +7,6 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -17,7 +16,6 @@
 </div>
 
 <div id="wrapper">
-
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -58,8 +56,9 @@
                                 <div class="form-group">
                                     <?php echo $this->Form->control('abn',['label'=>'ABN','class'=>'form-control']);?>
                                 </div>
-
                                 <?= $this->Form->button(__('ADD'),['class'=>'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Suppliers list", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+
                             </div>
                         </div>
                     </div>

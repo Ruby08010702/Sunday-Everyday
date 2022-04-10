@@ -8,7 +8,6 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
 </div>
@@ -52,6 +51,8 @@
                                     <?php echo $this->Form->control('supplier_id',['label'=>'Supplier ID','class'=>'form-control']);?>
                                 </div>
                                 <?= $this->Form->button(__('ADD'),['class'=>'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Products List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+
                             </div>
                         </div>
                     </div>
