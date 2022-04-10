@@ -46,7 +46,7 @@
                                     <?php echo $this->Form->control('last_name',['label'=>'Last Name','class'=>'form-control']);?>
                                 </div>
                                 <div class="form-group">
-                                    <?php echo $this->Form->control('email',['label'=>'Email','class'=>'form-control']);?>
+                                    <?php echo $this->Form->control('email',['type'=>'email','label'=>'Email','class'=>'form-control']);?>
                                 </div>
                                 <div class="form-group">
                                     <?php echo $this->Form->control('Phone',['label'=>'Phone','class'=>'form-control']);?>
