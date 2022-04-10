@@ -37,7 +37,6 @@ class OrdersController extends AppController
             'contain' => ['Customers', 'ProductOrders'],
         ]);
 
-
         $this->set(compact('order'));
 
 

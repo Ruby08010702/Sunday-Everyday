@@ -11,8 +11,9 @@ use Cake\Validation\Validator;
 /**
  * Orders Model
  *
- * @property \App\Model\Table\ProductOrdersTable&\Cake\ORM\Association\BelongsTo $ProductOrders
- * @property \App\Model\Table\CustomersTable&\Cake\ORM\Association\BelongsTo $Customers*
+ * @property \App\Model\Table\CustomersTable&\Cake\ORM\Association\BelongsTo $Customers
+ * @property \App\Model\Table\ProductOrdersTable&\Cake\ORM\Association\HasMany $ProductOrders
+ *
  * @method \App\Model\Entity\Order newEmptyEntity()
  * @method \App\Model\Entity\Order newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Order[] newEntities(array $data, array $options = [])
@@ -49,10 +50,6 @@ class OrdersTable extends Table
             'Customers' => ['order_count'],
         ]);
 
-        $this->belongsTo('ProductOrders', [
-            'foreignKey' => 'po_id',
-            'joinType' => 'INNER',
-        ]);
         $this->belongsTo('Customers', [
             'foreignKey' => 'customer_id',
             'joinType' => 'INNER',
@@ -113,7 +110,6 @@ class OrdersTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn('po_id', 'ProductOrders'), ['errorField' => 'po_id']);
         $rules->add($rules->existsIn('customer_id', 'Customers'), ['errorField' => 'customer_id']);
 
         return $rules;
