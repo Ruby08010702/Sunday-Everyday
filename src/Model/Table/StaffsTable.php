@@ -38,7 +38,7 @@ class StaffsTable extends Table
         parent::initialize($config);
 
         $this->setTable('staffs');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name','last_name');
         $this->setPrimaryKey('id');
     }
 

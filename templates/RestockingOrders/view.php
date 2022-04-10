@@ -16,19 +16,14 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="restockingOrders view content">
-            <h3><?= h($restockingOrder->id) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($restockingOrder->id) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Payment') ?></th>
                     <td><?= h($restockingOrder->payment) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Supplier') ?></th>
-                    <td><?= $restockingOrder->has('supplier') ? $this->Html->link($restockingOrder->supplier->id, ['controller' => 'Suppliers', 'action' => 'view', $restockingOrder->supplier->id]) : '' ?></td>
+                    <td><?= $restockingOrder->has('supplier') ? $this->Html->link($restockingOrder->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $restockingOrder->supplier->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Item Count') ?></th>

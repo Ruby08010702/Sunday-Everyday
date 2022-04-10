@@ -19,7 +19,7 @@
                     <th><?= h('Payment') ?></th>
                     <th><?= h('Date') ?></th>
                     <th><?= h('Product Arrival Date') ?></th>
-                    <th><?= h('supplier_id') ?></th>
+                    <th><?= h('Supplier') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                     <td><?= h($restockingOrder->payment) ?></td>
                     <td><?= h($restockingOrder->date) ?></td>
                     <td><?= h($restockingOrder->product_arrival_date) ?></td>
-                    <td><?= $restockingOrder->has('supplier') ? $this->Html->link($restockingOrder->supplier->id, ['controller' => 'Suppliers', 'action' => 'view', $restockingOrder->supplier->id]) : '' ?></td>
+                    <td><?= $restockingOrder->has('supplier') ? $this->Html->link($restockingOrder->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $restockingOrder->supplier->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $restockingOrder->id]) ?>
                         <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $restockingOrder->id],['escape' => false,]) ?>

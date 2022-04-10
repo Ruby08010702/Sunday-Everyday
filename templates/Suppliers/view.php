@@ -16,12 +16,8 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="suppliers view content">
-            <h3><?= h($supplier->id) ?></h3>
+            <h3><?= h($supplier->business_name) ?></h3>
             <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($supplier->id) ?></td>
-                </tr>
                 <tr>
                     <th><?= __('Business Name') ?></th>
                     <td><?= h($supplier->business_name) ?></td>
@@ -53,24 +49,19 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
                             <th><?= __('Name') ?></th>
                             <th><?= __('Cost') ?></th>
                             <th><?= __('Retail Price') ?></th>
                             <th><?= __('Stock') ?></th>
-                            <th><?= __('Supplier Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($supplier->products as $products) : ?>
                         <tr>
-                            <td><?= h($products->id) ?></td>
                             <td><?= h($products->name) ?></td>
                             <td><?= h($products->cost) ?></td>
                             <td><?= h($products->retail_price) ?></td>
                             <td><?= h($products->stock) ?></td>
-                            <td><?= h($products->supplier_id) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Products', 'action' => 'view', $products->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Products', 'action' => 'edit', $products->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Products', 'action' => 'delete', $products->id], ['confirm' => __('Are you sure you want to delete # {0}?', $products->id)]) ?>
                             </td>
@@ -86,24 +77,20 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
                             <th><?= __('Item Count') ?></th>
                             <th><?= __('Cost') ?></th>
                             <th><?= __('Payment') ?></th>
                             <th><?= __('Date') ?></th>
                             <th><?= __('Product Arrival Date') ?></th>
-                            <th><?= __('Supplier Id') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($supplier->restocking_orders as $restockingOrders) : ?>
                         <tr>
-                            <td><?= h($restockingOrders->id) ?></td>
                             <td><?= h($restockingOrders->item_count) ?></td>
                             <td><?= h($restockingOrders->cost) ?></td>
                             <td><?= h($restockingOrders->payment) ?></td>
                             <td><?= h($restockingOrders->date) ?></td>
                             <td><?= h($restockingOrders->product_arrival_date) ?></td>
-                            <td><?= h($restockingOrders->supplier_id) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'RestockingOrders', 'action' => 'view', $restockingOrders->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'RestockingOrders', 'action' => 'edit', $restockingOrders->id]) ?>

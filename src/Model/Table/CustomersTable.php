@@ -40,7 +40,7 @@ class CustomersTable extends Table
         parent::initialize($config);
 
         $this->setTable('customers');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name',' last_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Orders', [
