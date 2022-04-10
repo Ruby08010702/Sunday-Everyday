@@ -8,7 +8,6 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <?= $this->Html->link(__('List Restocking Orders'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -61,6 +60,7 @@
                                     <?php echo $this->Form->control('supplier_id',['label'=>'Supplier','class'=>'form-control']);?>
                                 </div>
                                 <?= $this->Form->button(__('ADD'),['class'=>'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Orders List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
                             </div>
                         </div>
                     </div>

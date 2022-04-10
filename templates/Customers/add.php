@@ -8,7 +8,6 @@
     <aside class="column">
         <div class="side-nav">
 
-            <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -61,6 +60,8 @@
                                     <?php echo $this->Form->control('abn',['label'=>'ABN','class'=>'form-control']);?>
                                 </div>
                                 <?= $this->Form->button(__('ADD'),['class'=>'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Customers list", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+
                             </div>
                         </div>
                     </div>
