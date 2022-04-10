@@ -31,7 +31,7 @@
                     <td><?= $this->Number->format($product->stock) ?></td>
                     <td><?= $product->has('supplier') ? $this->Html->link($product->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $product->supplier->id]) : '' ?></td>
                     <td class="actions">
-                       <?= $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $product->id]) ?>
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                         <?= $this->Html->link("<i class=\"far fa-edit\"></i>", ['action' => 'edit', $product->id],['escape' => false,]) ?>
                         <?= $this->Form->postLink("<i class=\"fas fa-trash\"></i>", ['action' => 'delete', $product->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$product->name)]) ?>
                     </td>
