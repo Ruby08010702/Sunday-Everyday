@@ -10,6 +10,16 @@
         <a href="<?=$this->Url->build(['action'=>'add'])?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
     </div>
+    <div class="content">
+        <?= $this->Form->create(null,['type'=>'get']); ?>
+        <fieldset>
+            <?php
+            echo $this->Form->control('stock');
+            ?>
+        </fieldset>
+        <?= $this->Form->button(__('Overstock'),['type'=>'submit','name'=>'overstock','class' => 'd-none d-sm-inline-block btn btn-sm btn-primary shadow-sm']) ?>
+        <?= $this->Form->end() ?>
+    </div>
 
         <table id="products_table">
             <thead>

@@ -98,7 +98,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="webroot/img/sundayEveryday_logo_blue.png">
+                <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/sundayEveryday_logo_blue.png">
 
             </a>
             <!-- Dropdown - User Information -->

@@ -19,7 +19,23 @@ class ProductsController extends AppController
     public function index()
     {
 
-        $products = $this->Products->find()->contain(['Suppliers']);
+        $query = $this->Products->find();
+        $this->paginate = [
+            'contain' => ['Suppliers']  //also query for their related genre objects(one record only has one genre)
+        ];
+
+        $searchTerm_stock = $this->request->getQuery('stock');
+
+
+        if (!empty($searchTerm_stock)) {
+
+            $query->where([
+                'stock <' => $searchTerm_stock
+            ]);
+        }
+
+        //debug($query); //program stops here
+        $products = $this->paginate($query);//return the array of records
 
         $this->set(compact('products'));
     }
