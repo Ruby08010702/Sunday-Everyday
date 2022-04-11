@@ -5,9 +5,8 @@
  */
 ?>
 <div class="dashboard">
-    <a href="http://localhost/team14-app_fit3047/customers">
     <div class="card-shad">
-        <h6 class="dash">Customers</h6>
+    <a class="nav-link " <?= $this->Html->link(__('Customers'), ['controller' => 'Customers','action' => 'index']) ?>
         <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
     </div>
     </a>
