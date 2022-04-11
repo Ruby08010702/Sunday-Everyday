@@ -5,47 +5,66 @@
  */
 ?>
 <div class="dashboard">
+    <a href="<?= $this->Url->build(['controller' => 'Customers','action' => 'index'])?>">
     <div class="card-shad">
-    <a class="nav-link " <?= $this->Html->link(__('Customers'), ['controller' => 'Customers','action' => 'index']) ?>
-        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
+        <h6 class="dash">Customer</h6>
+<!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/Customer.png', [
+            'class' => 'dash-img',
+            'url' => ['controller' => 'Customers','action' => 'index']
+        ]); ?>
     </div>
     </a>
 
-    <a href="http://localhost/team14-app_fit3047/staffs">
+    <a href="<?= $this->Url->build(['controller' => 'Staffs','action' => 'index'])?>">
     <div class="card-shad">
 
         <h6 class="dash">Staffs</h6>
-        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
-
+<!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/staff.png', [
+            'class' => 'dashst-img',
+            'url' => ['controller' => 'Staffs','action' => 'index']
+        ]); ?>
 
     </div>
     </a>
 
 
-    <a href="http://localhost/team14-app_fit3047/suppliers">
+    <a href="<?= $this->Url->build(['controller' => 'Suppliers','action' => 'index'])?>">
     <div class="card-shad">
 
         <h6 class="dash">Suppliers</h6>
 
-        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
-
+<!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/supplier.png', [
+            'class' => 'dashsu-img',
+            'url' => ['controller' => 'Suppliers','action' => 'index']
+        ]); ?>
 
     </div>
     </a>
 
 
-    <a href="http://localhost/team14-app_fit3047/products">
+    <a href="<?= $this->Url->build(['controller' => 'Products','action' => 'index'])?>">
     <div class="card-shad">
 
         <h6 class="dash">Products</h6>
-        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
+<!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/product.png', [
+            'class' => 'dashp-img',
+            'url' => ['controller' => 'Products','action' => 'index']
+        ]); ?>
     </div>
     </a>
 
-    <a href="http://localhost/team14-app_fit3047/orders">
+    <a href="<?= $this->Url->build(['controller' => 'Orders','action' => 'index'])?>">
     <div class="card-shad">
         <h6 class="dash">Orders</h6>
-        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
+<!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/order.png', [
+            'class' => 'dasho-img',
+            'url' => ['controller' => 'Orders','action' => 'index']
+        ]); ?>
     </div>
     </a>
 

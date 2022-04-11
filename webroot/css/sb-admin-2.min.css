@@ -286,6 +286,34 @@ body{height:100%}a:focus{outline:0}#wrapper{display:flex}#wrapper #content-wrapp
     padding: 10px;
 }
 
+.card-shad:hover {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #88Cee7;
+    align-self: center;
+    padding: 10px;
+}
+
 .dash {
     text-align: center;
+}
+
+.dash-img {
+    width: 174px;
+}
+
+.dashst-img {
+    width: 174px;
+    padding-top: 15px;
+}
+.dashsu-img {
+    width: 174px;
+    padding-top: 41px;
+}
+.dashp-img {
+    width: 174px;
+}
+.dasho-img {
+    width: 174px;
 }
