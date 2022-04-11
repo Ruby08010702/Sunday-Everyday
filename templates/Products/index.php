@@ -17,7 +17,7 @@
             echo $this->Form->control('stock');
             ?>
         </fieldset>
-        <?= $this->Form->button(__('Overstock'),['type'=>'submit','name'=>'overstock','class' => 'd-none d-sm-inline-block btn btn-sm btn-primary shadow-sm']) ?>
+        <?= $this->Form->button(__('Understock'),['type'=>'submit','name'=>'understock','class' => 'd-none d-sm-inline-block btn btn-sm btn-primary shadow-sm']) ?>
         <?= $this->Form->end() ?>
     </div>
 
