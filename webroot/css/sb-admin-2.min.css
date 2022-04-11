@@ -251,7 +251,10 @@ body{height:100%}a:focus{outline:0}#wrapper{display:flex}#wrapper #content-wrapp
 
 .sidebar .nav-item .nav-link .topbar .nav-item .nav-link {height:2rem;width:2rem}
 
-.img-profile {height:3rem;width:3rem;}  /*image size */
+.img-profile {margin-top: 10px;
+    margin-left: 11px;
+    height:3rem;
+    width:4rem;}  /*image size */
 
 .topbar{height:4.375rem}
 

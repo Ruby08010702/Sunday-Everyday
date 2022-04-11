@@ -95,12 +95,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<!--            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"-->
+<!--               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/sundayEveryday_logo_blue.png">
-
-            </a>
+<!--                <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/sundayEveryday_logo_blue.png">-->
+                <?= $this->Html->image('/img/sundayEveryday_logo_blue.png', [
+//                    'class' => 'img-profile rounded-circle',
+                        'class' => 'img-profile',
+                    'url' => ['controller' => 'pages','action' => 'home']
+                ]); ?>
+<!--            </a>-->
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
