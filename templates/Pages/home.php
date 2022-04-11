@@ -8,7 +8,7 @@
     <a href="http://localhost/team14-app_fit3047/customers">
     <div class="card-shad">
         <h6 class="dash">Customers</h6>
-        <img src="default.png">
+        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
     </div>
     </a>
 
@@ -16,7 +16,7 @@
     <div class="card-shad">
 
         <h6 class="dash">Staffs</h6>
-        <img src="default.png">
+        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
 
 
     </div>
@@ -28,7 +28,7 @@
 
         <h6 class="dash">Suppliers</h6>
 
-        <img src="default.png">
+        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
 
 
     </div>
@@ -39,14 +39,14 @@
     <div class="card-shad">
 
         <h6 class="dash">Products</h6>
-        <img src="default.png">
+        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
     </div>
     </a>
 
     <a href="http://localhost/team14-app_fit3047/orders">
     <div class="card-shad">
         <h6 class="dash">Orders</h6>
-        <img src="default.png">
+        <img class="img-profile rounded-circle" src="/fit3047_team14/webroot/img/default.png">
     </div>
     </a>
 
