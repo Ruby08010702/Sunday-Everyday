@@ -40,7 +40,7 @@ class SuppliersTable extends Table
         parent::initialize($config);
 
         $this->setTable('suppliers');
-        $this->setDisplayField('id');
+        $this->setDisplayField('business_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Products', [
