@@ -6,7 +6,7 @@
  */
 ?>
 
-<h1 class="h3 mb-2 text-gray-800">Edit Customer</h1>
+<h1 class="h3 mb-2 text-gray-800">Edit Product</h1>
 <?= $this->Form->create($product) ?>
 <?php
 echo $this->Form->control('name');
