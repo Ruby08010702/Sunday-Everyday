@@ -19,9 +19,9 @@
                 <legend><?= __('Add Product') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('cost');
-                    echo $this->Form->control('retail_price');
-                    echo $this->Form->control('quantity');
+                    echo $this->Form->control('cost',['min'=>0,'max'=>1000]);
+                    echo $this->Form->control('retail_price',['min'=>0,'max'=>1000]);
+                    echo $this->Form->control('quantity',['min'=>0,'max'=>999]);
                     echo $this->Form->control('supplier_id', ['options' => $suppliers]);
                 ?>
             </fieldset>
