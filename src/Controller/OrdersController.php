@@ -36,8 +36,9 @@ class OrdersController extends AppController
     public function view($id = null)
     {
         $order = $this->Orders->get($id, [
-            'contain' => ['Customers', 'CustomersOrderDetail'],
+            'contain' => ['Customers', 'CustomersOrderDetail','CustomersOrderDetail.Products'],
         ]);
+
 
         $this->set(compact('order'));
     }

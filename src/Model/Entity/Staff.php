@@ -14,9 +14,8 @@ use Cake\ORM\Entity;
  * @property string $address
  * @property string $email
  * @property string $phone
- * @property string $role_id
  *
- * @property \App\Model\Entity\Role $role
+ * @property \App\Model\Entity\Restocking[] $restockings
  */
 class Staff extends Entity
 {
@@ -35,7 +34,6 @@ class Staff extends Entity
         'address' => true,
         'email' => true,
         'phone' => true,
-        'role_id' => true,
-        'role' => true,
+        'restockings' => true,
     ];
 }

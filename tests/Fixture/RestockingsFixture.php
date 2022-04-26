@@ -19,9 +19,9 @@ class RestockingsFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => '8f95cf73-5449-429e-8494-d640b5f2e607',
-                'staff_id' => '22c78f96-ad33-4f3c-bce9-67166fb54ae4',
-                'date' => '2022-04-22',
+                'id' => '322c0f4d-c330-4cf4-b113-df223bf800f5',
+                'staff_id' => '47059fd5-470d-4fed-bf5a-ba6c824de5e6',
+                'date' => '2022-04-26',
                 'payment' => 'Lorem ipsum dolor sit amet',
                 'quantity' => 1,
             ],

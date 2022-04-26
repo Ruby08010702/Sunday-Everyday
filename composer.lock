@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "cakephp/cakephp",
-            "version": "4.3.7",
+            "version": "4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "f20f6df934dac17ff15b044bf369efdc0356fe37"
+                "reference": "34aae68e91e6834aa6711c3e435a3f220bf56c0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/f20f6df934dac17ff15b044bf369efdc0356fe37",
-                "reference": "f20f6df934dac17ff15b044bf369efdc0356fe37",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/34aae68e91e6834aa6711c3e435a3f220bf56c0b",
+                "reference": "34aae68e91e6834aa6711c3e435a3f220bf56c0b",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/cakephp"
             },
-            "time": "2022-03-26T02:09:46+00:00"
+            "time": "2022-04-23T01:23:23+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -3926,16 +3926,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "d8e9fd97ca11f2f24fc1aafbcfb1f78bce762267"
+                "reference": "129a63b3bc7caeb593c224c41f420675e63cfefc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/d8e9fd97ca11f2f24fc1aafbcfb1f78bce762267",
-                "reference": "d8e9fd97ca11f2f24fc1aafbcfb1f78bce762267",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/129a63b3bc7caeb593c224c41f420675e63cfefc",
+                "reference": "129a63b3bc7caeb593c224c41f420675e63cfefc",
                 "shasum": ""
             },
             "require": {
@@ -3964,9 +3964,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.4.4"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.4.5"
             },
-            "time": "2022-04-14T12:24:06+00:00"
+            "time": "2022-04-22T11:11:01+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

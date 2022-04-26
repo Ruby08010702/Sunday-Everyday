@@ -17,7 +17,6 @@
                     <th><?= $this->Paginator->sort('address') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('phone') ?></th>
-                    <th><?= $this->Paginator->sort('role_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -30,7 +29,6 @@
                     <td><?= h($staff->address) ?></td>
                     <td><?= h($staff->email) ?></td>
                     <td><?= h($staff->phone) ?></td>
-                    <td><?= $staff->has('role') ? $this->Html->link($staff->role->name, ['controller' => 'Roles', 'action' => 'view', $staff->role->id]) : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $staff->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $staff->id]) ?>

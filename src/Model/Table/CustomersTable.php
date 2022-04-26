@@ -76,12 +76,6 @@ class CustomersTable extends Table
             ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->scalar('gender')
-            ->maxLength('gender', 15)
-            ->requirePresence('gender', 'create')
-            ->notEmptyString('gender');
-
-        $validator
             ->scalar('address')
             ->maxLength('address', 200)
             ->requirePresence('address', 'create')
@@ -95,16 +89,17 @@ class CustomersTable extends Table
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 36)
+            ->maxLength('phone', 12,'incorrect phone number length. e.g:640412xxxxxx')
+            ->minLength('phone',12,'incorrect phone number length. e.g:640412xxxxxx')
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('abn')
-            ->maxLength('abn', 11)
-            ->requirePresence('abn', 'create')
-            ->notEmptyString('abn')
+            ->maxLength('abn', 11,'length of abn should be 11')
+            ->minLength('abn', 11,'length of abn should be 11')
+            ->allowEmptyString('abn')
             ->add('abn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;
@@ -122,7 +117,7 @@ class CustomersTable extends Table
         $rules->add($rules->isUnique(['username']), ['errorField' => 'username']);
         $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
         $rules->add($rules->isUnique(['phone']), ['errorField' => 'phone']);
-        $rules->add($rules->isUnique(['abn']), ['errorField' => 'abn']);
+        $rules->add($rules->isUnique(['abn'], ['allowMultipleNulls' => true]), ['errorField' => 'abn']);
 
         return $rules;
     }

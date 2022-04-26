@@ -2,7 +2,6 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Staff $staff
- * @var \Cake\Collection\CollectionInterface|string[] $roles
  */
 ?>
 <div class="row">
@@ -23,7 +22,6 @@
                     echo $this->Form->control('address');
                     echo $this->Form->control('email');
                     echo $this->Form->control('phone');
-                    echo $this->Form->control('role_id', ['options' => $roles]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

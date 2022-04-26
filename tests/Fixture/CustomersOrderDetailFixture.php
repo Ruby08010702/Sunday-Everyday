@@ -25,10 +25,10 @@ class CustomersOrderDetailFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'f01d13c8-e11a-4fc5-ab88-e496e811395a',
-                'product_id' => 'd199d2c1-7cde-47c3-acc6-2929414d6e07',
-                'order_id' => '220f4759-8252-428c-ba2a-beec65b79212',
-                'price' => 1,
+                'id' => '372f7dc3-7b22-4e18-90fe-0b40c4d75b60',
+                'product_id' => 'aabf1762-28a0-4245-b99a-49343ffff9c3',
+                'order_id' => '33f2ad1a-376a-4a91-860a-856cd159543d',
+                'price' => 1.5,
             ],
         ];
         parent::init();

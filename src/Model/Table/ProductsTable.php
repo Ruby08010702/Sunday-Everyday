@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\SuppliersTable&\Cake\ORM\Association\BelongsTo $Suppliers
  * @property \App\Model\Table\CustomersOrderDetailTable&\Cake\ORM\Association\HasMany $CustomersOrderDetail
+ * @property \App\Model\Table\StaffsRestockingDetailTable&\Cake\ORM\Association\HasMany $StaffsRestockingDetail
  *
  * @method \App\Model\Entity\Product newEmptyEntity()
  * @method \App\Model\Entity\Product newEntity(array $data, array $options = [])
@@ -49,6 +50,9 @@ class ProductsTable extends Table
             'joinType' => 'INNER',
         ]);
         $this->hasMany('CustomersOrderDetail', [
+            'foreignKey' => 'product_id',
+        ]);
+        $this->hasMany('StaffsRestockingDetail', [
             'foreignKey' => 'product_id',
         ]);
     }

@@ -19,12 +19,13 @@ class SuppliersFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'bc8d0df4-5e14-4782-bb3d-24de82021572',
+                'id' => '840e5d5a-90cf-4272-a8bc-75088b24c1ea',
                 'business_name' => 'Lorem ipsum dolor sit amet',
+                'contact_name' => 'Lorem ipsum dolor sit amet',
                 'address' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
-                'phone' => 'Lorem ipsum dolor sit amet',
-                'abn' => 'Lorem ips',
+                'phone' => 'Lorem ipsu',
+                'abn' => '',
             ],
         ];
         parent::init();

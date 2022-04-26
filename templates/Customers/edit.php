@@ -5,13 +5,12 @@
  */
 ?>
 
-<h1 class="h3 mb-2 text-gray-800">Edit Customer</h1>
+    <h1 class="h3 mb-2 text-gray-800">Edit Customer</h1>
 <?= $this->Form->create($customer) ?>
 <?php
 echo $this->Form->control('first_name');
 echo $this->Form->control('last_name');
 echo $this->Form->control('username');
-echo $this->Form->control('gender');
 echo $this->Form->control('address');
 echo $this->Form->control('email');
 echo $this->Form->control('phone');

@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\Order $order
  */
 ?>
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Order $order
+ */
+?>
 
 <div class="row">
     <aside class="column">
@@ -69,7 +75,7 @@
                                         <th><?= __('Quantity:') ?></th>
                                         <td><?= $this->Number->format($order->quantity) ?></td>
                                     </tr>
-                                                      </div>
+                                </div>
                                 <div >
                                     <tr>
                                         <th><?= __('Date:') ?></th>
@@ -95,8 +101,8 @@
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Product Id:') ?></th>
-                                        <td><?= h($customers_order_detail->product_id) ?></td>
+                                        <th><?= __('Product Name:') ?></th>
+                                        <td><?= h($customers_order_detail->product->name) ?></td>
                                     </tr>
                                 </div>
 
@@ -104,18 +110,19 @@
                                     <tr>
                                         <th><?= __('Price: $') ?></th>
                                         <td><?= h($customers_order_detail->price) ?></td>
+
                                     </tr>
                                 </div>
 
-                                    <?php endforeach; ?>
-                                </div>
+                            <?php endforeach; ?>
                             </div>
-                            <?php endif; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
+</div>
 </div>

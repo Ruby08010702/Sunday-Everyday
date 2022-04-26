@@ -27,6 +27,7 @@ class ProductsTableTest extends TestCase
         'app.Products',
         'app.Suppliers',
         'app.CustomersOrderDetail',
+        'app.StaffsRestockingDetail',
     ];
 
     /**

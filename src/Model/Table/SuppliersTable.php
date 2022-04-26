@@ -40,7 +40,7 @@ class SuppliersTable extends Table
         parent::initialize($config);
 
         $this->setTable('suppliers');
-        $this->setDisplayField('business_name');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Products', [
@@ -63,6 +63,12 @@ class SuppliersTable extends Table
             ->notEmptyString('business_name');
 
         $validator
+            ->scalar('contact_name')
+            ->maxLength('contact_name', 64)
+            ->requirePresence('contact_name', 'create')
+            ->notEmptyString('contact_name');
+
+        $validator
             ->scalar('address')
             ->maxLength('address', 200)
             ->requirePresence('address', 'create')
@@ -76,7 +82,7 @@ class SuppliersTable extends Table
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 36)
+            ->maxLength('phone', 12)
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
@@ -84,8 +90,7 @@ class SuppliersTable extends Table
         $validator
             ->scalar('abn')
             ->maxLength('abn', 11)
-            ->requirePresence('abn', 'create')
-            ->notEmptyString('abn')
+            ->allowEmptyString('abn')
             ->add('abn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;
@@ -102,7 +107,7 @@ class SuppliersTable extends Table
     {
         $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
         $rules->add($rules->isUnique(['phone']), ['errorField' => 'phone']);
-        $rules->add($rules->isUnique(['abn']), ['errorField' => 'abn']);
+        $rules->add($rules->isUnique(['abn'], ['allowMultipleNulls' => true]), ['errorField' => 'abn']);
 
         return $rules;
     }

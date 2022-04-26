@@ -4,121 +4,82 @@
  * @var \App\Model\Entity\Supplier $supplier
  */
 ?>
-
-
-<div id="wrapper">
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-        <!-- Main Content -->
-        <div id="content">
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Supplier</h1>
-                <?= $this->Flash->render('error') ?>
-                <!-- DataTales Example -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Details</h6>
-                            </div>
-
-                            <div class="card-body">
-                                <div>
-                                    <tr>
-                                        <th><?= __('Name:') ?></th>
-                                        <td><?= h($supplier->business_name) ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <tr>
-                                        <th><?= __('ID:') ?></th>
-                                        <td><?= h($supplier->id) ?></td>
-                                    </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Address:') ?></th>
-                                        <td><?= h($supplier->address) ?></td>
-                                    </tr>
-                                </div>
-                                <div >
-                                        <tr>
-                                            <th><?= __('Contact Admin:') ?></th>
-                                            <!--<td><?= h($supplier->email) ?></td> --> //Not yet implemented - requires table update
-                                        </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Contact Email:') ?></th>
-                                        <td><?= h($supplier->email) ?></td>
-                                    </tr>
-                                </div>
-                                <div class>
-                                    <tr>
-                                        <th><?= __('Phone:') ?></th>
-                                        <td><?= h($supplier->phone) ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <tr>
-                                        <th><?= __('ABN:') ?></th>
-                                        <td><?= h($supplier->abn) ?></td>
-                                    </tr>
-                                </div>
-
-                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $supplier->id], ['escape' => false,'confirm' => __('Are you sure you want to delete {0} ? ID: {1}?', $supplier->business_name, $supplier->id)]) ?>
-                                <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $supplier->id],['escape' => false,]) ?>
-                                <?= $this->Html->link("Back to Supplier List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
-                            </div>
-                        </div>
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Related Orders</h6>
-                            </div>
-                            <div class="card-body">
-                                <?php if (!empty($supplier->customers_order_detail)) : ?>
-                                <div>
-                                    <?php foreach ($supplier->customers_order_detail as $customers_order_detail) : ?>
-                                    <div>
-                                        <hr class="sidebar-divider d-none d-md-block">
-                                    </div>
-                                    <tr>
-                                        <th><?= __('Customer ID:') ?></th>
-                                        <td><?= h($customers_order_detail->id) ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <tr>
-                                        <th><?= __('Order ID:') ?></th>
-                                        <td><?= h($customers_order_detail->order_id) ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <tr>
-                                        <th><?= __('Price: $') ?></th>
-                                        <td><?= h($customers_order_detail->price) ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <div>
-                                        <td class="actions">
-                                            <?= $this->Html->link(__('View'), ['controller' => 'customers_order_detail', 'action' => 'view', $customers_order_detail->id]) ?>
-                                            <?= $this->Html->link(__('Edit'), ['controller' => 'customers_order_detail', 'action' => 'edit', $customers_order_detail->id]) ?>
-                                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'customers_order_detail', 'action' => 'delete', $customers_order_detail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customers_order_detail->id)]) ?>
-                                        </td>
-                                    </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('Edit Supplier'), ['action' => 'edit', $supplier->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Supplier'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="suppliers view content">
+            <h3><?= h($supplier->id) ?></h3>
+            <table>
+                <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= h($supplier->id) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Business Name') ?></th>
+                    <td><?= h($supplier->business_name) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Contact Name') ?></th>
+                    <td><?= h($supplier->contact_name) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Address') ?></th>
+                    <td><?= h($supplier->address) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Email') ?></th>
+                    <td><?= h($supplier->email) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Phone') ?></th>
+                    <td><?= h($supplier->phone) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Abn') ?></th>
+                    <td><?= h($supplier->abn) ?></td>
+                </tr>
+            </table>
+            <div class="related">
+                <h4><?= __('Related Products') ?></h4>
+                <?php if (!empty($supplier->products)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Name') ?></th>
+                            <th><?= __('Cost') ?></th>
+                            <th><?= __('Retail Price') ?></th>
+                            <th><?= __('Quantity') ?></th>
+                            <th><?= __('Supplier Id') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($supplier->products as $products) : ?>
+                        <tr>
+                            <td><?= h($products->id) ?></td>
+                            <td><?= h($products->name) ?></td>
+                            <td><?= h($products->cost) ?></td>
+                            <td><?= h($products->retail_price) ?></td>
+                            <td><?= h($products->quantity) ?></td>
+                            <td><?= h($products->supplier_id) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Products', 'action' => 'view', $products->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Products', 'action' => 'edit', $products->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Products', 'action' => 'delete', $products->id], ['confirm' => __('Are you sure you want to delete # {0}?', $products->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
                 </div>
-
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </div>
-

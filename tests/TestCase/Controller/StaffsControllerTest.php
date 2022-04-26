@@ -23,7 +23,7 @@ class StaffsControllerTest extends TestCase
      */
     protected $fixtures = [
         'app.Staffs',
-        'app.Roles',
+        'app.Restockings',
     ];
 
     /**

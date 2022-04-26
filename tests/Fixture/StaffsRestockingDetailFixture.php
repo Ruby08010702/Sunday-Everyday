@@ -25,9 +25,9 @@ class StaffsRestockingDetailFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => '9a5d5a31-7c3d-4101-8cab-495216dee7df',
-                'product_id' => '35f46142-346d-4a2e-82a2-066e2fb6bdc3',
-                'restocking_id' => 'f7716db1-41e5-4f87-98e9-f177764eaa39',
+                'id' => '8695153a-6d35-4f3a-86d0-1c42f15a27c7',
+                'product_id' => 'da227d2c-de2b-4e1d-996d-1f3a433060c8',
+                'restocking_id' => '8dca990e-4579-424e-b8a8-d57eb975b7c6',
                 'quantity' => 1,
             ],
         ];

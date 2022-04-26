@@ -12,11 +12,10 @@ use Cake\ORM\Entity;
  * @property string $first_name
  * @property string $last_name
  * @property string $username
- * @property string $gender
  * @property string $address
  * @property string $email
  * @property string $phone
- * @property string $abn
+ * @property string|null $abn
  *
  * @property \App\Model\Entity\Order[] $orders
  */
@@ -35,7 +34,6 @@ class Customer extends Entity
         'first_name' => true,
         'last_name' => true,
         'username' => true,
-        'gender' => true,
         'address' => true,
         'email' => true,
         'phone' => true,

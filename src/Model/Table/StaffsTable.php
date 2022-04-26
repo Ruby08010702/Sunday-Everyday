@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Staffs Model
  *
- * @property \App\Model\Table\RolesTable&\Cake\ORM\Association\BelongsTo $Roles
+ * @property \App\Model\Table\RestockingsTable&\Cake\ORM\Association\HasMany $Restockings
  *
  * @method \App\Model\Entity\Staff newEmptyEntity()
  * @method \App\Model\Entity\Staff newEntity(array $data, array $options = [])
@@ -43,9 +43,8 @@ class StaffsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Roles', [
-            'foreignKey' => 'role_id',
-            'joinType' => 'INNER',
+        $this->hasMany('Restockings', [
+            'foreignKey' => 'staff_id',
         ]);
     }
 
@@ -83,16 +82,10 @@ class StaffsTable extends Table
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 36)
+            ->maxLength('phone', 12)
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
-        $validator
-            ->scalar('role_id')
-            ->maxLength('role_id', 32)
-            ->requirePresence('role_id', 'create')
-            ->notEmptyString('role_id');
 
         return $validator;
     }
@@ -108,7 +101,6 @@ class StaffsTable extends Table
     {
         $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
         $rules->add($rules->isUnique(['phone']), ['errorField' => 'phone']);
-        $rules->add($rules->existsIn('role_id', 'Roles'), ['errorField' => 'role_id']);
 
         return $rules;
     }

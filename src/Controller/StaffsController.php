@@ -18,9 +18,6 @@ class StaffsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Roles'],
-        ];
         $staffs = $this->paginate($this->Staffs);
 
         $this->set(compact('staffs'));
@@ -36,7 +33,7 @@ class StaffsController extends AppController
     public function view($id = null)
     {
         $staff = $this->Staffs->get($id, [
-            'contain' => ['Roles'],
+            'contain' => ['Restockings'],
         ]);
 
         $this->set(compact('staff'));
@@ -59,8 +56,7 @@ class StaffsController extends AppController
             }
             $this->Flash->error(__('The staff could not be saved. Please, try again.'));
         }
-        $roles = $this->Staffs->Roles->find('list', ['limit' => 200])->all();
-        $this->set(compact('staff', 'roles'));
+        $this->set(compact('staff'));
     }
 
     /**
@@ -84,8 +80,7 @@ class StaffsController extends AppController
             }
             $this->Flash->error(__('The staff could not be saved. Please, try again.'));
         }
-        $roles = $this->Staffs->Roles->find('list', ['limit' => 200])->all();
-        $this->set(compact('staff', 'roles'));
+        $this->set(compact('staff'));
     }
 
     /**

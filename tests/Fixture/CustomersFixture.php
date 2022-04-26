@@ -19,15 +19,14 @@ class CustomersFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => '66bd4257-5a34-40aa-bae9-b22a0756e43e',
+                'id' => '6d59fd97-557f-4570-af86-363ece8d2c91',
                 'first_name' => 'Lorem ipsum dolor sit amet',
                 'last_name' => 'Lorem ipsum dolor sit amet',
                 'username' => 'Lorem ipsum dolor sit amet',
-                'gender' => 'Lorem ipsum d',
                 'address' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
-                'phone' => 'Lorem ipsum dolor sit amet',
-                'abn' => 'Lorem ips',
+                'phone' => 'Lorem ipsu',
+                'abn' => '',
             ],
         ];
         parent::init();

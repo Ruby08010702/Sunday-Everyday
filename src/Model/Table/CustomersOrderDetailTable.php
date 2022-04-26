@@ -73,7 +73,7 @@ class CustomersOrderDetailTable extends Table
             ->notEmptyString('order_id');
 
         $validator
-            ->integer('price')
+            ->decimal('price')
             ->requirePresence('price', 'create')
             ->notEmptyString('price');
 

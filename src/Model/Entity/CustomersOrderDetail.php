@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property string $id
  * @property string $product_id
  * @property string $order_id
- * @property int $price
+ * @property string $price
  *
  * @property \App\Model\Entity\Product $product
  * @property \App\Model\Entity\Order $order

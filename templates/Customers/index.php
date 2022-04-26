@@ -16,17 +16,17 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
     <div class="table-responsive">
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
-                <tr>
+            <tr>
 
-                    <th><?= h('username') ?></th>
-                    <th><?= h('email') ?></th>
-                    <th><?= h('phone') ?></th>
-                    <th><?= h('abn') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
+                <th><?= h('username') ?></th>
+                <th><?= h('email') ?></th>
+                <th><?= h('phone') ?></th>
+                <th><?= h('abn') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($customers as $customer): ?>
+            <?php foreach ($customers as $customer): ?>
                 <tr>
                     <td><?= h($customer->username) ?></td>
 
@@ -39,7 +39,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

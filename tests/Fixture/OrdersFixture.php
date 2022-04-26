@@ -19,9 +19,9 @@ class OrdersFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'a494aef8-d9a8-4d78-af8d-ace681f687bb',
-                'customer_id' => '9172eb2d-b94c-4acc-b6eb-e0dc281d0491',
-                'date' => '2022-04-22',
+                'id' => '9e6a2814-2fda-48d1-965d-16dad21108ba',
+                'customer_id' => '81ce2165-03d6-4d18-bd8f-30f7e47dc5d2',
+                'date' => '2022-04-26',
                 'payment' => 'Lorem ipsum dolor sit amet',
                 'quantity' => 1,
             ],

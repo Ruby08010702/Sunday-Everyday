@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Customer $customer
  */
 ?>
-
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -68,12 +67,7 @@
                                         <th><?= __('Username:') ?></th>
                                         <td><?= h($customer->username) ?></td>
                                     </tr>                            </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Gender:') ?></th>
-                                        <td><?= h($customer->gender) ?></td>
-                                    </tr>                                </div>
-                                <div class>
+                                <div>
                                     <tr>
                                         <th><?= __('Address:') ?></th>
                                         <td><?= h($customer->address) ?></td>
@@ -155,4 +149,3 @@
         </div>
     </div>
 </div>
-
