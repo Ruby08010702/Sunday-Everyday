@@ -5,28 +5,15 @@
  * @var \Cake\Collection\CollectionInterface|string[] $suppliers
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="products form content">
-            <?= $this->Form->create($product) ?>
-            <fieldset>
-                <legend><?= __('Add Product') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('cost',['min'=>0,'max'=>1000]);
-                    echo $this->Form->control('retail_price',['min'=>0,'max'=>1000]);
-                    echo $this->Form->control('quantity',['min'=>0,'max'=>999]);
-                    echo $this->Form->control('supplier_id', ['options' => $suppliers]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
-</div>
+
+<h1 class="h3 mb-2 text-gray-800">Add new Product</h1>
+<?= $this->Form->create($product) ?>
+<?php
+echo $this->Form->control('name',['pattern'=>'^[A-Za-z]+$']);
+echo $this->Form->control('cost');
+echo $this->Form->control('retail_price');
+echo $this->Form->control('quantity');
+echo $this->Form->control('supplier_id', ['options' => $suppliers]);
+?>
+<?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+<?= $this->Form->end() ?>

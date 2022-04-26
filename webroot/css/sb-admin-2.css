@@ -11279,3 +11279,52 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2;
+    justify-content: space-evenly;
+}
+
+.card-shad {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #031c6c;
+    align-self: center;
+    padding: 10px;
+}
+
+.card-shad:hover {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #88Cee7;
+    align-self: center;
+    padding: 10px;
+}
+
+.dash {
+    text-align: center;
+}
+
+.dash-img {
+    width: 174px;
+}
+
+.dashst-img {
+    width: 174px;
+    padding-top: 15px;
+}
+.dashsu-img {
+    width: 174px;
+    padding-top: 41px;
+}
+.dashp-img {
+    width: 174px;
+}
+.dasho-img {
+    width: 174px;
+}
+
