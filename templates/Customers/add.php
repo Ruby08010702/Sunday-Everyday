@@ -11,9 +11,9 @@ echo $this->Form->control('first_name',['pattern'=>'^[A-Za-z]+$']);
 echo $this->Form->control('last_name',['pattern'=>'^[A-Za-z]+$']);
 echo $this->Form->control('username');
 echo $this->Form->control('address');
-echo $this->Form->control('email',['pattern'=>'\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b']);
-echo $this->Form->control('phone');
-echo $this->Form->control('abn');
+echo $this->Form->control('email',['pattern'=>'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$']);
+echo $this->Form->control('phone',['placeholder'=>'e.g. 0412345678']);
+echo $this->Form->control('abn',['placeholder'=>'e.g. 11111111111']);
 ?>
 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
 <?= $this->Form->end() ?>
