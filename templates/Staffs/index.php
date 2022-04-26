@@ -18,23 +18,20 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <thead>
             <tr>
 
-                <th><?= h('Staff ID') ?></th>
                 <th><?= h('First name') ?></th>
                 <th><?= h('Last name') ?></th>
-                <th><?= h('Phone') ?>
-                <th><?= h('Address') ?></th>
+                <th><?= h('Email') ?>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
             <tbody>
             <?php foreach ($staffs as $staff): ?>
                 <tr>
-                    <td><?= h($staff->role_id) ?></td>
 
                     <td><?= h($staff->first_name) ?></td>
                     <td><?= h($staff->last_name) ?></td>
-                    <td><?= h($staff->phone) ?></td>
-                    <td><?= h($staff->address) ?></td>
+                    <td><?= h($staff->email) ?></td>
+
 
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $staff->id]) ?>

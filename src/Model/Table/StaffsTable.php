@@ -82,7 +82,8 @@ class StaffsTable extends Table
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 12)
+            ->maxLength('phone', 10,'incorrect phone number length. e.g:0412xxxxxx')
+            ->minLength('phone',10,'incorrect phone number length. e.g:0412xxxxxx')
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
