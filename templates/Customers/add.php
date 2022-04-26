@@ -11,7 +11,7 @@ echo $this->Form->control('first_name',['pattern'=>'^[A-Za-z]+$']);
 echo $this->Form->control('last_name',['pattern'=>'^[A-Za-z]+$']);
 echo $this->Form->control('username');
 echo $this->Form->control('address');
-echo $this->Form->control('email');
+echo $this->Form->control('email',['pattern'=>'\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b']);
 echo $this->Form->control('phone');
 echo $this->Form->control('abn');
 ?>
