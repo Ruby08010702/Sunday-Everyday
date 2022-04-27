@@ -26,7 +26,7 @@
                     echo $this->Form->control('customer_id', ['options' => $customers]);
                     echo $this->Form->control('date');
                     echo $this->Form->control('payment');
-                    echo $this->Form->control('quantity');
+                    echo $this->Form->control('quantity',['max'=>999]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

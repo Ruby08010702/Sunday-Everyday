@@ -21,7 +21,7 @@
                     echo $this->Form->control('staff_id', ['options' => $staffs]);
                     echo $this->Form->control('date');
                     echo $this->Form->control('payment');
-                    echo $this->Form->control('quantity');
+                    echo $this->Form->control('quantity',['max'=>999]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

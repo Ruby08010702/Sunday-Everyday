@@ -12,7 +12,7 @@
 echo $this->Form->control('name',['pattern'=>'^[A-Za-z]+$']);
 echo $this->Form->control('cost');
 echo $this->Form->control('retail_price');
-echo $this->Form->control('quantity');
+echo $this->Form->control('quantity',['max'=>999]);
 echo $this->Form->control('supplier_id', ['options' => $suppliers]);
 ?>
 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
