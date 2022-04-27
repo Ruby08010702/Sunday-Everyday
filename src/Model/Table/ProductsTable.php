@@ -74,7 +74,8 @@ class ProductsTable extends Table
         $validator
             ->decimal('cost')
             ->requirePresence('cost', 'create')
-            ->notEmptyString('cost');
+            ->notEmptyString('cost')
+            ->maxLength('cost', 50);
 
         $validator
             ->decimal('retail_price')

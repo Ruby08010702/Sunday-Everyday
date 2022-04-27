@@ -10,8 +10,8 @@
 <?= $this->Form->create($product) ?>
 <?php
 echo $this->Form->control('name',['pattern' => '^[A-Za-z0-9 ]{0-24}']);
-echo $this->Form->control('cost',['pattern' => '^[0-9]{0-10}'] );
-echo $this->Form->control('retail_price',['pattern' => '^[0-9]{0-10}'] );
+echo $this->Form->control('cost',['max'=>"99999.99", 'min' => "0.00",'step'=>"0.01"],['pattern' => '^[0-9]{0-10}'] );
+echo $this->Form->control('retail_price',['max'=>"99999.99", 'min' => "0.00",'step'=>"0.01"],['pattern' => '^[0-9]{0-10}'] );
 echo $this->Form->control('quantity',['max'=>999999]);
 echo $this->Form->control('supplier_id', ['options' => $suppliers]);
 ?>
