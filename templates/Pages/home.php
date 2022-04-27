@@ -57,13 +57,13 @@
         </div>
     </a>
 
-    <a href="<?= $this->Url->build(['controller' => 'Orders','action' => 'index'])?>">
+    <a href="<?= $this->Url->build(['controller' => 'Restockings','action' => 'index'])?>">
         <div class="card-shad">
-            <h6 class="dash">Orders</h6>
+            <h6 class="dash">Restockings</h6>
             <!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
             <?= $this->Html->image('/img/order.png', [
                 'class' => 'dasho-img',
-                'url' => ['controller' => 'Orders','action' => 'index']
+                'url' => ['controller' => 'Restockings','action' => 'index']
             ]); ?>
         </div>
     </a>
