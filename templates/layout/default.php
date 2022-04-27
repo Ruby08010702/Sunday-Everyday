@@ -142,7 +142,6 @@
                     <h6 class="collapse-header">Order Functions:</h6>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Restockings', 'action'=>'index']) ?>">List Orders</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Restockings', 'action'=>'add']) ?>">Add New Order</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Staffs_restocking_detail', 'action'=>'add']) ?>">Add Product to Order</a>
                 </div>
             </div>
         </li>
