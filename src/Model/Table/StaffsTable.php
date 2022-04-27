@@ -40,7 +40,7 @@ class StaffsTable extends Table
         parent::initialize($config);
 
         $this->setTable('staffs');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Restockings', [

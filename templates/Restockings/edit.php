@@ -5,32 +5,31 @@
  * @var string[]|\Cake\Collection\CollectionInterface $staffs
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $restocking->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $restocking->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Restockings'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="restockings form content">
-            <?= $this->Form->create($restocking) ?>
-            <fieldset>
-                <legend><?= __('Edit Restocking') ?></legend>
-                <?php
-                    echo $this->Form->control('staff_id', ['options' => $staffs]);
-                    echo $this->Form->control('date');
-                    echo $this->Form->control('payment');
-                    echo $this->Form->control('quantity',['max'=>999]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
+<div class="grid">
+
+    <h1 class="h3 mb-2 text-gray-800">Edit Restock Order</h1>
+    <?= $this->Form->create($restocking) ?>
+    <?php
+    echo $this->Form->control('staff_id', ['options' => $staffs]);
+    echo $this->Form->control('date');
+    echo $this->Form->control('payment', ['max' => 10000]); //TABLE NEEDS TO BE CHANGED TO INT FROM VARCHAR
+    echo $this->Form->control('quantity',['max'=>99999],['pattern' => '^[0-9]']);
+    ?>
+    <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+    <?= $this->Form->end() ?>
+
+
+    <h2 class="h3 mb-2 text-gray-800">Actions:</h2>
+
+    <li>
+        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $restocking->id],
+            ['confirm' => __('Are you sure you want to delete restock order placed on {0}?', $restocking->date),
+                'class' => 'side-nav-item']) ?>
+    </li>
+
+    <li>
+        <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+    </li>
+
+
 </div>

@@ -6,26 +6,31 @@
  */
 ?>
 <div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Restockings'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
+
+    <aside class="buffer">
+        <h4 class="blank"> </h4> <!-- ADD BUFFER HERE FOR FORMATTING -->
+
     </aside>
+
     <div class="column-responsive column-80">
-        <div class="restockings form content">
-            <?= $this->Form->create($restocking) ?>
-            <fieldset>
-                <legend><?= __('Add Restocking') ?></legend>
-                <?php
-                    echo $this->Form->control('staff_id', ['options' => $staffs]);
-                    echo $this->Form->control('date');
-                    echo $this->Form->control('payment');
-                    echo $this->Form->control('quantity',['max'=>999]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
+        <?= $this->Form->create($restocking) ?>
+        <fieldset>
+            <h1 class="h3 mb-2 text-gray-800">Restock Product</h1>
+            <?php
+            echo $this->Form->control('staff_id', ['options' => $staffs]);
+            echo $this->Form->control('date');
+            echo $this->Form->control('payment', ['max' => 10000]); //TABLE NEEDS TO BE CHANGED TO INT FROM VARCHAR
+            echo $this->Form->control('quantity',['max'=>99999],['pattern' => '^[0-9]']);
+            ?>
+        </fieldset>
+        <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+        <?= $this->Form->end() ?>
+
+        <h2 class="h3 mb-2 text-gray-800">Actions:</h2>
+
+        <li>
+            <?= $this->Html->link(__('List Restocking Options'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+        </li>
+
     </div>
 </div>

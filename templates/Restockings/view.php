@@ -9,7 +9,7 @@
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Restocking'), ['action' => 'edit', $restocking->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Restocking'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete # {0}?', $restocking->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Restocking'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete restock order placed on {0}?', $restocking->date), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Restockings'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('New Restocking'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
@@ -71,3 +71,4 @@
         </div>
     </div>
 </div>
+

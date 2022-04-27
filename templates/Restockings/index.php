@@ -41,7 +41,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $restocking->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $restocking->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete # {0}?', $restocking->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete restock order placed on {0}?', $restocking->date)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
