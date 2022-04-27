@@ -36,7 +36,7 @@ class RestockingsController extends AppController
     public function view($id = null)
     {
         $restocking = $this->Restockings->get($id, [
-            'contain' => ['Staffs', 'StaffsRestockingDetail'],
+            'contain' => ['Staffs', 'StaffsRestockingDetail','StaffsRestockingDetail.Products'],
         ]);
 
         $this->set(compact('restocking'));

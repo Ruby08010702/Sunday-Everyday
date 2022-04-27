@@ -7,66 +7,112 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Restocking'), ['action' => 'edit', $restocking->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Restocking'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete restock order placed on {0}?', $restocking->date), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Restockings'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Restocking'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="restockings view content">
-            <h3><?= h($restocking->id) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($restocking->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Staff') ?></th>
-                    <td><?= $restocking->has('staff') ? $this->Html->link($restocking->staff->id, ['controller' => 'Staffs', 'action' => 'view', $restocking->staff->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Payment') ?></th>
-                    <td><?= h($restocking->payment) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Quantity') ?></th>
-                    <td><?= $this->Number->format($restocking->quantity) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Date') ?></th>
-                    <td><?= h($restocking->date) ?></td>
-                </tr>
-            </table>
-            <div class="related">
-                <h4><?= __('Related Staffs Restocking Detail') ?></h4>
-                <?php if (!empty($restocking->staffs_restocking_detail)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Product Id') ?></th>
-                            <th><?= __('Restocking Id') ?></th>
-                            <th><?= __('Quantity') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($restocking->staffs_restocking_detail as $staffsRestockingDetail) : ?>
-                        <tr>
-                            <td><?= h($staffsRestockingDetail->id) ?></td>
-                            <td><?= h($staffsRestockingDetail->product_id) ?></td>
-                            <td><?= h($staffsRestockingDetail->restocking_id) ?></td>
-                            <td><?= h($staffsRestockingDetail->quantity) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'StaffsRestockingDetail', 'action' => 'view', $staffsRestockingDetail->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'StaffsRestockingDetail', 'action' => 'edit', $staffsRestockingDetail->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'StaffsRestockingDetail', 'action' => 'delete', $staffsRestockingDetail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $staffsRestockingDetail->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
+        <div class="customers view content">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="customers form content">
+
+        </div>
+    </div>
+</div>
+
+
+<div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Restocking</h1>
+                <?= $this->Flash->render('error') ?>
+                <!-- DataTales Example -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Detail</h6>
+                            </div>
+                            <div class="card-body">
+
+                                <div>
+                                    <tr>
+                                        <th><?= __('Staff') ?></th>
+                                        <td><?= $restocking->has('staff') ? $this->Html->link($restocking->staff->first_name,$restocking->staff->last_name, ['controller' => 'Staffs', 'action' => 'view', $restocking->staff->id]) : '' ?></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <th><?= __('Payment') ?></th>
+                                        <td><?= h($restocking->payment) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <th><?= __('Quantity') ?></th>
+                                        <td><?= $this->Number->format($restocking->quantity) ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th><?= __('Date') ?></th>
+                                        <td><?= h($restocking->date) ?></td>
+                                    </tr>                          </div>
+                                <div>
+                                    <tr>
+                                        <th><?= __('Date') ?></th>
+                                        <td><?= h($restocking->date) ?></td>
+                                    </tr>
+                                </div>
+
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $restocking->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$restocking->id)]) ?>
+                                <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $restocking->id],['escape' => false,]) ?>
+                                <?= $this->Html->link("Back to restocking List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Related Orders</h6>
+                            </div>
+                            <div class="card-body">
+                                <?php if (!empty($restocking->staffs_restocking_detail)) : ?>
+                                <div>
+                                    <?php foreach ($restocking->staffs_restocking_detail as $staffsRestockingDetail) : ?>
+                                    <div>
+                                        <hr class="sidebar-divider d-none d-md-block">
+                                    </div>
+                                    <tr>
+                                        <th><?= __('Product name:') ?></th>
+                                        <td><?= h($staffsRestockingDetail->product->name) ?></td>
+                                    </tr>
+                                </div>
+
+                                <div>
+                                    <tr>
+                                        <th><?= __('Quantity') ?></th>
+                                        <td><?= h($staffsRestockingDetail->quantity) ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
-                <?php endif; ?>
+
             </div>
         </div>
     </div>
