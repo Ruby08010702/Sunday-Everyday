@@ -52,25 +52,23 @@
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Staff') ?></th>
+                                        <th><?= __('Staff:') ?></th>
                                         <td><?= $restocking->has('staff') ? $this->Html->link($restocking->staff->first_name,$restocking->staff->last_name, ['controller' => 'Staffs', 'action' => 'view', $restocking->staff->id]) : '' ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Payment') ?></th>
+                                        <th><?= __('Payment:') ?></th>
                                         <td><?= h($restocking->payment) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Quantity') ?></th>
+                                        <th><?= __('Quantity:') ?></th>
                                         <td><?= $this->Number->format($restocking->quantity) ?></td>
                                     </tr>
-                                    <tr>
-                                        <th><?= __('Date') ?></th>
-                                        <td><?= h($restocking->date) ?></td>
-                                    </tr>                          </div>
+                                    </div>
+
                                 <div>
                                     <tr>
                                         <th><?= __('Date') ?></th>
