@@ -34,6 +34,7 @@ class Customer extends Entity
         'first_name' => true,
         'last_name' => true,
         'username' => true,
+        'password'=>true,
         'address' => true,
         'email' => true,
         'phone' => true,

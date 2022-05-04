@@ -6,18 +6,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Staff Entity
+ * Cart Entity
  *
  * @property string $id
- * @property string $first_name
- * @property string $last_name
- * @property string $address
- * @property string $email
- * @property string $phone
+ * @property string $customer_id
+ * @property int $items_no
+ * @property string $cost
  *
- * @property \App\Model\Entity\Restocking[] $restockings
+ * @property \App\Model\Entity\Customer $customer
+ * @property \App\Model\Entity\CustomerProductsCartDetail[] $customer_products_cart_detail
  */
-class Staff extends Entity
+class Cart extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -29,13 +28,10 @@ class Staff extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'first_name' => true,
-        'last_name' => true,
-        'username' => true,
-        'password'=>true,
-        'address' => true,
-        'email' => true,
-        'phone' => true,
-        'restockings' => true,
+        'customer_id' => true,
+        'items_no' => true,
+        'cost' => true,
+        'customer' => true,
+        'customer_products_cart_detail' => true,
     ];
 }

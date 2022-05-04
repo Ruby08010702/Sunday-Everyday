@@ -76,6 +76,12 @@ class CustomersTable extends Table
             ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
+            ->scalar('password')
+            ->maxLength('password', 64,'password length should less than 65')
+            ->requirePresence('password', 'create')
+            ->notEmptyString('password');
+
+        $validator
             ->scalar('address')
             ->maxLength('address', 200)
             ->requirePresence('address', 'create')
