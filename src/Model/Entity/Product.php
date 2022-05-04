@@ -18,6 +18,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Supplier $supplier
  * @property \App\Model\Entity\CustomersOrderDetail[] $customers_order_detail
  * @property \App\Model\Entity\StaffsRestockingDetail[] $staffs_restocking_detail
+ * @property \App\Model\Entity\ProductImage[] $product_images
  */
 class Product extends Entity
 {
@@ -39,5 +40,6 @@ class Product extends Entity
         'supplier' => true,
         'customers_order_detail' => true,
         'staffs_restocking_detail' => true,
+        'product_images'=>true,
     ];
 }

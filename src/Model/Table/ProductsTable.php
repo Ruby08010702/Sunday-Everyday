@@ -55,6 +55,9 @@ class ProductsTable extends Table
         $this->hasMany('StaffsRestockingDetail', [
             'foreignKey' => 'product_id',
         ]);
+        $this->hasMany('ProductImages', [
+            'foreignKey' => 'product_id',
+        ]);
     }
 
     /**
