@@ -38,5 +38,11 @@ class Staff extends Entity
         'phone' => true,
         'restockings' => true,
     ];
+    protected function _setPassword(string $password) : ?string
+    {
+        if (strlen($password) > 0) {
+            return (new DefaultPasswordHasher())->hash($password);
+        }
+    }
 
 }
