@@ -10,8 +10,6 @@
 <?php
 echo $this->Form->control('first_name',['pattern'=>'^[A-Za-z ]+$']);
 echo $this->Form->control('last_name',['pattern'=>'^[A-Za-z ]+$']);
-echo $this->Form->control('username');
-echo $this->Form->control('password');
 echo $this->Form->control('address');
 echo $this->Form->control('email',['pattern'=>'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$']);
 echo $this->Form->control('phone',['pattern' => '^[0-9]{10,10}'], ['placeholder'=>'e.g. 0412345678']);

@@ -33,8 +33,6 @@ class Customer extends Entity
     protected $_accessible = [
         'first_name' => true,
         'last_name' => true,
-        'username' => true,
-        'password'=>true,
         'address' => true,
         'email' => true,
         'phone' => true,
