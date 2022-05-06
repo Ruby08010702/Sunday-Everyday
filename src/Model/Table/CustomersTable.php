@@ -69,6 +69,13 @@ class CustomersTable extends Table
             ->notEmptyString('last_name');
 
         $validator
+            ->scalar('username')
+            ->maxLength('username', 36)
+            ->requirePresence('username', 'create')
+            ->notEmptyString('username')
+            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
             ->scalar('address')
             ->maxLength('address', 200)
             ->requirePresence('address', 'create')

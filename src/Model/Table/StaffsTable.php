@@ -76,7 +76,7 @@ class StaffsTable extends Table
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 64,'password length should less than 65')
+            ->maxLength('password', 128,'password should not over 128 digit')
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 
