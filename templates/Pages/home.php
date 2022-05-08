@@ -3,7 +3,24 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
  */
+
+
+/** PRODUCT ECHOES (Populate table*/
+echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
+
+/** UNDERSTOCK TABLE LOCATOR: */
+use Cake\ORM\TableRegistry;
+use Cake\ORM\Table;
+use Cake\ORM\Query;
+$products = TableRegistry::getTableLocator()->get('Products');
+
+
+
+
 ?>
+
 <div class="dashboard">
     <a href="<?= $this->Url->build(['controller' => 'Customers','action' => 'index'])?>">
         <div class="card-shad">
@@ -71,14 +88,102 @@
 </div>
 
 
+<!-- UNDERSTOCK TABLE -->
 
+<div class="card-body">
 
+</div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Low-Stock Products</h6>
+        <h6 class="m-0 font-weight-bold text-primary"><!--TITLE --></h6>
+
+        <!-- Table implementation: -->
+        <div class="products index content">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800"><?= __('Under-Stock Products:') ?></h1>
+
+            </div>
+            <div class="table-responsive">
+                <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+
+                        <th><?= h('Name') ?></th>
+                        <th><?= h('Cost') ?></th>
+                        <th><?= h('Retail price') ?></th>
+                        <th><?= h('Quantity') ?></th>
+                        <th><?= h('Supplier') ?></th>
+                        <th class="actions"><?= __('Actions') ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($products as $product): ?>
+                        <tr>
+                            <td><?= h($product->name) ?></td>
+                            <td><?= h($product->cost) ?></td>
+                            <td><?= h($product->retail_price) ?></td>
+                            <td><?= h($product->quantity) ?></td>
+                            <td><?= $product->has('supplier') ? $this->Html->link($product->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $product->supplier->id]) : '' ?></td>
+
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete PRODUCT: {0}? ID: {1}', $product->name, $product->id)]) ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <?=
+            $query = $products->find('all');
+            // Iteration will execute the query.
+            foreach ($query as $row) {
+            }
+
+            // Calling all() will execute the query
+            // and return the result set.
+            $results = $query->all();
+
+            // Once we have a result set we can get all the rows
+            $data = $results->toList();
+
+            // Converting the query to a key-value array will also execute it.
+            $data = $query->toArray();
+
+            // In a controller or table method.
+            $query = $products->find('all')
+                ->where(['Products.created >' => new DateTime('-10 days')])
+                ->contain([''])
+                ->limit(10);
+
+            ?>
+
+
+
+            <script>
+                $(document).ready(function (){
+                    $('#dataTable').DataTable();
+                });
+            </script>
+        </div>
+
+        <!-- TABLE OBJECT TEST -->
+
+
+
+
     </div>
     <div class="card-body">
 
+    </div>
+</div>
+
+
+
+<!-- OVERSTOCK TABLE: -->
+    <div class="card-body">
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -88,5 +193,5 @@
 
         </div>
     </div>
-</div>
+
 
