@@ -86,7 +86,7 @@ class StaffsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The staff could not be saved. Please, try again.'));
+            $this->Flash->error(__(''));
         }
         $this->set(compact('staff'));
     }
@@ -110,7 +110,7 @@ class StaffsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The staff could not be saved. Please, try again.'));
+            $this->Flash->error(__('Staff could not be saved. Please, try again.'));
         }
         $this->set(compact('staff'));
     }

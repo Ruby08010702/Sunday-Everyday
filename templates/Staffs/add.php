@@ -7,9 +7,13 @@
     <h1 class="h3 mb-2 text-gray-800">Add new Staff</h1>
 <?= $this->Form->create($staff) ?>
 <?php
+
+//Generate random number for user default:
+$random = rand(6, 99999);
+
 echo $this->Form->control('first_name',['pattern'=>'^[A-Za-z ]+$']);
 echo $this->Form->control('last_name',['pattern'=>'^[A-Za-z ]+$']);
-echo $this->Form->control('username');
+echo $this->Form->control('username', ['default' => 'newUser{0}', $random]); //does not work?
 echo $this->Form->control('password');
 echo $this->Form->control('address', ['pattern' => '^[A-Za-z0-9, ]{3,40}']);
 echo $this->Form->control('email',['pattern'=>'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$']);

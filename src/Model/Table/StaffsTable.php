@@ -58,44 +58,49 @@ class StaffsTable extends Table
     {
         $validator
             ->scalar('first_name')
-            ->maxLength('first_name', 64)
+            ->maxLength('first_name', 64, 'Name must be shortened.')
+            ->minLength('first_name', 2, 'Must be longer than 1 character.')
             ->requirePresence('first_name', 'create')
-            ->notEmptyString('first_name');
+            ->notEmptyString('first_name', 'This field cannot be empty.');
 
         $validator
             ->scalar('last_name')
-            ->maxLength('last_name', 64)
+            ->maxLength('last_name', 64, 'Name must be shortened.')
+            ->minLength('last_name', 2, 'Must be longer than 1 character.')
             ->requirePresence('last_name', 'create')
-            ->notEmptyString('last_name');
+            ->notEmptyString('last_name', 'This field cannot be empty.');
+
         $validator
             ->scalar('username')
-            ->maxLength('username', 36)
+            ->maxLength('username', 36, 'Username is too long.')
+            ->minLength('username', 5, 'Must be longer than 4 characters.')
             ->requirePresence('username', 'create')
             ->notEmptyString('username')
-            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table', 'message' => 'This field must be unique.']);
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 128,'password should not over 128 digit')
+            ->maxLength('password', 128,'Password should not over 128 digit')
+            ->minLength('password', 8, 'Must be longer than 8 characters')
             ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->notEmptyString('password', 'This field cannot be empty.');
 
         $validator
             ->scalar('address')
-            ->maxLength('address', 200)
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
+            ->maxLength('address', 200, 'Address must be shortened.')
+            ->requirePresence('address', 'create', 'This field cannot be empty.')
+            ->notEmptyString('address', 'This field cannot be empty.');
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email')
+            ->notEmptyString('email', 'This field cannot be empty.')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 10,'incorrect phone number length. e.g:0412xxxxxx')
-            ->minLength('phone',10,'incorrect phone number length. e.g:0412xxxxxx')
+            ->maxLength('phone', 10,'Incorrect phone number length. e.g:0412xxxxxx')
+            ->minLength('phone',10,'Incorrect phone number length. e.g:0412xxxxxx')
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
