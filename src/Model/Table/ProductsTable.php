@@ -70,25 +70,28 @@ class ProductsTable extends Table
     {
         $validator
             ->scalar('name')
-            ->maxLength('name', 36)
+            ->maxLength('name', 32, 'Name must be shortened.')
+            ->minLength('name', 2, 'Must be longer than 1 character.')
             ->requirePresence('name', 'create')
-            ->notEmptyString('name');
+            ->notEmptyString('name', 'This field cannot be empty.');
 
         $validator
             ->decimal('cost')
             ->requirePresence('cost', 'create')
-            ->notEmptyString('cost')
-            ->maxLength('cost', 50);
+            ->notEmptyString('cost', 'eg: 15.00')
+            ->maxLength('cost', 7, 'Cost cannot exceed 9999.99 for a single item.');
 
         $validator
             ->decimal('retail_price')
             ->requirePresence('retail_price', 'create')
-            ->notEmptyString('retail_price');
+            ->notEmptyString('retail_price', 'eg: 18.00')
+            ->maxLength('retail_price', 7, 'Retail Price cannot exceed 9999.99 for a single item.');
 
         $validator
             ->integer('quantity')
             ->requirePresence('quantity', 'create')
-            ->notEmptyString('quantity');
+            ->notEmptyString('quantity', 'eg: 528')
+            ->maxLength('quantity', 5, 'Quantity cannot exceed 99999 for a single item.');
 
         $validator
             ->uuid('supplier_id')

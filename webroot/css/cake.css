@@ -121,14 +121,21 @@ th {
     border-radius: 4px;
     margin-bottom: 2rem;
 }
+
 .message.hidden {
     display: none;
+    color: #20c9a6;
+    font-size: 0.7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
 }
 .message.success {
-    background: #e3fcec;
-    color: #1f9d55;
+    background: #20c9a6;
+    color: #20c9a6;
     border-color: #51d88a;
 }
+
 .message.warning {
     background: #fffabc;
     color: #8d7b00;

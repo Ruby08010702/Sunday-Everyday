@@ -39,14 +39,14 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Staffs</h1>
+                <h1 class="h3 mb-2 text-gray-800">Staff Details</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Detail</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
                             </div>
                             <div class="card-body">
 

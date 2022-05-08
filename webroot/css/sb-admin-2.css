@@ -10977,6 +10977,25 @@ form.user .btn-user {
   width: 12.5rem;
 }
 
+/*
+.message success hidden {
+    color: #20c9a6;
+    font-size: 0.7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
+}
+
+.message success{
+    color: #20c9a6;
+    font-size: 0.7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
+}
+*/
+
+
 @-webkit-keyframes noise-anim {
   0% {
     clip: rect(49px, 9999px, 40px, 0);

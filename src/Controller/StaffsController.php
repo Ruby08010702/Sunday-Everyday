@@ -82,7 +82,7 @@ class StaffsController extends AppController
         if ($this->request->is('post')) {
             $staff = $this->Staffs->patchEntity($staff, $this->request->getData());
             if ($this->Staffs->save($staff)) {
-                $this->Flash->success(__('The staff has been saved.'));
+                $this->Flash->success(__('Staff has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -106,7 +106,7 @@ class StaffsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $staff = $this->Staffs->patchEntity($staff, $this->request->getData());
             if ($this->Staffs->save($staff)) {
-                $this->Flash->success(__('The staff has been saved.'));
+                $this->Flash->success(__('Staff has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -127,9 +127,9 @@ class StaffsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $staff = $this->Staffs->get($id);
         if ($this->Staffs->delete($staff)) {
-            $this->Flash->success(__('The staff has been deleted.'));
+            $this->Flash->success(__('Staff user has been deleted.'));
         } else {
-            $this->Flash->error(__('The staff could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Staff could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

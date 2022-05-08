@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Staff $staff
  */
 ?>
-    <h1 class="h3 mb-2 text-gray-800">Add new Staff</h1>
+    <h1 class="h3 mb-2 text-gray-800">Create New Staff</h1>
 <?= $this->Form->create($staff) ?>
 <?php
 

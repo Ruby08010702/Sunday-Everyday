@@ -75,7 +75,7 @@ class StaffsTable extends Table
             ->maxLength('username', 36, 'Username is too long.')
             ->minLength('username', 5, 'Must be longer than 4 characters.')
             ->requirePresence('username', 'create')
-            ->notEmptyString('username')
+            ->notEmptyString('username', 'Please input a unique username. eg: user3856')
             ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table', 'message' => 'This field must be unique.']);
 
         $validator
@@ -99,10 +99,10 @@ class StaffsTable extends Table
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 10,'Incorrect phone number length. e.g:0412xxxxxx')
-            ->minLength('phone',10,'Incorrect phone number length. e.g:0412xxxxxx')
+            ->maxLength('phone', 10,'Incorrect phone number length. eg:0412xxxxxx')
+            ->minLength('phone',10,'Incorrect phone number length. eg:0412xxxxxx')
             ->requirePresence('phone', 'create')
-            ->notEmptyString('phone')
+            ->notEmptyString('phone', 'Please input a valid phone number. eg:0414xxxxxx')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;

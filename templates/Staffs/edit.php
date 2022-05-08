@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Staff $staff
  */
 ?>
-<h1 class="h3 mb-2 text-gray-800">Edit Staff</h1>
+<h1 class="h3 mb-2 text-gray-800">Edit Existing Staff</h1>
 <?= $this->Form->create($staff) ?>
 <?php
 echo $this->Form->control('first_name',['pattern'=>'^[A-Za-z ]+$']);
