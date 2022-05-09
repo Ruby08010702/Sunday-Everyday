@@ -1,4 +1,4 @@
-<?php
+<<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
@@ -179,7 +179,6 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
     </div>
 </div>
-
 
 
 <!-- OVERSTOCK TABLE: -->
