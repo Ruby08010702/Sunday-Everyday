@@ -40,6 +40,8 @@ class AppView extends View
         $formTemplate=[
             'inputContainer'=>'<div class="input {{type}}{{required}}">{{content}}</div>',
             'label'=>'<label{{attrs}} class="form-label">{{text}}</label>',
+            'select' => '<select name="{{name}}"{{attrs}}>{{content}}</select>',
+            'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
             'input'=>'<input type="{{type}}" name="{{name}}" class="form-control"{{attrs}}/>',
             'textarea'=>'<textarea name="{{name}}" class="form-control" {{attrs}}>{{value}}</textarea>',
             'nestingLabel'=>'{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>',
