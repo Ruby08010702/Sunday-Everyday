@@ -52,37 +52,37 @@
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Id') ?></th>
-                                        <td><?= h($staff->id) ?></td>
-                                    </tr>
-                                </div>
-
-                                <div>
-                                    <tr>
-                                        <th><?= __('First Name') ?></th>
+                                        <b><th><?= __('First Name: ') ?></th> </b>
                                         <td><?= h($staff->first_name) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Last Name') ?></th>
+                                        <b><th><?= __('Last Name: ') ?></th> </b>
                                         <td><?= h($staff->last_name) ?></td>
-                                    </tr>                          </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Address') ?></th>
-                                        <td><?= h($staff->address) ?></td>
-                                    </tr>                          </div>
-                                <div class>
-                                    <tr>
-                                        <th><?= __('Email') ?></th>
-                                        <td><?= h($staff->email) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Phone') ?></th>
+                                        <b><th><?= __('Phone: ') ?></th> </b>
                                         <td><?= h($staff->phone) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Email: ') ?></th> </b>
+                                        <td><?= h($staff->email) ?></td>
+                                    </tr>                          </div>
+                                <div class>
+                                    <tr>
+                                        <b><th><?= __('Address: ') ?></th> </b>
+                                        <td><?= h($staff->address) ?></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <b><th><?= __('Id:') ?></th> </b>
+                                        <td><?= h($staff->id) ?></td>
                                     </tr>
                                 </div>
 

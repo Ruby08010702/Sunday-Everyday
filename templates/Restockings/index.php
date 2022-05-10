@@ -12,7 +12,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 <div class="customers index content">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?= __('Restockings') ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?= __('Restock List') ?></h1>
         <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-user-plus fa-sm text-white-50"></i> New Restocking</a>
     </div>
@@ -21,11 +21,11 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <thead>
             <tr>
 
-                <th><?= h('id') ?></th>
-                <th><?= h('staff_id') ?></th>
-                <th><?= h('date') ?></th>
-                <th><?= h('payment') ?></th>
-                <th><?= h('quantity') ?></th>
+                <th><?= h('Restock Order ID') ?></th>
+                <th><?= h('Placed By') ?></th>
+                <th><?= h('Date') ?></th>
+                <th><?= h('Payment') ?></th>
+                <th><?= h('Quantity') ?></th>
 
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -41,7 +41,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $restocking->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $restocking->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete restock order placed on {0}?', $restocking->date)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $restocking->id], ['confirm' => __('Are you sure you want to delete restock order placed on {0}? ID: {1}', $restocking->date, $restocking->id)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -57,4 +57,4 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 </div>
 
 
-<!--------------->
+

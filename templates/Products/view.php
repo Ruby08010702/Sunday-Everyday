@@ -54,38 +54,39 @@
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Name:') ?></th>
+                                        <b><th><?= __('Name: ') ?></th> </b>
                                         <td><?= h($product->name) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Cost: ') ?></th> </b>
+                                        <td><?= h($product->cost) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('ID:') ?></th>
-                                        <td><?= h($product->id) ?></td>
+                                        <b><th><?= __('Quantity: ') ?></th> </b>
+                                        <td><?= h($product->quantity) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Cost:') ?></th>
-                                        <td><?= h($product->cost) ?></td>
-                                    </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Retail price:') ?></th>
+                                        <b><th><?= __('Retail price: ') ?></th> </b>
                                         <td><?= h($product->retail_price) ?></td>
                                     </tr>
                                 </div>
+
                                 <div class>
                                     <tr>
-                                        <th><?= __('Supplier') ?></th>
+                                        <b><th><?= __('Supplier: ') ?></th> </b>
                                         <td><?= $product->has('supplier') ? $this->Html->link($product->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $product->supplier->id]) : '' ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Quantity:') ?></th>
-                                        <td><?= h($product->email) ?></td>
+                                        <b><th><?= __('ID: ') ?></th> </b>
+                                        <td><?= h($product->id) ?></td>
                                     </tr>
                                 </div>
 

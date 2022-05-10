@@ -9,6 +9,7 @@ namespace App\Controller;
  * @property \App\Model\Table\StaffsTable $Staffs
  * @method \App\Model\Entity\Staff[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
+
 class StaffsController extends AppController
 {
     public function login()

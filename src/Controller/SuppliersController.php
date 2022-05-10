@@ -50,11 +50,11 @@ class SuppliersController extends AppController
         if ($this->request->is('post')) {
             $supplier = $this->Suppliers->patchEntity($supplier, $this->request->getData());
             if ($this->Suppliers->save($supplier)) {
-                $this->Flash->success(__('The supplier has been saved.'));
+                $this->Flash->success(__('Supplier has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The supplier could not be saved. Please, try again.'));
+            $this->Flash->error(__('Supplier could not be saved. Please, try again.'));
         }
         $this->set(compact('supplier'));
     }
@@ -74,11 +74,11 @@ class SuppliersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $supplier = $this->Suppliers->patchEntity($supplier, $this->request->getData());
             if ($this->Suppliers->save($supplier)) {
-                $this->Flash->success(__('The supplier has been saved.'));
+                $this->Flash->success(__('Supplier has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The supplier could not be saved. Please, try again.'));
+            $this->Flash->error(__('Supplier could not be saved. Please, try again.'));
         }
         $this->set(compact('supplier'));
     }
@@ -95,9 +95,9 @@ class SuppliersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $supplier = $this->Suppliers->get($id);
         if ($this->Suppliers->delete($supplier)) {
-            $this->Flash->success(__('The supplier has been deleted.'));
+            $this->Flash->success(__('Supplier has been deleted successfully.'));
         } else {
-            $this->Flash->error(__('The supplier could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Supplier could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

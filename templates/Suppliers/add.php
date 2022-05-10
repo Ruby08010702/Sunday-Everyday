@@ -14,11 +14,11 @@
     <div class="column-responsive column-80">
         <?= $this->Form->create($supplier) ?>
         <fieldset>
-            <h1 class="h3 mb-2 text-gray-800">Add New Supplier</h1>
+            <h1 class="h3 mb-2 text-gray-800">Create New Supplier</h1>
             <?php
             echo $this->Form->control('business_name',['pattern' => '^[A-Za-z0-9 ]{1,24}']);
             echo $this->Form->control('contact_name', ['pattern' => '[A-Za-z ]{0-24}']);
-            echo $this->Form->control('address', ['pattern' => '^[A-Za-z0-9, ]{3,40}']);
+            echo $this->Form->control('address', ['pattern' => '^[A-Za-z0-9, ]{3,100}']);
             echo $this->Form->control('email', ['pattern' => '^{7,20}']);
             echo $this->Form->control('phone', ['pattern' => '^[0-9]{10,10}']);
             echo $this->Form->control('abn', ['pattern' => '^[0-9]{11,11}']);

@@ -53,11 +53,11 @@ class RestockingsController extends AppController
         if ($this->request->is('post')) {
             $restocking = $this->Restockings->patchEntity($restocking, $this->request->getData());
             if ($this->Restockings->save($restocking)) {
-                $this->Flash->success(__('The restocking has been saved.'));
+                $this->Flash->success(__('Restocking has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The restocking could not be saved. Please, try again.'));
+            $this->Flash->error(__('Restocking could not be saved. Please, try again.'));
         }
         $staffs = $this->Restockings->Staffs->find('list', ['limit' => 200])->all();
         $this->set(compact('restocking', 'staffs'));
@@ -78,11 +78,11 @@ class RestockingsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $restocking = $this->Restockings->patchEntity($restocking, $this->request->getData());
             if ($this->Restockings->save($restocking)) {
-                $this->Flash->success(__('The restocking has been saved.'));
+                $this->Flash->success(__('Restocking has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The restocking could not be saved. Please, try again.'));
+            $this->Flash->error(__('Restocking could not be saved. Please, try again.'));
         }
         $staffs = $this->Restockings->Staffs->find('list', ['limit' => 200])->all();
         $this->set(compact('restocking', 'staffs'));
@@ -100,9 +100,9 @@ class RestockingsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $restocking = $this->Restockings->get($id);
         if ($this->Restockings->delete($restocking)) {
-            $this->Flash->success(__('The restocking has been deleted.'));
+            $this->Flash->success(__('Restocking has been deleted successfully.'));
         } else {
-            $this->Flash->error(__('The restocking could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Restocking could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

@@ -114,4 +114,6 @@ class ProductsTable extends Table
 
         return $rules;
     }
+
+
 }

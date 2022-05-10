@@ -58,41 +58,46 @@ class SuppliersTable extends Table
     {
         $validator
             ->scalar('business_name')
-            ->maxLength('business_name', 64)
-            ->requirePresence('business_name', 'create')
-            ->notEmptyString('business_name');
+            ->maxLength('business_name', 64, 'Business name mustbe shortened.')
+            ->minLength('business_name', 2, 'Must be longer than 1 character.')
+            ->requirePresence('business_name', 'create', 'This is a required field.')
+            ->notEmptyString('business_name', 'This field cannot be empty.');
 
         $validator
             ->scalar('contact_name')
-            ->maxLength('contact_name', 64)
-            ->requirePresence('contact_name', 'create')
-            ->notEmptyString('contact_name');
+            ->maxLength('contact_name', 64, 'Contact Name must be shortened.')
+            ->minLength('contact_name', 2, 'Must be longer than 1 character.')
+            ->requirePresence('contact_name', 'create', 'This is a required field.')
+            ->notEmptyString('contact_name', 'This field cannot be empty.');
 
         $validator
             ->scalar('address')
-            ->maxLength('address', 200)
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
+            ->maxLength('address', 200, 'Address must be shortened.')
+            ->minLength('address', 3, 'Must be longer than 3 characters.')
+            ->requirePresence('address', 'create', 'This field cannot be empty.')
+            ->notEmptyString('address', 'This field cannot be empty.');
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email')
+            ->maxLength('email', 72, 'Email must be shortened.')
+            ->minLength('email', 5, 'Must be longer than 5 characters.')
+            ->notEmptyString('email', 'This field cannot be empty.')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 10,'incorrect phone number length. e.g:0412xxxxxx')
-            ->minLength('phone',10,'incorrect phone number length. e.g:0412xxxxxx')
+            ->maxLength('phone', 10,'Incorrect phone number length. eg:0412xxxxxx')
+            ->minLength('phone',10,'Incorrect phone number length. eg:0412xxxxxx')
             ->requirePresence('phone', 'create')
-            ->notEmptyString('phone')
+            ->notEmptyString('phone', 'Please input a valid phone number. eg:0414xxxxxx')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('abn')
-            ->maxLength('abn', 11,'length of abn should be 11')
-            ->minLength('abn', 11,'length of abn should be 11')
-            ->allowEmptyString('abn')
+            ->maxLength('abn', 11,'Length of 11 required. eg: 34882274731')
+            ->minLength('abn', 11,'Length of 11 required. eg: 34882274731')
+            ->allowEmptyString('abn', 'This field cannot be empty.')
             ->add('abn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;

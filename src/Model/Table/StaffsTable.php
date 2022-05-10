@@ -88,12 +88,15 @@ class StaffsTable extends Table
         $validator
             ->scalar('address')
             ->maxLength('address', 200, 'Address must be shortened.')
+            ->minLength('address', 3, 'Must be longer than 3 characters.')
             ->requirePresence('address', 'create', 'This field cannot be empty.')
             ->notEmptyString('address', 'This field cannot be empty.');
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
+            ->maxLength('email', 72, 'Email must be shortened.')
+            ->minLength('email', 5, 'Must be longer than 5 characters.')
             ->notEmptyString('email', 'This field cannot be empty.')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 

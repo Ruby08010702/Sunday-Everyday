@@ -8,19 +8,19 @@
 <div class="row">
 
     <aside class="buffer">
-        <h4 class="blank"> </h4> <!-- ADD BUFFER HERE FOR FORMATTING -->
+        <h4 class="blank"> </h4>
 
     </aside>
 
     <div class="column-responsive column-80">
         <?= $this->Form->create($restocking) ?>
         <fieldset>
-            <h1 class="h3 mb-2 text-gray-800">Restock Product</h1>
+            <h1 class="h3 mb-2 text-gray-800">Restock Products</h1>
             <?php
             echo $this->Form->control('staff_id', ['options' => $staffs]);
             echo $this->Form->control('date');
-            echo $this->Form->select('payment',['Credit Card', 'Cash', 'Paypal']); //TABLE NEEDS TO BE CHANGED TO INT FROM VARCHAR
-            echo $this->Form->control('quantity',['max'=>99999],['pattern' => '^[0-9]']);
+            echo $this->Form->select('payment',['Credit Card', 'Cash', 'Paypal']);
+            echo $this->Form->control('quantity',['max'=>99999, 'default' => 100],['pattern' => '^[0-9]{0-5}']);
             ?>
         </fieldset>
         <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>

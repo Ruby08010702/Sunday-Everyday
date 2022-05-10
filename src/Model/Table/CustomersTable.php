@@ -58,49 +58,56 @@ class CustomersTable extends Table
     {
         $validator
             ->scalar('first_name')
-            ->maxLength('first_name', 64)
+            ->maxLength('first_name', 64, 'Name must be shortened.')
+            ->minLength('first_name', 2, 'Must be longer than 1 character.')
             ->requirePresence('first_name', 'create')
-            ->notEmptyString('first_name');
+            ->notEmptyString('first_name', 'This field cannot be empty.');
 
         $validator
             ->scalar('last_name')
-            ->maxLength('last_name', 64)
+            ->maxLength('last_name', 64, 'Name must be shortened.')
+            ->minLength('last_name', 2, 'Must be longer than 1 character.')
             ->requirePresence('last_name', 'create')
-            ->notEmptyString('last_name');
+            ->notEmptyString('last_name', 'This field cannot be empty.');
 
         $validator
             ->scalar('username')
-            ->maxLength('username', 36)
+            ->maxLength('username', 36, 'Username is too long.')
+            ->minLength('username', 5, 'Must be longer than 4 characters.')
             ->requirePresence('username', 'create')
-            ->notEmptyString('username')
-            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->notEmptyString('username', 'Please input a unique username. eg: user3856')
+            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table', 'message' => 'This field must be unique.']);
 
         $validator
             ->scalar('address')
-            ->maxLength('address', 200)
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
+            ->maxLength('address', 200, 'Address must be shortened.')
+            ->minLength('address', 3, 'Must be longer than 3 characters.')
+            ->requirePresence('address', 'create', 'This field cannot be empty.')
+            ->notEmptyString('address', 'This field cannot be empty.');
 
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email')
+            ->maxLength('email', 72, 'Email must be shortened.')
+            ->minLength('email', 5, 'Must be longer than 5 characters.')
+            ->notEmptyString('email', 'This field cannot be empty.')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('phone')
-            ->maxLength('phone', 10,'incorrect phone number length. e.g:0412xxxxxx')
-            ->minLength('phone',10,'incorrect phone number length. e.g:0412xxxxxx')
+            ->maxLength('phone', 10,'Incorrect phone number length. eg:0412xxxxxx')
+            ->minLength('phone',10,'Incorrect phone number length. eg:0412xxxxxx')
             ->requirePresence('phone', 'create')
-            ->notEmptyString('phone')
+            ->notEmptyString('phone', 'Please input a valid phone number. eg:0414xxxxxx')
             ->add('phone', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('abn')
-            ->maxLength('abn', 11,'length of abn should be 11')
-            ->minLength('abn', 11,'length of abn should be 11')
-            ->allowEmptyString('abn')
+            ->maxLength('abn', 11,'eg: 94059341141')
+            ->minLength('abn',11,'eg: 94059341141')
+            ->allowEmptyString('abn', 'optional field')
             ->add('abn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
 
         return $validator;
     }
@@ -112,6 +119,7 @@ class CustomersTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
+
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->isUnique(['username']), ['errorField' => 'username']);

@@ -14,63 +14,57 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Supplier</h1>
+                <h1 class="h3 mb-2 text-gray-800">Supplier Details</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Details</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
                             </div>
 
                             <div class="card-body">
                                 <div>
                                     <tr>
-                                        <th><?= __('Business Name:') ?></th>
+                                        <b><th><?= __('Business: ') ?></th></b>
                                         <td><?= h($supplier->business_name) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('ID:') ?></th>
-                                        <td><?= h($supplier->id) ?></td>
-                                    </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Address:') ?></th>
-                                        <td><?= h($supplier->address) ?></td>
-                                    </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Contact Admin:') ?></th>
-                                        <!--<td><?= h($supplier->email) ?></td> --> //Not yet implemented - requires table update
-                                    </tr>
-                                </div>
-                                <div >
-                                    <tr>
-                                        <th><?= __('Contact Email:') ?></th>
-                                        <td><?= h($supplier->email) ?></td>
+                                        <b><th><?= __('Contact: ') ?></th></b>
+                                        <td><?= h($supplier->contact_name) ?></td>
                                     </tr>
                                 </div>
                                 <div class>
                                     <tr>
-                                        <th><?= __('Phone:') ?></th>
+                                        <b><th><?= __('Phone: ') ?></th> </b>
                                         <td><?= h($supplier->phone) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Contact:') ?></th>
-                                        <td><?= h($supplier->contact_name) ?></td>
+                                        <b><th><?= __('ABN: ') ?></th> </b>
+                                        <td><?= h($supplier->abn) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Contact Email: ') ?></th> </b>
+                                        <td><?= h($supplier->email) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Address: ') ?></th> </b>
+                                        <td><?= h($supplier->address) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('ABN:') ?></th>
-                                        <td><?= h($supplier->abn) ?></td>
+                                        <b><th><?= __('ID: ') ?></th> </b>
+                                        <td><?= h($supplier->id) ?></td>
                                     </tr>
                                 </div>
 

@@ -52,33 +52,33 @@
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Staff:') ?></th>
+                                        <th><?= __('Staff: ') ?></th>
                                         <td><?= $restocking->has('staff') ? $this->Html->link($restocking->staff->first_name,$restocking->staff->last_name, ['controller' => 'Staffs', 'action' => 'view', $restocking->staff->id]) : '' ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Payment:') ?></th>
+                                        <th><?= __('Payment: ') ?></th>
                                         <td><?= h($restocking->payment) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Quantity:') ?></th>
+                                        <th><?= __('Quantity: ') ?></th>
                                         <td><?= $this->Number->format($restocking->quantity) ?></td>
                                     </tr>
                                     </div>
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Date') ?></th>
+                                        <th><?= __('Date: ') ?></th>
                                         <td><?= h($restocking->date) ?></td>
                                     </tr>
                                 </div>
 
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $restocking->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$restocking->id)]) ?>
                                 <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $restocking->id],['escape' => false,]) ?>
-                                <?= $this->Html->link("Back to restocking List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Restock List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">
