@@ -21,9 +21,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <thead>
             <tr>
 
-                <th><?= h('Name') ?></th>
+                <th><?= h('Item') ?></th>
                 <th><?= h('Cost') ?></th>
-                <th><?= h('Retail price') ?></th>
+                <th><?= h('Retail Price') ?></th>
                 <th><?= h('Quantity') ?></th>
                 <th><?= h('Supplier') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>

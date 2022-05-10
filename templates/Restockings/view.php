@@ -39,39 +39,39 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Restocking</h1>
+                <h1 class="h3 mb-2 text-gray-800">Restocking Details</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Detail</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
                             </div>
                             <div class="card-body">
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Staff: ') ?></th>
+                                        <b><th><?= __('Staff: ') ?></th></b>
                                         <td><?= $restocking->has('staff') ? $this->Html->link($restocking->staff->first_name,$restocking->staff->last_name, ['controller' => 'Staffs', 'action' => 'view', $restocking->staff->id]) : '' ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Payment: ') ?></th>
+                                        <b><th><?= __('Payment: ') ?></th></b>
                                         <td><?= h($restocking->payment) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Quantity: ') ?></th>
+                                        <b><th><?= __('Quantity: ') ?></th></b>
                                         <td><?= $this->Number->format($restocking->quantity) ?></td>
                                     </tr>
                                     </div>
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Date: ') ?></th>
+                                        <b><th><?= __('Date: ') ?></th></b>
                                         <td><?= h($restocking->date) ?></td>
                                     </tr>
                                 </div>

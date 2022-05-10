@@ -18,8 +18,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <thead>
             <tr>
 
-                <th><?= h('First name') ?></th>
-                <th><?= h('Last name') ?></th>
+                <th><?= h('First Name') ?></th>
+                <th><?= h('Last Name') ?></th>
                 <th><?= h('Email') ?>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>

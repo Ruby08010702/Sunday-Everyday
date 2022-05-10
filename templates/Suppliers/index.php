@@ -21,11 +21,11 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <thead>
             <tr>
 
-                <th><?= h('Name') ?></th>
+                <th><?= h('Business Name') ?></th>
                 <th><?= h('Address') ?></th>
                 <th><?= h('Email') ?></th>
                 <th><?= h('Phone') ?></th>
-                <th><?= h('Contact') ?></th>
+                <th><?= h('Contact Name') ?></th>
                 <th><?= h('ABN') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
