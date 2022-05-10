@@ -4,43 +4,101 @@
  * @var \App\Model\Entity\Enquiry $enquiry
  */
 ?>
+
+
+
+
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Enquiry'), ['action' => 'edit', $enquiry->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Enquiry'), ['action' => 'delete', $enquiry->id], ['confirm' => __('Are you sure you want to delete # {0}?', $enquiry->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Enquiries'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Enquiry'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="enquiries view content">
-            <h3><?= h($enquiry->id) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($enquiry->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Supplier') ?></th>
-                    <td><?= $enquiry->has('supplier') ? $this->Html->link($enquiry->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $enquiry->supplier->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($enquiry->created->i18nFormat(null, 'Australia/Melbourne')) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Email Sent') ?></th>
-                    <td><?= $enquiry->email_sent ? __('Yes') : __('No'); ?></td>
-                </tr>
-            </table>
-            <div class="text">
-                <strong><?= __('Body') ?></strong>
-                <blockquote>
-                    <?= $this->Text->autoParagraph(h($enquiry->body)); ?>
-                </blockquote>
+        <div class="customers view content">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="customers form content">
+
+        </div>
+    </div>
+</div>
+
+
+<div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Order request details</h1>
+                <?= $this->Flash->render('error') ?>
+                <!-- DataTales Example -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
+                            </div>
+                            <div class="card-body">
+
+
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Order sent to supplier: ') ?></th> </b>
+                                        <td><?= $enquiry->has('supplier') ? $this->Html->link($enquiry->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $enquiry->supplier->id]) : '' ?></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <b><th><?= __('Created: ') ?></th> </b>
+                                        <td><?= h($enquiry->created) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Email Sent: ') ?></th> </b>
+                                        <td><?= h($enquiry->email_sent) ?></td>
+                                    </tr>
+                                </div>
+
+                                <div class>
+                                    <tr>
+                                        <b><th><?= __('Mail Body: ') ?></th> </b>
+                                        <td><?= h($enquiry->body) ?></td>
+                                        </tr>
+                                </div>
+
+
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $enquiry->id], ['escape' => false,'confirm' => __('Are you sure you want to delete email?')]) ?>
+
+                                <?= $this->Html->link("Back to Email List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+

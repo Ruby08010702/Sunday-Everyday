@@ -15,6 +15,8 @@
  * @var string $content
  */
 
+
+
 $lines = explode("\n", $content);
 
 foreach ($lines as $line) :

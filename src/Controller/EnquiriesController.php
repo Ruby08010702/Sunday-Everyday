@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Core\Configure;
+use Cake\Mailer\Mailer;
+
 /**
  * Enquiries Controller
  *
@@ -52,8 +55,37 @@ class EnquiriesController extends AppController
         $enquiry = $this->Enquiries->newEmptyEntity();
         if ($this->request->is('post')) {
             $enquiry = $this->Enquiries->patchEntity($enquiry, $this->request->getData());
-            if ($this->Enquiries->save($enquiry)) {
-                $this->Flash->success(__('The enquiry has been saved.'));
+            if ($enquiry = $this->Enquiries->save($enquiry)) {
+
+                //send email
+                $mailer = new Mailer('default');
+                // Setup email para
+                $mailer
+                    ->setEmailFormat('html')
+                    ->setTo(Configure::read('EnquiryMail.to'))
+                    ->setFrom(Configure::read('EnquiryMail.from'))
+                    ->setSubject('New order request from Sunday Everyday')
+                    ->viewBuilder()
+                    ->disableAutoLayout()
+                    ->setTemplate('enquiry');
+                // Send data to the email template
+                $mailer->setViewVars([
+                    'content' => $enquiry->body,
+//                    'email' => $enquiry->fetchTable('Suppliers')->find('email'),
+                    'email' => $enquiry->has('supplier') ? $this->link($enquiry->supplier->email, ['controller' => 'Suppliers', 'action' => 'view', $enquiry->supplier->id]) : '',
+                    'created' => $enquiry->created,
+                    'id' => $enquiry->id
+                ]);
+                //send email
+                $email_result = $mailer->deliver();
+
+                if ($email_result) {
+                    $enquiry->email_sent = ($email_result) ? true : false;
+                    $this->Enquiries->save($enquiry);
+                    $this->Flash->success(__('The email order has been saved and sent to the supplier.'));
+                } else {
+                    $this->Flash->error(__('Email failed to send. Please check the system later.'));
+                }
 
                 return $this->redirect(['action' => 'index']);
             }

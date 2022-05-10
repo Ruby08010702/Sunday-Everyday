@@ -146,7 +146,22 @@
             </div>
         </li>
 
-
+        <!-- Nav Item - Email -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmail"
+               aria-expanded="true" aria-controls="collapseEmail">
+                <i class="fas fa-truck"></i>
+                <span>Email Request Orders</span>
+            </a>
+            <div id="collapseEmail" class="collapse" aria-labelledby="headingEmail"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Order Functions:</h6>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'index']) ?>">List Emails</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'add']) ?>">Send Email</a>
+                </div>
+            </div>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
