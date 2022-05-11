@@ -5,32 +5,31 @@
  * @var string[]|\Cake\Collection\CollectionInterface $customers
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $order->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Orders'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="orders form content">
-            <?= $this->Form->create($order) ?>
-            <fieldset>
-                <legend><?= __('Edit Order') ?></legend>
-                <?php
-                    echo $this->Form->control('customer_id', ['options' => $customers]);
-                    echo $this->Form->control('date');
-                    echo $this->Form->control('payment');
-                    echo $this->Form->control('quantity',['max'=>999]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
+<div class="grid">
+
+    <h1 class="h3 mb-2 text-gray-800">Edit Existing Order</h1>
+    <?= $this->Form->create($order) ?>
+    <?php
+    echo $this->Form->control('customer_id', ['options' => $customers]);
+    echo $this->Form->control('date');
+    echo $this->Form->select('payment', ['Credit Card', 'Cash', 'Paypal']);
+    echo $this->Form->control('quantity',['max'=>999]);
+    ?>
+    <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+    <?= $this->Form->end() ?>
+
+
+    <h2 class="h3 mb-2 text-gray-800">Actions:</h2>
+
+    <li>
+        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $order->id],
+            ['confirm' => __('Are you sure you want to delete order placed on the {0} by customer ID: {1}?', $order->date, $order->customer_id),
+                'class' => 'side-nav-item']) ?>
+    </li>
+
+    <li>
+        <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+    </li>
+
+
 </div>

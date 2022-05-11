@@ -80,6 +80,7 @@ class OrdersTable extends Table
         $validator
             ->integer('quantity')
             ->requirePresence('quantity', 'create')
+            ->maxLength('quantity', 5, 'Quantity cannot exceed 99999 for a single restocking.')
             ->notEmptyString('quantity');
 
         return $validator;
