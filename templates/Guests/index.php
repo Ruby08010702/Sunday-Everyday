@@ -42,7 +42,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-1.jpg" alt="..." />
                     <h5>Ultra Gentle Lotion</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $10</p>
                     <a class="btn btn-primary" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-2.jpg" alt="..." />
                     <h5>Pampers Baby Diapers</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $20</p>
                     <a class="btn btn-primary" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-4.jpg" alt="..." />
                     <h5>Baby Oil</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $4</p>
                     <a class="btn btn-primary" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-5.jpg" alt="..." />
                     <h5>Ultra Gentle Lotion</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $21</p>
                     <a class="btn btn-primary" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-6.jpg" alt="..." />
                     <h5>Pampers Baby Diapers</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $13</p>
                     <a class="btn btn-primary" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="assets/img/product-7.jpg" alt="..." />
                     <h5>Baby Oil</h5>
-                    <p class="font-weight-light mb-0">"This is product will help......"</p>
+                    <p class="font-weight-light mb-0">Cost: $12</p>
                     <a class="btn btn-primary mb-5" href="#aboutus">Add to Cart</a>
                 </div>
             </div>
