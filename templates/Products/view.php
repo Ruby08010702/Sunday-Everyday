@@ -120,8 +120,7 @@
                             </tr>
                         </div>
                                 <td class="actions">
-                                    <?= $this->Html->link(__('Edit'), ['controller' => 'orders', 'action' => 'edit', $image->id]) ?>
-                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id)]) ?>
+                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'productImages', 'action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete the image for {0}?', $product->name)]) ?>
                                 </td>
                             </div>
                             <?php endforeach; ?>

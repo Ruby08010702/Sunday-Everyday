@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\ProductImage $productImage
  */
 ?>
+//THIS PAGE IS NOT IN USE
 <div class="row">
     <aside class="column">
         <div class="side-nav">

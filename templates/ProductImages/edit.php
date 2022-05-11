@@ -5,7 +5,10 @@
  * @var string[]|\Cake\Collection\CollectionInterface $products
  */
 ?>
-<h1 class="h3 mb-2 text-gray-800">Edit Product image</h1>
+
+
+//THIS PAGE IS BROKEN--- DO NOT USE
+<h1 class="h3 mb-2 text-gray-800">Edit Product Image</h1>
 <?= $this->Form->create($productImage,['type'=>'file']) ?>
 <?php
 //Adds hint underneath input ('help' templateVars is also needed):

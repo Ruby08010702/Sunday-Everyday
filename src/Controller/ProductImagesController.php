@@ -66,7 +66,7 @@ class ProductImagesController extends AppController
 
 
             if ($this->ProductImages->save($productImage)) {
-                $this->Flash->success(__('The product image has been saved.'));
+                $this->Flash->success(__('The product image has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -91,7 +91,7 @@ class ProductImagesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $productImage = $this->ProductImages->patchEntity($productImage, $this->request->getData());
             if ($this->ProductImages->save($productImage)) {
-                $this->Flash->success(__('The product image has been saved.'));
+                $this->Flash->success(__('The product image has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -113,7 +113,7 @@ class ProductImagesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $productImage = $this->ProductImages->get($id);
         if ($this->ProductImages->delete($productImage)) {
-            $this->Flash->success(__('The product image has been deleted.'));
+            $this->Flash->success(__('The product image has been deleted successfully.'));
         } else {
             $this->Flash->error(__('The product image could not be deleted. Please, try again.'));
         }

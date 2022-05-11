@@ -19,7 +19,7 @@
             <?php
             echo $this->Form->control('staff_id', ['options' => $staffs]);
             echo $this->Form->control('date');
-            echo $this->Form->select('payment',['Credit Card', 'Cash', 'Paypal']);
+            echo $this->Form->select('payment',['options' => 'Credit Card', 'Cash', 'Paypal']);
             echo $this->Form->control('quantity',['max'=>99999, 'default' => 100],['pattern' => '^[0-9]{0-5}']);
             ?>
         </fieldset>

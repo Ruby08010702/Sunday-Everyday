@@ -67,11 +67,11 @@ class ProductImagesTable extends Table
             ->add('image_file',[
                 'mimeType'=>[
                     'rule'=>['mimeType',['image/jpg', 'image/png','image/jpeg']],
-                    'message'=>'Please upload only jpg and png.',
+                    'message'=>'ERROR: Only .jpg and .png image files can be uploaded.',
             ],
             'fileSize'=>[
                 'rule'=>['fileSize','<=','5MB'],
-                'message'=>'Image file size must be less than 5MB.',
+                'message'=>'ERROR: Image file size must be less than 5MB.',
 
 ]
 
