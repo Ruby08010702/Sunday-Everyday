@@ -90,6 +90,8 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Products in this order</h6>
+                                <a href="<?= $this->Url->build(['controller'=>'customersOrderDetail','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                        class="fas fa-plus fa-sm text-white-50"></i>add product to this order </a>
                             </div>
                             <div class="card-body">
                                 <?php if (!empty($order->customers_order_detail)) : ?>

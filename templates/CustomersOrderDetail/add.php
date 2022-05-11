@@ -6,26 +6,27 @@
  * @var \Cake\Collection\CollectionInterface|string[] $orders
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Customers Order Detail'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="customersOrderDetail form content">
-            <?= $this->Form->create($customersOrderDetail) ?>
-            <fieldset>
-                <legend><?= __('Add Customers Order Detail') ?></legend>
-                <?php
-                    echo $this->Form->control('product_id', ['options' => $products]);
-                    echo $this->Form->control('order_id', ['options' => $orders]);
-                    echo $this->Form->control('price');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
+
+<h1 class="h3 mb-2 text-gray-800">Add product to order</h1>
+<?= $this->Form->create($customersOrderDetail) ?>
+<?php
+
+//Adds hint underneath input ('help' templateVars is also needed):
+$this->Form->setTemplates([ 'inputContainer' => '<div class="input {{type}}{{required}}">
+        {{content}} <span class="help">{{help}}</span></div>'
+]);
+
+echo $this->Form->control('product_id', ['options' => $products]);
+echo $this->Form->control('order_id', ['options' => $orders]);
+echo $this->Form->control('price');
+?>
+<?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ;
+?>
+<?=
+$this->Form->end();
+
+
+?>
+
 </div>
+

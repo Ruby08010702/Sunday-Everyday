@@ -84,6 +84,8 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Related Orders</h6>
+                                <a href="<?= $this->Url->build(['controller'=>'staffsRestockingDetail','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                        class="fas fa-user-plus fa-sm text-white-50"></i> Add product to order</a>
                             </div>
                             <div class="card-body">
                                 <?php if (!empty($restocking->staffs_restocking_detail)) : ?>

@@ -3,46 +3,46 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\CustomersOrderDetail[]|\Cake\Collection\CollectionInterface $customersOrderDetail
  */
+echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
+echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
 ?>
-<div class="customersOrderDetail index content">
-    <?= $this->Html->link(__('New Customers Order Detail'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Customers Order Detail') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
+    <div class="customers index content">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"><?= __('order detail List') ?></h1>
+            <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-user-plus fa-sm text-white-50"></i> New Order detail</a>
+        </div>
+        <div class="table-responsive">
+            <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('product_id') ?></th>
-                    <th><?= $this->Paginator->sort('order_id') ?></th>
-                    <th><?= $this->Paginator->sort('price') ?></th>
+                    <th><?= h('product') ?></th>
+                    <th><?= h('price') ?></th>
+                    <th><?= h('order id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($customersOrderDetail as $customersOrderDetail): ?>
-                <tr>
-                    <td><?= h($customersOrderDetail->id) ?></td>
-                    <td><?= $customersOrderDetail->has('product') ? $this->Html->link($customersOrderDetail->product->name, ['controller' => 'Products', 'action' => 'view', $customersOrderDetail->product->id]) : '' ?></td>
-                    <td><?= $customersOrderDetail->has('order') ? $this->Html->link($customersOrderDetail->order->id, ['controller' => 'Orders', 'action' => 'view', $customersOrderDetail->order->id]) : '' ?></td>
-                    <td><?= $this->Number->format($customersOrderDetail->price) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $customersOrderDetail->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $customersOrderDetail->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $customersOrderDetail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customersOrderDetail->id)]) ?>
-                    </td>
-                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($customersOrderDetail as $detail): ?>
+                    <tr>
+                        <td><?= h($detail->product->name) ?></td>
+
+                        <td><?= h($detail->price) ?></td>
+                        <td><?= h($detail->order_id) ?></td>
+                        <td class="actions">
+                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $detail->id]) ?>
+                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $detail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $detail->id)]) ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            $(document).ready(function (){
+                $('#dataTable').DataTable();
+            });
+        </script>
     </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
-</div>
