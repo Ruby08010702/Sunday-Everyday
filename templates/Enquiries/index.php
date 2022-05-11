@@ -12,9 +12,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 <div class="customers index content">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?= __('Order Request List') ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?= __('Email List (Suppliers)') ?></h1>
         <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-user-plus fa-sm text-white-50"></i> Make New Order Request</a>
+                class="fas fa-user-plus fa-sm text-white-50"></i> Email Supplier</a>
     </div>
     <div class="table-responsive">
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -22,10 +22,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <tr>
 
 
-                <th><?= h('supplier') ?></th>
-                <th><?= h('email') ?></th>
-                <th><?= h('created') ?></th>
-                <th><?= h('email_sent') ?></th>
+                <th><?= h('Supplier') ?></th>
+                <th><?= h('Email Address') ?></th>
+                <th><?= h('Creation Date') ?></th>
+                <th><?= h('Sent') ?></th>
 
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -40,9 +40,15 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= $enquiry->email_sent ? __('Yes') : __('No') ?></td>
 
                     <td class="actions">
+                        <li>
                         <?= $this->Html->link(__('View'), ['action' => 'view', $enquiry->id]) ?>
-                        <?= $this->Html->link(__('Mark as sent'), ['action' => 'mark', $enquiry->id]) ?>
+                        </li>
+                        <li>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $enquiry->id], ['confirm' => __('Are you sure you want to delete # {0}?', $enquiry->id)]) ?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('Mark As Sent'), ['action' => 'mark', $enquiry->id]) ?>
+                        </li>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\CustomersOrderDetail $customersOrderDetail
  */
 ?>
+//THIS PAGE IS NOT USED
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -172,7 +173,7 @@
                                         <td class="actions">
                                             <?= $this->Html->link(__('View'), ['controller' => 'orders', 'action' => 'view', $orders->id]) ?>
                                             <?= $this->Html->link(__('Edit'), ['controller' => 'orders', 'action' => 'edit', $orders->id]) ?>
-                                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orders->id)]) ?>
+                                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete this order? ID: {0}?', $orders->id)]) ?>
                                         </td>
                                     </div>
                                     <?php endforeach; ?>

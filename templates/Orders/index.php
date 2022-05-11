@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Order[]|\Cake\Collection\CollectionInterface $orders
+ * @var \App\Model\Entity\Customer[]|\Cake\Collection\CollectionInterface $customers
  */
 echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block'=>true]);
 echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
@@ -18,7 +19,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-
                     <th><?= h('Order ID') ?></th>
                     <th><?= h('Customer ID') ?></th>
                     <th><?= h('Date') ?>

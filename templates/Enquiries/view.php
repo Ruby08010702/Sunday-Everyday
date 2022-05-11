@@ -5,10 +5,6 @@
  */
 ?>
 
-
-
-
-
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -44,7 +40,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Order request details</h1>
+                <h1 class="h3 mb-2 text-gray-800">Email Details</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
                 <div class="row">
@@ -58,14 +54,8 @@
 
                                 <div >
                                     <tr>
-                                        <b><th><?= __('Order sent to supplier: ') ?></th> </b>
+                                        <b><th><?= __('Supplier: ') ?></th> </b>
                                         <td><?= $enquiry->has('supplier') ? $this->Html->link($enquiry->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $enquiry->supplier->id]) : '' ?></td>
-                                    </tr>
-                                </div>
-                                <div>
-                                    <tr>
-                                        <b><th><?= __('Created: ') ?></th> </b>
-                                        <td><?= h($enquiry->created) ?></td>
                                     </tr>
                                 </div>
                                 <div >
@@ -74,7 +64,12 @@
                                         <td><?= h($enquiry->email_sent) ?></td>
                                     </tr>
                                 </div>
-
+                                <div>
+                                    <tr>
+                                        <b><th><?= __('Created on: ') ?></th> </b>
+                                        <td><?= h($enquiry->created) ?></td>
+                                    </tr>
+                                </div>
                                 <div class>
                                     <tr>
                                         <b><th><?= __('Mail Body: ') ?></th> </b>

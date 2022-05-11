@@ -100,7 +100,6 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
 
 <!-- UNDERSTOCK TABLE -->
-
 <div class="card-body">
 
 </div>
@@ -147,32 +146,6 @@ $products = TableRegistry::getTableLocator()->get('Products');
                 </table>
             </div>
 
-            <?=
-            $query = $products->find('all');
-            // Iteration will execute the query.
-            foreach ($query as $row) {
-            }
-
-            // Calling all() will execute the query
-            // and return the result set.
-            $results = $query->all();
-
-            // Once we have a result set we can get all the rows
-            $data = $results->toList();
-
-            // Converting the query to a key-value array will also execute it.
-            $data = $query->toArray();
-
-            // In a controller or table method.
-            $query = $products->find('all')
-                ->where(['Products.created >' => new DateTime('-10 days')])
-                ->contain([''])
-                ->limit(10);
-
-            ?>
-
-
-
             <script>
                 $(document).ready(function (){
                     $('#dataTable').DataTable();
@@ -182,9 +155,6 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
         <!-- TABLE OBJECT TEST -->
 
-
-
-
     </div>
     <div class="card-body">
 
@@ -193,6 +163,7 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
 
 <!-- OVERSTOCK TABLE: -->
+<?php /*
     <div class="card-body">
     </div>
     <div class="card shadow mb-4">
@@ -202,6 +173,11 @@ $products = TableRegistry::getTableLocator()->get('Products');
         <div class="card-body">
 
         </div>
-    </div>
+ </div>
+ */
+ ?>
+
+
+
 
 

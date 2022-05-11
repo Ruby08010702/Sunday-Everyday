@@ -53,7 +53,7 @@ class CustomersOrderDetailController extends AppController
         if ($this->request->is('post')) {
             $customersOrderDetail = $this->CustomersOrderDetail->patchEntity($customersOrderDetail, $this->request->getData());
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
-                $this->Flash->success(__('The customers order detail has been saved.'));
+                $this->Flash->success(__('The customers order detail has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -79,7 +79,7 @@ class CustomersOrderDetailController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customersOrderDetail = $this->CustomersOrderDetail->patchEntity($customersOrderDetail, $this->request->getData());
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
-                $this->Flash->success(__('The customers order detail has been saved.'));
+                $this->Flash->success(__('The customers order detail has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -102,7 +102,7 @@ class CustomersOrderDetailController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $customersOrderDetail = $this->CustomersOrderDetail->get($id);
         if ($this->CustomersOrderDetail->delete($customersOrderDetail)) {
-            $this->Flash->success(__('The customers order detail has been deleted.'));
+            $this->Flash->success(__('The customers order detail has been deleted successfully.'));
         } else {
             $this->Flash->error(__('The customers order detail could not be deleted. Please, try again.'));
         }

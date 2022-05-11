@@ -75,8 +75,8 @@ class CustomersOrderDetailTable extends Table
         $validator
             ->decimal('price')
             ->requirePresence('price', 'create')
-            ->notEmptyString('price');
-
+            ->notEmptyString('price')
+            ->maxLength('price', 7, 'Price cannot exceed 9999.99 for a single item.');
         return $validator;
     }
 

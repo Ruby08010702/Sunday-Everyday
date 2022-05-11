@@ -151,14 +151,14 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmail"
                aria-expanded="true" aria-controls="collapseEmail">
                 <i class="fas fa-truck"></i>
-                <span>Email Request Orders</span>
+                <span>Email Suppliers</span>
             </a>
             <div id="collapseEmail" class="collapse" aria-labelledby="headingEmail"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Order Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'index']) ?>">List Emails</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'add']) ?>">Send Email</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'index']) ?>">Show All Emails</a>
                 </div>
             </div>
         </li>
@@ -174,8 +174,8 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Order Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'index']) ?>">List all product Images</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'add']) ?>">Add new Product Image</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'add']) ?>">Add New Product Image</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'index']) ?>">Show All Product Images</a>
                 </div>
             </div>
         </li>

@@ -9,9 +9,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 ?>
     <div class="customers index content">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800"><?= __('order detail List') ?></h1>
+            <h1 class="h3 mb-0 text-gray-800"><?= __('Customer Orders List') ?></h1>
             <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-user-plus fa-sm text-white-50"></i> New Order detail</a>
+                    class="fas fa-user-plus fa-sm text-white-50"></i> Add Product to Order</a>
         </div>
         <div class="table-responsive">
             <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -32,7 +32,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                         <td><?= h($detail->order_id) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $detail->id]) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $detail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $detail->id)]) ?>
+                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $detail->id], ['confirm' => __('Are you sure you want to delete {0} from this order?', $detail->product->name)]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

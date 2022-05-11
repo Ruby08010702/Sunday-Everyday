@@ -5,6 +5,7 @@
  * @var string[]|\Cake\Collection\CollectionInterface $suppliers
  */
 ?>
+//PAGE NOT USED
 <div class="row">
     <aside class="column">
         <div class="side-nav">

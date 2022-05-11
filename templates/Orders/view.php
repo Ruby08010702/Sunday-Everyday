@@ -54,7 +54,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Detail</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
                             </div>
                             <div class="card-body">
 
@@ -83,15 +83,15 @@
                                     </tr>
                                 </div>
 
-                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$order->id)]) ?>
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order? ID: '.$order->id)]) ?>
                                 <?= $this->Html->link("Back to Customers List", ['controller'=>'Customers','action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Products in this order</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Cart:</h6>
                                 <a href="<?= $this->Url->build(['controller'=>'customersOrderDetail','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                        class="fas fa-plus fa-sm text-white-50"></i>add product to this order </a>
+                                        class="fas fa-plus fa-sm text-white-50"></i> Add Item To This Order </a>
                             </div>
                             <div class="card-body">
                                 <?php if (!empty($order->customers_order_detail)) : ?>

@@ -46,7 +46,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Detail</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
                             </div>
                             <div class="card-body">
 
@@ -99,9 +99,9 @@
                         </div>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Related Orders</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Order History:</h6>
                                 <a href="<?= $this->Url->build(['controller'=>'Orders','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                        class="fas fa-plus fa-sm text-white-50"></i>add </a>
+                                        class="fas fa-plus fa-sm text-white-50"></i> Create New Order for Customer </a>
                             </div>
                             <div class="card-body">
                                 <?php if (!empty($customer->orders)) : ?>
@@ -136,7 +136,7 @@
                                         <td class="actions">
                                             <?= $this->Html->link(__('View'), ['controller' => 'orders', 'action' => 'view', $orders->id]) ?>
                                             <?= $this->Html->link(__('Edit'), ['controller' => 'orders', 'action' => 'edit', $orders->id]) ?>
-                                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orders->id)]) ?>
+                                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete order ID: {0} for {1} {2}?', $orders->id, $customer->first_name, $customer->last_name)]) ?>
                                         </td>
                                     </div>
                                     <?php endforeach; ?>

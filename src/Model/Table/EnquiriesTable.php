@@ -64,8 +64,9 @@ class EnquiriesTable extends Table
         $validator
             ->scalar('body')
             ->maxLength('body', 255)
+            ->minLength('body', 6, 'Email must be more informative.')
             ->requirePresence('body', 'create')
-            ->notEmptyString('body');
+            ->notEmptyString('body', 'Email can not be blank.');
 
         $validator
             ->boolean('email_sent')
