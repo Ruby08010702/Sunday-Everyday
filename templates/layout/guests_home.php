@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand">Sunday Everyday</a>
+        <div class="topnav">
+            <!--<a href="#">Sale</a>
+            <a href="#">Cart</a>
+            -->
+            <a class="btn btn-primary" href="#aboutus">About Us</a>
 
+        </div>
+        <!-- Nav Item - User Information -->
+        <?= $this->Html->link(__('Login'), ['controller' => 'Staffs', 'action' => 'login'],['class'=>'btn btn-primary']) ?>
+        <?= $this->Html->link(__('Carts'), ['controller' => 'carts', 'action' => 'index'],['class'=>'btn btn-primary']) ?>
+
+    </div>
+</nav>
 <head>
 
     <?= $this->Html->charset() ?>

@@ -44,10 +44,7 @@ class CartsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Customers', [
-            'foreignKey' => 'customer_id',
-            'joinType' => 'INNER',
-        ]);
+
         $this->hasMany('CustomerProductsCartDetail', [
             'foreignKey' => 'cart_id',
         ]);
@@ -61,10 +58,6 @@ class CartsTable extends Table
      */
     public function validationDefault(Validator $validator): Validator
     {
-        $validator
-            ->uuid('customer_id')
-            ->requirePresence('customer_id', 'create')
-            ->notEmptyString('customer_id');
 
         $validator
             ->integer('items_no')

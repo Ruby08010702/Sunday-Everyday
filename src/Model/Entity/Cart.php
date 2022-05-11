@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Cart Entity
  *
  * @property string $id
- * @property string $customer_id
+
  * @property int $items_no
  * @property string $cost
  *
@@ -28,10 +28,8 @@ class Cart extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'customer_id' => true,
         'items_no' => true,
         'cost' => true,
-        'customer' => true,
         'customer_products_cart_detail' => true,
     ];
 }

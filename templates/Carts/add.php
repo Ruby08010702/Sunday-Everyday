@@ -8,9 +8,6 @@
 <h1 class="h3 mb-2 text-gray-800">Carts</h1>
 <?= $this->Form->create($cart) ?>
 <?php
-
-
-echo $this->Form->control('customer_id',['options' => $customers]);
 echo $this->Form->control('items_no');
 echo $this->Form->control('cost');
 

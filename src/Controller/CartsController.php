@@ -18,8 +18,10 @@ class CartsController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('guests_home');
+
         $this->paginate = [
-            'contain' => ['Customers', 'CustomerProductsCartDetail'],
+            'contain' => ['CustomerProductsCartDetail'],
         ];
         $carts = $this->paginate($this->Carts);
 
@@ -36,7 +38,7 @@ class CartsController extends AppController
     public function view($id = null)
     {
         $cart = $this->Carts->get($id, [
-            'contain' => ['Customers', 'CustomerProductsCartDetail'],
+            'contain' => ['CustomerProductsCartDetail'],
         ]);
 
         $this->set(compact('cart'));

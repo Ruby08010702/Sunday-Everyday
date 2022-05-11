@@ -18,7 +18,7 @@ class CustomersController extends AppController
      */
     public function index()
     {
-        $customers =($this->Customers->find()->contain(['Orders','Carts']));
+        $customers =($this->Customers->find()->contain(['Orders']));
 
         $this->set(compact('customers'));
     }
@@ -33,7 +33,7 @@ class CustomersController extends AppController
     public function view($id = null)
     {
         $customer = $this->Customers->get($id, [
-            'contain' => ['Orders','Carts'],
+            'contain' => ['Orders'],
         ]);
 
         $this->set(compact('customer'));
