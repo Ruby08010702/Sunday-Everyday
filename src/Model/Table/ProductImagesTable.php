@@ -63,10 +63,19 @@ class ProductImagesTable extends Table
             ->notEmptyString('product_id');
 
         $validator
-            ->scalar('filename')
-            ->maxLength('filename', 64)
-            ->allowEmptyFile('filename');
+            ->allowEmptyFile('image_file')
+            ->add('image_file',[
+                'mimeType'=>[
+                    'rule'=>['mimeType',['image/jpg', 'image/png','image/jpeg']],
+                    'message'=>'Please upload only jpg and png.',
+            ],
+            'fileSize'=>[
+                'rule'=>['fileSize','<=','5MB'],
+                'message'=>'Image file size must be less than 5MB.',
 
+]
+
+    ]);
         return $validator;
     }
 

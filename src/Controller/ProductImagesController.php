@@ -52,6 +52,19 @@ class ProductImagesController extends AppController
         $productImage = $this->ProductImages->newEmptyEntity();
         if ($this->request->is('post')) {
             $productImage = $this->ProductImages->patchEntity($productImage, $this->request->getData());
+
+            if(!$productImage->getErrors())
+            {$image = $this->request->getData('image_file');
+
+                $name = $image->getClientFilename();
+                $targetPath= WWW_ROOT . 'img'. DS . $name;
+
+                if($name){ $image->moveTo($targetPath);}
+
+                $productImage->filename =$name;
+            }
+
+
             if ($this->ProductImages->save($productImage)) {
                 $this->Flash->success(__('The product image has been saved.'));
 

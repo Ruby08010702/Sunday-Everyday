@@ -99,6 +99,37 @@
                     </div>
                 </div>
 
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+
+                            <h6 class="m-0 font-weight-bold text-primary">Product Images</h6>
+                        <a href="<?= $this->Url->build(['controller'=>'productImages','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-user-plus fa-sm text-white-50"></i> Add new image</a>
+
+                    </div>
+                    <div class="card-body">
+                        <?php if (!empty($product->product_images)) : ?>
+                        <div>
+                            <?php foreach ($product->product_images as $image) : ?>
+                            <div>
+                                <hr class="sidebar-divider d-none d-md-block">
+                            </div>
+                            <tr>
+                                <th><?= __('Image:') ?></th>
+                                <td><?= $this->Html->image($image->filename,['style'=>'max-height: 150px; max-width: 150px']) ?></td>
+                            </tr>
+                        </div>
+                                <td class="actions">
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'orders', 'action' => 'edit', $image->id]) ?>
+                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'orders', 'action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id)]) ?>
+                                </td>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
             </div>
         </div>
     </div>

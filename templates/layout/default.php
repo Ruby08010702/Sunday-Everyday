@@ -163,6 +163,23 @@
             </div>
         </li>
 
+        <!-- Nav Item - Email -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productImage"
+               aria-expanded="true" aria-controls="collapseEmail">
+                <i class="fas fa-image"></i>
+                <span>Gallery</span>
+            </a>
+            <div id="productImage" class="collapse" aria-labelledby="headingImage"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Order Functions:</h6>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'index']) ?>">List all product Images</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'add']) ?>">Add new Product Image</a>
+                </div>
+            </div>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

@@ -19,8 +19,8 @@ class ProductImagesFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'd6df8568-b6c7-41c6-8460-c2c47d057670',
-                'product_id' => 'e96c8ff3-c409-469a-bd87-47936f27c425',
+                'id' => 'f7a93cc0-70c9-40bb-9f69-2c4be3f70a93',
+                'product_id' => '608b4368-5c9e-4806-bbd5-1ecdf3da2168',
                 'filename' => 'Lorem ipsum dolor sit amet',
             ],
         ];

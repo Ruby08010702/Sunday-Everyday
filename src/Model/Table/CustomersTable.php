@@ -46,6 +46,10 @@ class CustomersTable extends Table
         $this->hasMany('Orders', [
             'foreignKey' => 'customer_id',
         ]);
+
+        $this->hasMany('Carts', [
+            'foreignKey' => 'customer_id',
+        ]);
     }
 
     /**

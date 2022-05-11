@@ -30,4 +30,7 @@ class ProductImage extends Entity
         'filename' => true,
         'product' => true,
     ];
+    /**
+     * @var mixed
+     */
 }

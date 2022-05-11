@@ -19,7 +19,7 @@ class CartsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Customers'],
+            'contain' => ['Customers', 'CustomerProductsCartDetail'],
         ];
         $carts = $this->paginate($this->Carts);
 
