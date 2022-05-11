@@ -13,6 +13,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
         <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-user-plus fa-sm text-white-50"></i> New Staff</a>
     </div>
+
+
     <div class="table-responsive">
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>

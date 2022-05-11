@@ -7,64 +7,79 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Cart'), ['action' => 'edit', $cart->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Cart'), ['action' => 'delete', $cart->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cart->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Carts'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Cart'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+
         </div>
     </aside>
     <div class="column-responsive column-80">
-        <div class="carts view content">
-            <h3><?= h($cart->id) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= h($cart->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Customer') ?></th>
-                    <td><?= $cart->has('customer') ? $this->Html->link($cart->customer->username, ['controller' => 'Customers', 'action' => 'view', $cart->customer->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Items No') ?></th>
-                    <td><?= $this->Number->format($cart->items_no) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Cost') ?></th>
-                    <td><?= $this->Number->format($cart->cost) ?></td>
-                </tr>
-            </table>
-            <div class="related">
-                <h4><?= __('Related Customer Products Cart Detail') ?></h4>
-                <?php if (!empty($cart->customer_products_cart_detail)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Product Id') ?></th>
-                            <th><?= __('Cart Id') ?></th>
-                            <th><?= __('Cost') ?></th>
-                            <th><?= __('Quantity') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($cart->customer_products_cart_detail as $customerProductsCartDetail) : ?>
-                        <tr>
-                            <td><?= h($customerProductsCartDetail->id) ?></td>
-                            <td><?= h($customerProductsCartDetail->product_id) ?></td>
-                            <td><?= h($customerProductsCartDetail->cart_id) ?></td>
-                            <td><?= h($customerProductsCartDetail->cost) ?></td>
-                            <td><?= h($customerProductsCartDetail->quantity) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'CustomerProductsCartDetail', 'action' => 'view', $customerProductsCartDetail->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'CustomerProductsCartDetail', 'action' => 'edit', $customerProductsCartDetail->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'CustomerProductsCartDetail', 'action' => 'delete', $customerProductsCartDetail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customerProductsCartDetail->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
+        <div class="customers view content">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="customers form content">
+
+        </div>
+    </div>
+</div>
+
+
+<div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Order Details</h1>
+                <?= $this->Flash->render('error') ?>
+                <!-- DataTales Example -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
+                            </div>
+                            <div class="card-body">
+
+                                <div>
+                                    <tr>
+                                        <b><th><?= __('Id') ?></th> </b>
+                                        <td><?= h($cart->id) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Customer') ?></th> </b>
+                                        <td><?= $cart->has('customer') ? $this->Html->link($cart->customer->username, ['controller' => 'Customers', 'action' => 'view', $cart->customer->id]) : '' ?></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <b><th><?= __('Items No') ?></th> </b>
+                                        <td><?= $this->Number->format($cart->items_no) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <b><th><?= __('Cost') ?></th> </b>
+                                        <td><?= $this->Number->format($cart->cost) ?></td>
+                                    </tr>                          </div>
+                                <?= $this->Html->link(__('View'), ['controller' => 'Carts', 'action' => 'view', $cart->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Carts', 'action' => 'edit', $cart->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Carts', 'action' => 'delete', $cart->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cart->id)]) ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>

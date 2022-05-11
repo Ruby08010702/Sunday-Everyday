@@ -5,26 +5,15 @@
  * @var \Cake\Collection\CollectionInterface|string[] $customers
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Carts'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="carts form content">
-            <?= $this->Form->create($cart) ?>
-            <fieldset>
-                <legend><?= __('Add Cart') ?></legend>
-                <?php
-                    echo $this->Form->control('customer_id', ['options' => $customers]);
-                    echo $this->Form->control('items_no');
-                    echo $this->Form->control('cost');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
-</div>
+<h1 class="h3 mb-2 text-gray-800">Carts</h1>
+<?= $this->Form->create($cart) ?>
+<?php
+
+
+echo $this->Form->control('customer_id',['options' => $customers]);
+echo $this->Form->control('items_no');
+echo $this->Form->control('cost');
+
+?>
+<?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+<?= $this->Form->end() ?>
