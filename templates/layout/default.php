@@ -91,6 +91,7 @@
                     <h6 class="collapse-header">Product Functions:</h6>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products', 'action'=>'index']) ?>">List Products</a>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Products', 'action'=>'add']) ?>">Add New Product</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'ProductImages', 'action'=>'add']) ?>">Add New Product Image</a>
                 </div>
             </div>
         </li>
@@ -134,7 +135,7 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRestocking"
                aria-expanded="true" aria-controls="collapseRestocking">
                 <i class="fas fa-truck"></i>
-                <span>Restocking Orders</span>
+                <span>Restock Orders</span>
             </a>
             <div id="collapseRestocking" class="collapse" aria-labelledby="headingRestocking"
                  data-parent="#accordionSidebar">

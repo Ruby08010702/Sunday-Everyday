@@ -36,7 +36,7 @@ $products = TableRegistry::getTableLocator()->get('Products');
     <a href="<?= $this->Url->build(['controller' => 'Staffs','action' => 'index'])?>">
         <div class="card-shad">
 
-            <h6 class="dash">Staffs</h6>
+            <h6 class="dash">Staff</h6>
             <!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
             <?= $this->Html->image('/img/staff.png', [
                 'class' => 'dashst-img',
@@ -76,7 +76,7 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
     <a href="<?= $this->Url->build(['controller' => 'Restockings','action' => 'index'])?>">
         <div class="card-shad">
-            <h6 class="dash">Re-stockings</h6>
+            <h6 class="dash">Restock</h6>
             <!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
             <?= $this->Html->image('/img/order.png', [
                 'class' => 'dasho-img',
