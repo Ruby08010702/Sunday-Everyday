@@ -10,15 +10,6 @@ echo $this->Html->css('/vendor/datatables/dataTables.bootstrap4.min.css',['block
 echo $this->Html->script('/vendor/datatables/jquery.dataTables.min.js',['block'=>true]);
 echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['block'=>true]);
 
-/** UNDERSTOCK TABLE LOCATOR: */
-use Cake\ORM\TableRegistry;
-use Cake\ORM\Table;
-use Cake\ORM\Query;
-$products = TableRegistry::getTableLocator()->get('Products');
-
-
-
-
 ?>
 
 <div class="dashboard">
@@ -111,6 +102,8 @@ $products = TableRegistry::getTableLocator()->get('Products');
         <div class="products index content">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800"><?= __('Under-Stock Products:') ?></h1>
+                <?=$this->Html->link(__('.'), ['controller'=>'Products','action' => 'understock']) ;
+                ?>
 
             </div>
             <div class="table-responsive">
@@ -136,7 +129,7 @@ $products = TableRegistry::getTableLocator()->get('Products');
                             <td><?= $product->has('supplier') ? $this->Html->link($product->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $product->supplier->id]) : '' ?></td>
 
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
+                                <?= $this->Html->link(__('View'), ['action' => 'understock', $product->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete PRODUCT: {0}? ID: {1}', $product->name, $product->id)]) ?>
                             </td>

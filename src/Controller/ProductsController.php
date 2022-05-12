@@ -21,9 +21,29 @@ class ProductsController extends AppController
         $this->paginate = [
             'contain' => ['Suppliers','ProductImages'],
         ];
+
         $products = $this->paginate($this->Products);
 
         $this->set(compact('products'));
+    }
+
+    /**
+     * understock method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function understock(){
+
+        $query=$this->Products->find();
+        $query->where([
+            'quantity <='=>50
+        ]);
+
+
+        $products=$this->paginate($query);
+        $this->set(compact('products'));
+
+
     }
 
     /**

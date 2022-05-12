@@ -120,7 +120,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             'unauthenticatedRedirect' => Router::url([
                 'controller'=>'Staffs',
                 'action'=>'login',
-                'plugin'=>null,
+                'plugin'=>false,
                 'prefix'=>null
             ]),
             'queryParam' => 'redirect',
@@ -146,7 +146,9 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 'username' => 'username',
                 'password' => 'password',
             ],
-            'loginUrl' => Router::url(['controller'=>'Staffs','action'=>'login']),
+            'loginUrl' => Router::url(['controller'=>'Staffs','action'=>'login',
+                'plugin'=>false,
+                'prefix'=>null]),
         ]);
 
         return $authenticationService;

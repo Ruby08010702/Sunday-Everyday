@@ -70,4 +70,11 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function home() {
+        $products=$this->fetchTable('Products')->find()->where([
+            'quantity <='=>50
+        ]);
+        $this->set(compact('products'));
+    }
 }
