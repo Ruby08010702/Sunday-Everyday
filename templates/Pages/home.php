@@ -88,7 +88,7 @@ $products = TableRegistry::getTableLocator()->get('Products');
 
     <a href="<?= $this->Url->build(['controller' => 'Enquiries','action' => 'index'])?>">
         <div class="card-shad">
-            <h6 class="dash">Mail Order</h6>
+            <h6 class="dash">Email Supplier</h6>
             <!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
             <?= $this->Html->image('/img/order.png', [
                 'class' => 'dasho-img',
