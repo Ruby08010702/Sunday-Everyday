@@ -68,7 +68,7 @@ class ProductImagesController extends AppController
             if ($this->ProductImages->save($productImage)) {
                 $this->Flash->success(__('The product image has been saved successfully.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'products','action' => 'index']);
             }
             $this->Flash->error(__('The product image could not be saved. Please, try again.'));
         }
@@ -93,7 +93,7 @@ class ProductImagesController extends AppController
             if ($this->ProductImages->save($productImage)) {
                 $this->Flash->success(__('The product image has been saved successfully.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'products','action' => 'index']);
             }
             $this->Flash->error(__('The product image could not be saved. Please, try again.'));
         }
@@ -118,6 +118,6 @@ class ProductImagesController extends AppController
             $this->Flash->error(__('The product image could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'products','action' => 'index']);
     }
 }

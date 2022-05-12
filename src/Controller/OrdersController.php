@@ -56,7 +56,7 @@ class OrdersController extends AppController
             if ($this->Orders->save($order)) {
                 $this->Flash->success(__('The order has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
@@ -81,7 +81,7 @@ class OrdersController extends AppController
             if ($this->Orders->save($order)) {
                 $this->Flash->success(__('The order has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
@@ -106,6 +106,6 @@ class OrdersController extends AppController
             $this->Flash->error(__('The order could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'customers','action' => 'index']);
     }
 }

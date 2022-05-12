@@ -55,7 +55,7 @@ class CustomerProductsCartDetailController extends AppController
             if ($this->CustomerProductsCartDetail->save($customerProductsCartDetail)) {
                 $this->Flash->success(__('The customer products cart detail has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The customer products cart detail could not be saved. Please, try again.'));
         }
@@ -81,7 +81,7 @@ class CustomerProductsCartDetailController extends AppController
             if ($this->CustomerProductsCartDetail->save($customerProductsCartDetail)) {
                 $this->Flash->success(__('The customer products cart detail has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The customer products cart detail could not be saved. Please, try again.'));
         }
@@ -107,6 +107,6 @@ class CustomerProductsCartDetailController extends AppController
             $this->Flash->error(__('The customer products cart detail could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'customers','action' => 'index']);
     }
 }

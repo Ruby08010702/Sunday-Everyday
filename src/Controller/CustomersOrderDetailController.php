@@ -55,7 +55,7 @@ class CustomersOrderDetailController extends AppController
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
                 $this->Flash->success(__('The customers order detail has been saved successfully.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The customers order detail could not be saved. Please, try again.'));
         }
@@ -81,7 +81,7 @@ class CustomersOrderDetailController extends AppController
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
                 $this->Flash->success(__('The customers order detail has been saved successfully.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
             }
             $this->Flash->error(__('The customers order detail could not be saved. Please, try again.'));
         }
@@ -107,6 +107,6 @@ class CustomersOrderDetailController extends AppController
             $this->Flash->error(__('The customers order detail could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'customers','action' => 'index']);
     }
 }

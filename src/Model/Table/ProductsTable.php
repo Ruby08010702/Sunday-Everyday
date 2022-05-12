@@ -76,6 +76,18 @@ class ProductsTable extends Table
             ->notEmptyString('name', 'This field cannot be empty.');
 
         $validator
+            ->allowEmptyFile('image')
+            ->add('image',[
+                'mimeType'=>[
+                    'rule'=>['mimeType',['image/jpg', 'image/png','image/jpeg']],
+                    'message'=>'ERROR: Only .jpg and .png image files can be uploaded.',
+                ],
+                'fileSize'=>[
+                    'rule'=>['fileSize','<=','5MB'],
+                    'message'=>'ERROR: Image file size must be less than 5MB.',
+                ]
+            ]);
+        $validator
             ->decimal('cost')
             ->requirePresence('cost', 'create')
             ->notEmptyString('cost', 'eg: 15.00')

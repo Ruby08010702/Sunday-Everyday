@@ -10,10 +10,12 @@ use Cake\ORM\Entity;
  *
  * @property string $id
  * @property string $name
+ * @property string|null $image
  * @property string $cost
  * @property string $retail_price
  * @property int $quantity
  * @property string $supplier_id
+
  *
  * @property \App\Model\Entity\Supplier $supplier
  * @property \App\Model\Entity\CustomersOrderDetail[] $customers_order_detail
@@ -33,6 +35,7 @@ class Product extends Entity
      */
     protected $_accessible = [
         'name' => true,
+        'image'=>true,
         'cost' => true,
         'retail_price' => true,
         'quantity' => true,

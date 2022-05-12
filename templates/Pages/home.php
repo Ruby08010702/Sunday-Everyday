@@ -113,9 +113,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
                         <th><?= h('Name') ?></th>
                         <th><?= h('Cost') ?></th>
-                        <th><?= h('Retail price') ?></th>
                         <th><?= h('Quantity') ?></th>
-                        <th><?= h('Supplier') ?></th>
+
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                     </thead>
@@ -124,14 +123,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                         <tr>
                             <td><?= h($product->name) ?></td>
                             <td><?= h($product->cost) ?></td>
-                            <td><?= h($product->retail_price) ?></td>
-                            <td><?= h($product->quantity) ?></td>
-                            <td><?= $product->has('supplier') ? $this->Html->link($product->supplier->business_name, ['controller' => 'Suppliers', 'action' => 'view', $product->supplier->id]) : '' ?></td>
 
+                            <td><?= h($product->quantity) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['action' => 'understock', $product->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete PRODUCT: {0}? ID: {1}', $product->name, $product->id)]) ?>
+                                <?= $this->Html->link(__('Restock'), ['controller'=>'enquiries','action' => 'add']) ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
