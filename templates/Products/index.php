@@ -76,8 +76,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="exampleModalLongTitle"><?= h($product->name) ?></h4>
 
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h4>$<?= h($product->retail_price) ?></h4>
