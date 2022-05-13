@@ -57,7 +57,7 @@ return static function (RouteBuilder $routes) {
          */
         $builder->connect('/pages/home', 'Pages::home');
         $builder->connect('/pages/*', 'Pages::display');
-
+        $builder->connect('/guests/', 'Guests::index');
         /*
          * Connect catchall routes for all controllers.
          *

@@ -54,7 +54,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
         class="fas fa-plus fa-sm text-white-50"></i> Add Product</a>
 <div class="container">
     <div class="card-deck" style="margin-top: 60px">
-        <?php $i = 1; ?>
+        <?php $i = 1; ?>z
         <?php foreach ($products as $product): ?>
                 <div class="card card shadow mb-4 col-sm-4">
                     <?= $this->Html->image($product->image, ['class' => 'card-img-top', 'width' => '400px', 'height' => '250px']) ?>
@@ -88,6 +88,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                                             <div
                                                 class="col">
                                                 <div style="max-width: 900px; margin-top: 15px">
+                                                    <?= $this->Html->image($product->image, ['class' => 'card-img-top', 'width' => '400px', 'height' => '250px']) ?>
                                                     <?php if (!empty($product->product_images)) : ?>
                                                     <div>
                                                         <?php foreach ($product->product_images as $image) : ?>

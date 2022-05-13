@@ -27,6 +27,18 @@ class ProductsController extends AppController
         $this->set(compact('products'));
     }
 
+    public function guestsHome(){
+
+        $this->viewBuilder()->setLayout('guests_home');
+        $this->paginate = [
+            'contain' => ['Suppliers','ProductImages'],
+        ];
+
+        $products = $this->paginate($this->Products);
+
+        $this->set(compact('products'));
+    }
+
     /**
      * understock method
      *

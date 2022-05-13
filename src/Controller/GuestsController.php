@@ -15,6 +15,9 @@ class GuestsController extends AppController
     {
         $this->viewBuilder()->setLayout('guests_home');
 
+        $products=$this->fetchTable('Products')->find();
+        $this->set(compact('products'));
+
     }
 
 }
