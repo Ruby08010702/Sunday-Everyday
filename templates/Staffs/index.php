@@ -36,8 +36,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $staff->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $staff->id]) ?>
+                        <a href="<?= $this->Url->build(['action'=>'view', $staff->id]) ?>" class="btn"><i
+                                class="fa fa-eye"></i></a>
+                        <a href="<?= $this->Url->build(['action'=>'edit', $staff->id]) ?>" class="btn"><i
+                                class="fas fa-edit"></i></a>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $staff->id], ['confirm' => __('Are you sure you want to delete STAFF USER: {0} {1}? ID: {2}', $staff->first_name, $staff->last_name, $staff->id)]) ?>
                     </td>
                 </tr>

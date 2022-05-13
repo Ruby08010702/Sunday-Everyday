@@ -1,17 +1,31 @@
-<div class="users form">
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
 
-    <?= $this->Flash->render() ?>
-    <h3>Login</h3>
-    <?= $this->Form->create() ?>
-    <fieldset>
-        <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->control('username', ['required' => true]) ?>
-        <?= $this->Form->control('password', ['required' => true]) ?>
-    </fieldset>
-    <?= $this->Form->submit(__('Login'),['class' => 'btn btn-primary btn-lg btn-block']); ?>
-    <?= $this->Html->link("Back to Home Page", ['controller'=>'Guests','action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <?= $this->Flash->render() ?>
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <?= $this->Form->create() ?>
+                            <p class="text-white-50 mb-5">Please enter your username and password!</p>
 
-    <?= $this->Form->end() ?>
+                            <div class="form-outline form-white mb-4">
+                                <?= $this->Form->control('username', ['required' => true]) ?>
+                            </div>
 
-    <!--- $this->Html->link("Add User", ['action' => 'add'])---->
-</div>
+                            <div class="form-outline form-white mb-4">
+                                <?= $this->Form->control('password', ['required' => true]) ?>
+                            </div>
+                            <?= $this->Form->submit(__('Login'),['class' => 'btn btn-outline-light btn-lg px-5']); ?>
+                            <?= $this->Html->link("Back to Home Page", ['controller'=>'Guests','action' => 'index'], ['class' => 'btn btn-outline-info btn-lg px-5']) ?>
+                            <?= $this->Form->end() ?>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
