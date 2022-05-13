@@ -78,7 +78,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
                                     </div>
                                     <div class="modal-body">
-                                        <h4>$<?= h($product->retail_price) ?></h4>
+                                        <h4>Cost: $<?= h($product->cost) ?></h4>
+                                        <h4>Retail Price: $<?= h($product->retail_price) ?></h4>
+                                        <h4>Quantity: <?= h($product->retail_price) ?></h4>
+                                        <h4>Supplier:<?= h($product->supplier->business_name) ?></h4>
                                         <a href="<?= $this->Url->build(['controller'=>'productImages','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                                 class="fas fa-plus fa-sm text-white-50"></i> Add new image</a>
                                         <div class="row align-items-center">
