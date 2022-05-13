@@ -21,7 +21,7 @@
                                 <?= $this->Form->control('password', ['required' => true]) ?>
                             </div>
                             <?= $this->Form->submit(__('Login'),['class' => 'btn btn-outline-light btn-lg px-5']); ?>
-                            <?= $this->Html->link("Back to Home Page", ['controller'=>'products','action' => 'guests_home'], ['class' => 'btn btn-outline-info btn-lg px-5']) ?>
+                            <?= $this->Html->link("Back to Home Page", ['controller'=>'Guests','action' => 'index'], ['class' => 'btn btn-outline-info btn-lg px-5']) ?>
                             <?= $this->Form->end() ?>
                         </div>
 
