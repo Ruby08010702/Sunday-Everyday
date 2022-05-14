@@ -85,7 +85,7 @@
                                         <td><?= h($staff->id) ?></td>
                                     </tr>
                                 </div>
-
+                                <br>
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $staff->id], ['escape' => false,'confirm' => __('Are you sure you want to delete STAFF USER: {0} {1}? ID: {2} ',$staff->first_name, $staff->last_name, $staff->id )]) ?>
                                 <?= $this->Html->link("<i class=\"btn btn-primary btn-blo\">Edit</i> ", ['action' => 'edit', $staff->id],['escape' => false,]) ?>
                                 <?= $this->Html->link("Back to Staffs List", ['action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>

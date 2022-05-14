@@ -92,6 +92,7 @@
                                         <td><?= h($customer->abn) ?></td>
                                     </tr>
                                 </div>
+                                <br>
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
                                 <?= $this->Html->link("<i class=\"btn btn-primary btn-blo\">Edit</i> ", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
                                 <?= $this->Html->link("Back to Customers List", ['action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
@@ -111,25 +112,25 @@
                                         <hr class="sidebar-divider d-none d-md-block">
                                     </div>
                                     <tr>
-                                        <th><?= __('Order ID:') ?></th>
+                                        <th><b><?= __('Order ID:') ?></b></th>
                                         <td><?= h($orders->id) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Payment:') ?></th>
+                                        <th><b><?= __('Payment:') ?></b></th>
                                         <td><?= h($orders->payment) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Quantity:') ?></th>
+                                        <th><b><?= __('Quantity:') ?></b></th>
                                         <td><?= h($orders->quantity) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Date:') ?></th>
+                                        <th><b></b><?= __('Date:') ?></th>
                                         <td><?= h($orders->date) ?></td>
                                     </tr>
                                     <div>

@@ -88,7 +88,7 @@
                                         <td><?= h($order->id) ?></td>
                                     </tr>
                                 </div>
-
+                                <br>
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order? ID: '.$order->id)]) ?>
                                 <?= $this->Html->link("Back to Orders List", ['controller'=>'Orders','action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
                             </div>

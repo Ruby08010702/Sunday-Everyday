@@ -67,7 +67,7 @@
                                         <td><?= h($supplier->id) ?></td>
                                     </tr>
                                 </div>
-
+                                <br>
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $supplier->id], ['escape' => false,'confirm' => __('Are you sure you want to delete {0} ? ID: {1}?', $supplier->business_name, $supplier->id)]) ?>
                                 <?= $this->Html->link("<i class=\"btn btn-primary btn-blo\">Edit</i> ", ['action' => 'edit', $supplier->id],['escape' => false,]) ?>
                                 <?= $this->Html->link("Back to Supplier List", ['action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
