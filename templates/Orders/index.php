@@ -21,6 +21,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <tr>
                     <th><?= h('Order ID') ?></th>
                     <th><?= h('Customer ID') ?></th>
+                    <th><?= h('Customer First Name') ?></th>
+                    <th><?= h('Customer Last Name') ?></th>
                     <th><?= h('Date') ?>
                     <th><?= h('Payment Type') ?></th>
                     <th><?= h('Quantity') ?></th>

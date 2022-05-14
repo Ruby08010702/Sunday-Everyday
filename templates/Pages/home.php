@@ -89,6 +89,18 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
     </a>
 </div>
 
+<a href="<?= $this->Url->build(['controller' => 'Orders','action' => 'index'])?>">
+    <div class="card-shad">
+        <h6 class="dash">Orders</h6>
+        <!--        <img class="dash-img" src="/team14-app_fit3047/webroot/img/default.png">-->
+        <?= $this->Html->image('/img/order.png', [
+            'class' => 'dasho-img',
+            'url' => ['controller' => 'Orders','action' => 'index']
+        ]); ?>
+    </div>
+</a>
+</div>
+
 
 <!-- UNDERSTOCK TABLE -->
 <div class="card-body">
@@ -140,14 +152,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 });
             </script>
         </div>
-
-        <!-- TABLE OBJECT TEST -->
-
-    </div>
-    <div class="card-body">
-
-    </div>
-</div>
 
 
 <!-- OVERSTOCK TABLE: -->

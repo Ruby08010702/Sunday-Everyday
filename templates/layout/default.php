@@ -77,6 +77,22 @@
             </div>
         </li>
 
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrder"
+               aria-expanded="true" aria-controls="collapseOrder">
+                <i class="fas fa-user fa-cog"></i>
+                <span>Orders</span>
+            </a>
+            <div id="collapseOrder" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Order functions:</h6>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Orders', 'action'=>'index']) ?>">List Customer Orders</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Orders', 'action'=>'add']) ?>">Add New Order</a>
+                </div>
+            </div>
+        </li>
+
         <!-- Nav Item - Product Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduct"
