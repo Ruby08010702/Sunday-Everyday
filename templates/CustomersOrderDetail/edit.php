@@ -12,7 +12,7 @@
 <?php
 echo $this->Form->control('product_id', ['options' => $products]);
 echo $this->Form->control('order_id', ['options' => $orders]);
-echo $this->Form->control('price', ['max'=>99999, 'default' => 100],['pattern' => '^[0-9]{0-5}']);
+echo $this->Form->control('price', ['max'=>99999],['pattern' => '^[0-9]{0-5}']);
 ?>
 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
 <?= $this->Form->end() ?>

@@ -13,7 +13,7 @@
     echo $this->Form->control('customer_id', ['options' => $customers]);
     echo $this->Form->control('date');
     echo $this->Form->select('payment', ['Credit Card', 'Cash', 'Paypal']);
-    echo $this->Form->control('quantity',['max'=>999]);
+    echo $this->Form->control('quantity',['max'=>100]);
     ?>
     <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
     <?= $this->Form->end() ?>

@@ -143,6 +143,7 @@ class ProductsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $product = $this->Products->get($id);
+
         if ($this->Products->delete($product)) {
             $this->Flash->success(__('Product has been deleted.'));
         } else {
@@ -151,5 +152,7 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
 
 }

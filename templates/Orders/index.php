@@ -21,11 +21,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <tr>
                     <th><?= h('Order ID') ?></th>
                     <th><?= h('Customer ID') ?></th>
-                    <th><?= h('Customer First Name') ?></th>
-                    <th><?= h('Customer Last Name') ?></th>
+                    <th><?= h('Customer Name') ?></th>
                     <th><?= h('Date') ?>
+                    <th><?= h('Item Count') ?></th>
                     <th><?= h('Payment Type') ?></th>
-                    <th><?= h('Quantity') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
                 </thead>
@@ -34,9 +33,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                      <tr>
                     <td><?= h($order->id) ?></td>
                     <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
+                    <td><?= h($order->customer->first_name),' ', h($order->customer->last_name) ?></td>
                     <td><?= h($order->date) ?></td>
+                  <!-- add item count here (need to count no of customerOrderDetails listed in each order -->
                     <td><?= h($order->payment) ?></td>
-                    <td><?= $this->Number->format($order->quantity) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id]) ?>

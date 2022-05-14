@@ -132,4 +132,6 @@ class CustomersTable extends Table
 
         return $rules;
     }
+
+
 }

@@ -53,11 +53,11 @@ class CustomersOrderDetailController extends AppController
         if ($this->request->is('post')) {
             $customersOrderDetail = $this->CustomersOrderDetail->patchEntity($customersOrderDetail, $this->request->getData());
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
-                $this->Flash->success(__('The customers order detail has been saved successfully.'));
+                $this->Flash->success(__('Product was added to the order successfully.'));
 
-                return $this->redirect(['controller'=>'customers','action' => 'index']);
+                return $this->redirect(['controller'=>'orders','action' => 'index']);
             }
-            $this->Flash->error(__('The customers order detail could not be saved. Please, try again.'));
+            $this->Flash->error(__('The product could not be added. Please, try again.'));
         }
         $products = $this->CustomersOrderDetail->Products->find('list', ['limit' => 200])->all();
         $orders = $this->CustomersOrderDetail->Orders->find('list', ['limit' => 200])->all();
@@ -79,11 +79,11 @@ class CustomersOrderDetailController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customersOrderDetail = $this->CustomersOrderDetail->patchEntity($customersOrderDetail, $this->request->getData());
             if ($this->CustomersOrderDetail->save($customersOrderDetail)) {
-                $this->Flash->success(__('The customers order detail has been saved successfully.'));
+                $this->Flash->success(__('The order was altered successfully.'));
 
-                return $this->redirect(['controller'=>'customers','action' => 'index']);
+                return $this->redirect(['controller'=>'customersOrderDetail','action' => 'index']);
             }
-            $this->Flash->error(__('The customers order detail could not be saved. Please, try again.'));
+            $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
         $products = $this->CustomersOrderDetail->Products->find('list', ['limit' => 200])->all();
         $orders = $this->CustomersOrderDetail->Orders->find('list', ['limit' => 200])->all();
@@ -107,6 +107,6 @@ class CustomersOrderDetailController extends AppController
             $this->Flash->error(__('The customers order detail could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['controller'=>'customers','action' => 'index']);
+        return $this->redirect(['controller'=>'customersOrderDetail','action' => 'index']);
     }
 }

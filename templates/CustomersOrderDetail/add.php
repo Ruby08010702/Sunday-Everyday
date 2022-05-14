@@ -17,7 +17,7 @@ $this->Form->setTemplates([ 'inputContainer' => '<div class="input {{type}}{{req
 
 echo $this->Form->control('product_id', ['options' => $products]);
 echo $this->Form->control('order_id', ['options' => $orders]);
-echo $this->Form->control('price');
+echo $this->Form->control('price',['max'=>"9999.99", 'min' => "0.00",'step'=>"0.01"]);
 ?>
 <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ;
 ?>

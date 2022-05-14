@@ -2,8 +2,8 @@
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-                <span class="h1 fw-bold mb-0">Logo</span>
+                <i><img src="webroot\img\sundayEveryday_logo_black.png"/> </i>
+                <span class="h1 fw-bold mb-0">Sunday Everyday Management System</span>
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
 
@@ -11,7 +11,7 @@
                             <?= $this->Flash->render() ?>
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                             <?= $this->Form->create() ?>
-                            <p class="text-white-50 mb-5">Please enter your username and password!</p>
+                            <p class="text-white-50 mb-5">Please enter your username and password:</p>
 
                             <div class="form-outline form-white mb-4">
                                 <?= $this->Form->control('username', ['required' => true]) ?>

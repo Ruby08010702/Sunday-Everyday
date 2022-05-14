@@ -18,7 +18,7 @@
                     echo $this->Form->control('customer_id', ['options' => $customers]);
                     echo $this->Form->control('date');
                     echo $this->Form->select('payment',['Credit Card', 'Cash', 'Paypal']);
-                    echo $this->Form->control('quantity',['max'=>99999, 'default' => 100],['pattern' => '^[0-9]{0-5}']);
+                    echo $this->Form->control('quantity',['max'=>99999, 'default' => 1], ['pattern' => '^[0-9]{0-5}']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>

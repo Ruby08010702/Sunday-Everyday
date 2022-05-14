@@ -82,9 +82,15 @@
                                         <td><?= h($order->date) ?></td>
                                     </tr>
                                 </div>
+                                <div >
+                                    <tr>
+                                        <th><?= __('ID:') ?></th>
+                                        <td><?= h($order->id) ?></td>
+                                    </tr>
+                                </div>
 
                                 <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order? ID: '.$order->id)]) ?>
-                                <?= $this->Html->link("Back to Customers List", ['controller'=>'Customers','action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Html->link("Back to Orders List", ['controller'=>'Orders','action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">
