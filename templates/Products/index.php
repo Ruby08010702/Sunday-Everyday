@@ -53,9 +53,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
         class="fas fa-plus fa-sm text-white-50"></i> Add Product</a>
     <div class="dashboardp" style="margin-top: 60px">
-        <?php $i = 1; ?>z
+        <?php $i = 1; ?>
         <?php foreach ($products as $product): ?>
-                <div class="card card shadow mb-4 col-sm-4">
+                <div class="card card shadow emb col-sm-4">
                     <?= $this->Html->image($product->image, ['class' => 'card-img-top', 'width' => '400px', 'height' => '250px']) ?>
                     <div class="card-body">
                         <h5 class="card-title"><?= h($product->name) ?></h5>

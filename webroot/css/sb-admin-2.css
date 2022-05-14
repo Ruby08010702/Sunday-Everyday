@@ -11316,11 +11316,14 @@ body.sidebar-toggled footer.sticky-footer {
     align-self: center;
     padding: 10px;
 }
+.emb {
+    margin: 20px;
+}
 
 .dashboardp {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -11328,7 +11331,7 @@ body.sidebar-toggled footer.sticky-footer {
     flex: 1;
     width: 200px;
     height: 200px;
-    margin: 10px;
+    margin: 60px;
     border: 3px solid #031c6c;
     align-self: center;
     padding: 10px;
