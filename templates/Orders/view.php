@@ -84,8 +84,14 @@
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><b><?= __('ID:') ?></b></th>
+                                        <th><b><?= __('Order ID:') ?></b></th>
                                         <td><?= h($order->id) ?></td>
+                                    </tr>
+                                </div>
+                                <div >
+                                    <tr>
+                                        <th><b><?= __('Customer ID:') ?></b></th>
+                                        <td><?= h($order->customer_id) ?></td>
                                     </tr>
                                 </div>
                                 <br>

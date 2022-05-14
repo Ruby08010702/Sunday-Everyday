@@ -20,7 +20,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <thead>
                 <tr>
                     <th><?= h('Order ID') ?></th>
-                    <th><?= h('Customer ID') ?></th>
+                    <th><?= h("Username") ?></th>
                     <th><?= h('Customer Name') ?></th>
                     <th><?= h('Date') ?>
                     <th><?= h('Item Count') ?></th>
@@ -32,10 +32,11 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                 <?php foreach ($orders as $order): ?>
                      <tr>
                     <td><?= h($order->id) ?></td>
-                    <td><?= $order->has('customer') ? $this->Html->link($order->customer->id, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
+                         <td><?= h($order->customer->username)?></td>
                     <td><?= h($order->customer->first_name),' ', h($order->customer->last_name) ?></td>
                     <td><?= h($order->date) ?></td>
                   <!-- add item count here (need to count no of customerOrderDetails listed in each order -->
+                    <td><?= h(0)?></td>
                     <td><?= h($order->payment) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
