@@ -42,65 +42,65 @@
                 <h1 class="h3 mb-2 text-gray-800">Customer</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class>
+                    <div class="dashboardc">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
+                                <h4 class="m-0 font-weight-bold text-primary">Information:</h4>
                             </div>
                             <div class="card-body">
 
                                 <div>
                                     <tr>
-                                        <th><?= __('First Name:') ?></th>
+                                        <th><b><?= __('First Name:') ?></b></th>
                                         <td><?= h($customer->first_name) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Last Name:') ?></th>
+                                        <th><b><?= __('Last Name:') ?></b></th>
                                         <td><?= h($customer->last_name) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Username:') ?></th>
+                                        <th><b><?= __('Username:') ?></b></th>
                                         <td><?= h($customer->username) ?></td>
                                     </tr>                            </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Address:') ?></th>
+                                        <th><b><?= __('Address:') ?></b></th>
                                         <td><?= h($customer->address) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Email:') ?></th>
+                                        <th><b><?= __('Email:') ?></b></th>
                                         <td><?= h($customer->email) ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Phone:') ?></th>
+                                        <th><b><?= __('Phone:') ?></b></th>
                                         <td><?= h($customer->phone) ?></td>
                                     </tr>
                                 </div>
                                 <div >
 
                                     <tr>
-                                        <th><?= __('Abn:') ?></th>
+                                        <th><b><?= __('Abn:') ?></b></th>
                                         <td><?= h($customer->abn) ?></td>
                                     </tr>
                                 </div>
-                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
-                                <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
-                                <?= $this->Html->link("Back to Customers List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $customer->id], ['escape' => false,'confirm' => __('Are you sure you want to delete '.$customer->first_name, $customer->last_name)]) ?>
+                                <?= $this->Html->link("<i class=\"btn btn-primary btn-blo\">Edit</i> ", ['action' => 'edit', $customer->id],['escape' => false,]) ?>
+                                <?= $this->Html->link("Back to Customers List", ['action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Order History:</h6>
-                                <a href="<?= $this->Url->build(['controller'=>'Orders','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                <h4 class="m-0 font-weight-bold text-primary">Order History:</h4>
+                                <a href="<?= $this->Url->build(['controller'=>'Orders','action'=>'add']) ?>" class="btn btn-primary btn-blo"><i
                                         class="fas fa-plus fa-sm text-white-50"></i> Create New Order for Customer </a>
                             </div>
                             <div class="card-body">

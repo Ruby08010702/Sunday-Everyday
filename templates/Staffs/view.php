@@ -42,11 +42,11 @@
                 <h1 class="h3 mb-2 text-gray-800">Staff Details</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
-                <div class="row">
+                <div class="dashboardc">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
+                                <h4 class="m-0 font-weight-bold text-primary">Information:</h4>
                             </div>
                             <div class="card-body">
 
@@ -86,9 +86,9 @@
                                     </tr>
                                 </div>
 
-                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $staff->id], ['escape' => false,'confirm' => __('Are you sure you want to delete STAFF USER: {0} {1}? ID: {2} ',$staff->first_name, $staff->last_name, $staff->id )]) ?>
-                                <?= $this->Html->link("<i class=\"btn btn-primary btn-lg btn-blo\">Edit</i> ", ['action' => 'edit', $staff->id],['escape' => false,]) ?>
-                                <?= $this->Html->link("Back to Staffs List", ['action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $staff->id], ['escape' => false,'confirm' => __('Are you sure you want to delete STAFF USER: {0} {1}? ID: {2} ',$staff->first_name, $staff->last_name, $staff->id )]) ?>
+                                <?= $this->Html->link("<i class=\"btn btn-primary btn-blo\">Edit</i> ", ['action' => 'edit', $staff->id],['escape' => false,]) ?>
+                                <?= $this->Html->link("Back to Staffs List", ['action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
                             </div>
                         </div>
                     </div>

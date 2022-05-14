@@ -50,53 +50,53 @@
                 <h1 class="h3 mb-2 text-gray-800">Customer Orders</h1>
                 <?= $this->Flash->render('error') ?>
                 <!-- DataTales Example -->
-                <div class="row">
+                <div class="dashboardc">
                     <div class="col-lg-6">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Information:</h6>
+                                <h4 class="m-0 font-weight-bold text-primary">Information:</h4>
                             </div>
                             <div class="card-body">
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Customer:') ?></th>
+                                        <th><b><?= __('Customer:') ?></b></th>
                                         <td><?= $order->has('customer') ? $this->Html->link($order->customer->username, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?></td>
                                     </tr>
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Payment:') ?></th>
+                                        <th><b><?= __('Payment:') ?></b></th>
                                         <td><?= h($order->payment) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Quantity:') ?></th>
+                                        <th><b><?= __('Quantity:') ?></b></th>
                                         <td><?= $this->Number->format($order->quantity) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('Date:') ?></th>
+                                        <th><b><?= __('Date:') ?></b></th>
                                         <td><?= h($order->date) ?></td>
                                     </tr>
                                 </div>
                                 <div >
                                     <tr>
-                                        <th><?= __('ID:') ?></th>
+                                        <th><b><?= __('ID:') ?></b></th>
                                         <td><?= h($order->id) ?></td>
                                     </tr>
                                 </div>
 
-                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-lg btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order? ID: '.$order->id)]) ?>
-                                <?= $this->Html->link("Back to Orders List", ['controller'=>'Orders','action' => 'index'], ['class' => 'btn btn-primary btn-lg btn-block']) ?>
+                                <?= $this->Form->postLink("<i class=\"btn btn-primary btn-blo\">Delete</i> ", ['action' => 'delete', $order->id], ['escape' => false,'confirm' => __('Are you sure you want to delete this order? ID: '.$order->id)]) ?>
+                                <?= $this->Html->link("Back to Orders List", ['controller'=>'Orders','action' => 'index'], ['class' => 'btn btn-primary btn-blo']) ?>
                             </div>
                         </div>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Cart:</h6>
-                                <a href="<?= $this->Url->build(['controller'=>'customersOrderDetail','action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                <h4 class="m-0 font-weight-bold text-primary">Cart:</h4>
+                                <a href="<?= $this->Url->build(['controller'=>'customersOrderDetail','action'=>'add']) ?>" class="btn btn-primary btn-blo"><i
                                         class="fas fa-plus fa-sm text-white-50"></i> Add Item To This Order </a>
                             </div>
                             <div class="card-body">
@@ -109,20 +109,21 @@
                                 </div>
                                 <div>
                                     <tr>
-                                        <th><?= __('Product Name:') ?></th>
+                                        <th><b><?= __('Product Name:') ?></b></th>
                                         <td><?= h($customers_order_detail->product->name) ?></td>
                                     </tr>
                                 </div>
 
                                 <div>
                                     <tr>
-                                        <th><?= __('Price: $') ?></th>
+                                        <th><b><?= __('Price: $') ?></b></th>
                                         <td><?= h($customers_order_detail->price) ?></td>
 
                                     </tr>
+                                    <?php endforeach; ?>
                                 </div>
 
-                            <?php endforeach; ?>
+
                             </div>
                         </div>
                         <?php endif; ?>

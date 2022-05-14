@@ -11327,6 +11327,14 @@ body.sidebar-toggled footer.sticky-footer {
     align-items: center;
 }
 
+.dashboardc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .card-shadp {
     flex: 1;
     width: 200px;
