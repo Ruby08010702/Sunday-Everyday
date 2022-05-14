@@ -32,7 +32,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
                     <td class="actions">
                         <?= $this->Html->link(__(''), ['action' => 'edit', $image->id], ['class' => 'side-nav-item']) ?> <!-- Broken DO NOT USE -->
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete this image?')]) ?>
+                        <div class="btn">
+                            <?=$this->Form->postLink(__(''), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete this image?'), 'class' => 'fas fa-trash']) ?>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>

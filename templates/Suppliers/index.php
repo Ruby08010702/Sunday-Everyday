@@ -45,7 +45,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                                 class="fa fa-eye"></i></a>
                         <a href="<?= $this->Url->build(['action'=>'edit', $supplier->id]) ?>" class="btn"><i
                                 class="fas fa-edit"></i></a>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete {0} ? ID: {1}?', $supplier->business_name, $supplier->id)]) ?>
+                        <div class="btn">
+                            <?=$this->Form->postLink(__(''), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete {0} ? ID: {1}?', $supplier->business_name, $supplier->id), 'class' => 'fas fa-trash']) ?>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>
