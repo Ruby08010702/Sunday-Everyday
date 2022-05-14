@@ -11317,6 +11317,23 @@ body.sidebar-toggled footer.sticky-footer {
     padding: 10px;
 }
 
+.dashboardp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-shadp {
+    flex: 1;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #031c6c;
+    align-self: center;
+    padding: 10px;
+}
+
 .card-shad:hover {
     width: 200px;
     height: 200px;

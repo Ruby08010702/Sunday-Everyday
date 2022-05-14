@@ -52,8 +52,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 </div>
 <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
         class="fas fa-plus fa-sm text-white-50"></i> Add Product</a>
-<div class="container">
-    <div class="card-deck" style="margin-top: 60px">
+    <div class="dashboardp" style="margin-top: 60px">
         <?php $i = 1; ?>z
         <?php foreach ($products as $product): ?>
                 <div class="card card shadow mb-4 col-sm-4">
@@ -120,8 +119,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
         <?php endforeach; ?>
     </div>
-</div>
-</div>
 <br>
 
 <!-- Bootstrap core JS-->
