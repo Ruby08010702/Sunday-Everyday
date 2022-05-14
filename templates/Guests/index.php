@@ -65,7 +65,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 </header>
 
 <!-- About-->
-<section class="testimonials text-center bg-light" id="about">
+<section class="testimonials text-center bg-light" id="aboutus">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 text-center">
@@ -99,7 +99,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <?php $i = 1; ?>
                     <?php foreach ($products as $product): ?>
                     <!-- <img class="img-fluid rounded-circle mb-3" src="assets/img/product-1.jpg" alt="Image1" /> -->
-                    <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3']) ?>
+                    <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3','style'=>'max-height: 150px; max-width: 150px']) ?>
                     <h5 class="card-title"><?= h($product->name) ?></h5>
                     <p class="card-text">$<?= h($product->retail_price) ?></p>
                     <h6>
@@ -109,7 +109,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </h6>
+                        <?php $i++; ?>
 
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -140,9 +142,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 
 
-<?php $i++; ?>
 
-<?php endforeach; ?>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

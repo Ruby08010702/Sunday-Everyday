@@ -12,9 +12,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 <div class="customers index content">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?= __('Email List (Suppliers)') ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?= __('Restocking Order Email') ?></h1>
         <a href="<?= $this->Url->build(['action'=>'add']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-user-plus fa-sm text-white-50"></i> Email Supplier</a>
+                class="fas fa-plus fa-sm text-white-50"></i>Add new Restocking</a>
     </div>
     <div class="table-responsive">
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

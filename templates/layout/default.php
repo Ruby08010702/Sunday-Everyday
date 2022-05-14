@@ -88,7 +88,10 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Order functions:</h6>
                     <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Orders', 'action'=>'index']) ?>">List Customer Orders</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Orders', 'action'=>'add']) ?>">Add New Order</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Orders', 'action'=>'add']) ?>">Add New Customer Order</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'add']) ?>">Restocking Product</a>
+                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'index']) ?>">Show All Restocking</a>
+
                 </div>
             </div>
         </li>
@@ -145,41 +148,7 @@
             </div>
         </li>
 
-        <!-- Nav Item - Restocking Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRestocking"
-               aria-expanded="true" aria-controls="collapseRestocking">
-                <i class="fas fa-truck"></i>
-                <span>Restock Orders</span>
-            </a>
-            <div id="collapseRestocking" class="collapse" aria-labelledby="headingRestocking"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Order Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Restockings', 'action'=>'index']) ?>">List Orders</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Restockings', 'action'=>'add']) ?>">Add New Order</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Email -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmail"
-               aria-expanded="true" aria-controls="collapseEmail">
-                <i class="fas fa-truck"></i>
-                <span>Email Suppliers</span>
-            </a>
-            <div id="collapseEmail" class="collapse" aria-labelledby="headingEmail"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Order Functions:</h6>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'add']) ?>">Send Email</a>
-                    <a class="collapse-item" href="<?= $this->Url->build(['controller'=>'Enquiries', 'action'=>'index']) ?>">Show All Emails</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Email -->
+        <!-- Nav Item - Gallery -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productImage"
                aria-expanded="true" aria-controls="collapseEmail">
