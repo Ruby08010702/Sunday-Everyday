@@ -91,15 +91,14 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 </section>
 
 <section class="testimonials text-center bg-light">
-    <div class="container">
-        <h2 class="mb-5">Products Available</h2>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <?php $i = 1; ?>
-                    <?php foreach ($products as $product): ?>
+    <div class="container" id="product"">
+        <h2 class="mb-4">Products Available</h2>
+        <div class="row" style="margin-top: 60px">
+            <?php $i = 1; ?>
+            <?php foreach ($products as $product): ?>
+                <div class="card card shadow mb-4 ">
                     <!-- <img class="img-fluid rounded-circle mb-3" src="assets/img/product-1.jpg" alt="Image1" /> -->
-                    <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3','style'=>'max-height: 150px; max-width: 150px']) ?>
+                    <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3','style'=>'max-height: 200px; max-width: 200px']) ?>
                     <h5 class="card-title"><?= h($product->name) ?></h5>
                     <p class="card-text">$<?= h($product->retail_price) ?></p>
                     <h6>
@@ -109,11 +108,48 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </h6>
-                        <?php $i++; ?>
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                            data-bs-target="#myModal-<?php echo $i; // Displaying the increment ?>">
+                        View More
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal-<?php echo $i; // Displaying the increment ?>" tabindex="-1"
+                         role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLongTitle"><?= h($product->name) ?></h4>
+                                    <h5 class="modal-text" >Retail Price: $<?= h($product->retail_price) ?></h5>
+                                    <button type="button" class="fa fa-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row align-items-center">
+                                        <div
+                                            class="col"><?= $this->Html->image($product->image, ['style' => 'max-height: 150px; max-width: 150px']) ?>
+                                            <div style="max-width: 900px; margin-top: 15px">
+                                                <?php if (!empty($product->product_images)) : ?>
+                                                    <?php foreach ($product->product_images as $image) : ?>
+                                                        <tr>
+                                                            <td><?= $this->Html->image($image->filename,['style'=>'max-height: 150px; max-width: 150px']) ?></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
 
-                    <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <?php $i++; ?>
                 </div>
-            </div>
+                    <?php endforeach; ?>
+
+
+
         </div>
     </div>
 </section>
@@ -139,8 +175,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 </script>
-
-
 
 
 <!-- Bootstrap core JS-->
