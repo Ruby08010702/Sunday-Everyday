@@ -50,7 +50,7 @@ class CustomersController extends AppController
         if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
             if ($this->Customers->save($customer)) {
-                $this->Flash->success(__('The customer has been saved.'));
+                $this->Flash->success(__('The customer has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -74,7 +74,7 @@ class CustomersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
             if ($this->Customers->save($customer)) {
-                $this->Flash->success(__('The customer has been saved.'));
+                $this->Flash->success(__('The customer has been saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -95,7 +95,7 @@ class CustomersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $customer = $this->Customers->get($id);
         if ($this->Customers->delete($customer)) {
-            $this->Flash->success(__('The customer has been deleted.'));
+            $this->Flash->success(__('The customer has been deleted successfully.'));
         } else {
             $this->Flash->error(__('The customer could not be deleted. Please, try again.'));
         }

@@ -45,6 +45,8 @@ class CustomersTable extends Table
 
         $this->hasMany('Orders', [
             'foreignKey' => 'customer_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
 
     }

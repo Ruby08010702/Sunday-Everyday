@@ -47,6 +47,8 @@ class CartsTable extends Table
 
         $this->hasMany('CustomerProductsCartDetail', [
             'foreignKey' => 'cart_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 

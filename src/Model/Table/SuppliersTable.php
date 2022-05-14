@@ -45,6 +45,8 @@ class SuppliersTable extends Table
 
         $this->hasMany('Products', [
             'foreignKey' => 'supplier_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 

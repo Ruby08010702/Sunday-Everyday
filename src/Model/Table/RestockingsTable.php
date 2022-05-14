@@ -50,6 +50,8 @@ class RestockingsTable extends Table
         ]);
         $this->hasMany('StaffsRestockingDetail', [
             'foreignKey' => 'restocking_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 

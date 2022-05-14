@@ -51,12 +51,18 @@ class ProductsTable extends Table
         ]);
         $this->hasMany('CustomersOrderDetail', [
             'foreignKey' => 'product_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
         $this->hasMany('StaffsRestockingDetail', [
             'foreignKey' => 'product_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
         $this->hasMany('ProductImages', [
             'foreignKey' => 'product_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 

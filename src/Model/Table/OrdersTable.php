@@ -50,6 +50,8 @@ class OrdersTable extends Table
         ]);
         $this->hasMany('CustomersOrderDetail', [
             'foreignKey' => 'order_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 

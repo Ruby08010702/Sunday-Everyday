@@ -45,6 +45,8 @@ class StaffsTable extends Table
 
         $this->hasMany('Restockings', [
             'foreignKey' => 'staff_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 
