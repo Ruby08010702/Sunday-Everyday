@@ -23,7 +23,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <th><?= h("Username") ?></th>
                     <th><?= h('Customer Name') ?></th>
                     <th><?= h('Date') ?>
-                    <th><?= h('Item Count') ?></th>
                     <th><?= h('Payment Type') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -36,7 +35,6 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                     <td><?= h($order->customer->first_name),' ', h($order->customer->last_name) ?></td>
                     <td><?= h($order->date) ?></td>
                   <!-- add item count here (need to count no of customerOrderDetails listed in each order -->
-                    <td><?= h(0)?></td>
                     <td><?= h($order->payment) ?></td>
                     <td class="actions">
                         <a href="<?= $this->Url->build(['action'=>'view', $order->id]) ?>" class="btn"><i

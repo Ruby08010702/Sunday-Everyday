@@ -52,7 +52,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 <!-- Welcome-->
 <header class="masthead">
     <div class="container position-relative">
-        <img src="webroot\img\sundayEveryday_logo_black.png" />
+        <!-- <img src="webroot\img\sundayEveryday_logo_black.png" />-->
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="text-center text-black-50">
