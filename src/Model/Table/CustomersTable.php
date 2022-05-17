@@ -106,8 +106,8 @@ class CustomersTable extends Table
 
         $validator
             ->scalar('abn')
-            ->maxLength('abn', 11,'eg: 94059341141')
-            ->minLength('abn',11,'eg: 94059341141')
+            ->maxLength('abn', 11,'Length of 11 required. eg: 34882274731')
+            ->minLength('abn', 11,'Length of 11 required. eg: 34882274731')
             ->allowEmptyString('abn', 'optional field')
             ->add('abn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
