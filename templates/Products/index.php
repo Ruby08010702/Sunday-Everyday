@@ -67,6 +67,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                             data-bs-target="#myModal-<?php echo $i; // Displaying the increment ?>">
                         View More
                     </button>
+                    <a href="<?= $this->Url->build(['action'=>'edit', $product->id]) ?>" class="btn"><i
+                            class="fas fa-edit"></i></a>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'products', 'action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete the image for {0}?', $product->name)]) ?>
 
                     <!-- Modal -->
@@ -92,6 +94,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                                                     <?php foreach ($product->product_images as $image) : ?>
                                                         <tr>
                                                             <td><?= $this->Html->image($image->filename,['style'=>'max-height: 150px; max-width: 150px']) ?></td>
+
                                                             <?= $this->Form->postLink(__('Delete'), ['controller' => 'productImages', 'action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete the image for {0}?', $product->name)]) ?>
 
                                                         </tr>
