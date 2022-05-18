@@ -68,7 +68,7 @@ body {
   line-height: 1.5;
   color: #858796;
   text-align: left;
-  background-color: #fff;
+  background-color: #252f4e;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -6475,10 +6475,11 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #324758 !important;
-  background: url(sundayEveryday_logo_black.png);
+  /*background-color: #324758 !important;
+ /* background: url(sundayEveryday_logo_black.png);
   background-size: cover;
   background-repeat: no-repeat;
+  */
 
 }
 
@@ -11425,7 +11426,21 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .sundayEverydayLogo-main {
+   /* background: url(sundayEveryday_logo_black.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+    position: absolute;
+    /*background-color: #2a6496;*/
+}
 
-    opacity: 0.2;
-    position: relative;
+
+.login-title {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 200%;
+    text-align: left;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

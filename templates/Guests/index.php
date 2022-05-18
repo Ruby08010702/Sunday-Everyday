@@ -50,143 +50,144 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 </head>
 
+
 <body>
-<!-- Welcome-->
-<header class="masthead">
-    <div class="container position-relative">
-       <!-- <img class="sundayEverydayLogo-main" src="webroot\img\sundayEveryday_logo_black.png" /> -->
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <div class="text-center text-black-50">
-                    <!-- Page heading-->
-                    <h1 class="mb-5"></h1> <!-- EMPTY -->
+    <!-- Welcome-->
+    <header class="masthead">
+        <div class="container position-relative">
+           <img class="sundayEverydayLogo-main" src="webroot\img\sundayEveryday_logo_black.png" />
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-black-50">
+                        <!-- Page heading-->
+                        <h1 class="mb-5"></h1> <!-- EMPTY -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- About-->
-<section class="testimonials text-center bg-light" id="aboutus">
+    <!-- About-->
+    <section class="testimonials text-center bg-light" id="aboutus">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-guest-header">Customer Portal</h2>
+                    <hr class="divider divider-light" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty-->
+    <section class="testimonials text-center bg-light" id="about">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="text-guest-header">Customer Portal</h2>
-                <hr class="divider divider-light" />
+                <h2 class="text-Black mt-0"></h2>
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<!-- Empty-->
-<section class="testimonials text-center bg-light" id="about">
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-lg-8 text-center">
-            <h2 class="text-Black mt-0"></h2>
-        </div>
-    </div>
-</div>
-</section>
-
-<section class="testimonials text-center bg-light">
-    <div class="container" id="product"">
-        <h2 class="text-guest-subheading">Current Products:</h2>
-        <div class="row" style="margin-top: 60px">
-            <?php $i = 1; ?>
-            <?php foreach ($products as $product): ?>
-                <div class="card card shadow mb-4 ">
-                    <!-- <img class="img-fluid rounded-circle mb-3" src="assets/img/product-1.jpg" alt="Image1" /> -->
-                    <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3','style'=>'max-height: 200px; max-width: 200px']) ?>
-                    <h5 class="card-title"><?= h($product->name) ?></h5>
-                    <p class="card-text">$<?= h($product->retail_price) ?></p>
-                    <h6>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </h6>
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                            data-bs-target="#myModal-<?php echo $i; // Displaying the increment ?>">
-                        View More
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal-<?php echo $i; // Displaying the increment ?>" tabindex="-1"
-                         role="dialog"
-                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="exampleModalLongTitle"><?= h($product->name) ?></h4>
-                                    <h5 class="modal-text" >Retail Price: $<?= h($product->retail_price) ?></h5>
-                                    <button type="button" class="fa fa-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row align-items-center">
-                                        <div
-                                            class="col"><?= $this->Html->image($product->image, ['style' => 'max-height: 150px; max-width: 150px']) ?>
-                                            <div style="max-width: 900px; margin-top: 15px">
-                                                <?php if (!empty($product->product_images)) : ?>
-                                                    <?php foreach ($product->product_images as $image) : ?>
-                                                        <tr>
-                                                            <td><?= $this->Html->image($image->filename,['style'=>'max-height: 150px; max-width: 150px']) ?></td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
+    <section class="testimonials text-center bg-light">
+        <div class="container" id="product"">
+            <h2 class="text-guest-subheading">Current Products:</h2>
+            <div class="row" style="margin-top: 60px">
+                <?php $i = 1; ?>
+                <?php foreach ($products as $product): ?>
+                    <div class="card card shadow mb-4 ">
+                        <!-- <img class="img-fluid rounded-circle mb-3" src="assets/img/product-1.jpg" alt="Image1" /> -->
+                        <?= $this->Html->image($product->image, ['class' => 'img-fluid rounded-circle mb-3','style'=>'max-height: 200px; max-width: 200px']) ?>
+                        <h5 class="card-title"><?= h($product->name) ?></h5>
+                        <p class="card-text">$<?= h($product->retail_price) ?></p>
+                        <h6>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </h6>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                data-bs-target="#myModal-<?php echo $i; // Displaying the increment ?>">
+                            View More
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal-<?php echo $i; // Displaying the increment ?>" tabindex="-1"
+                             role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLongTitle"><?= h($product->name) ?></h4>
+                                        <h5 class="modal-text" >Retail Price: $<?= h($product->retail_price) ?></h5>
+                                        <button type="button" class="fa fa-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row align-items-center">
+                                            <div
+                                                class="col"><?= $this->Html->image($product->image, ['style' => 'max-height: 150px; max-width: 150px']) ?>
+                                                <div style="max-width: 900px; margin-top: 15px">
+                                                    <?php if (!empty($product->product_images)) : ?>
+                                                        <?php foreach ($product->product_images as $image) : ?>
+                                                            <tr>
+                                                                <td><?= $this->Html->image($image->filename,['style'=>'max-height: 150px; max-width: 150px']) ?></td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                            <?php $i++; ?>
                     </div>
-                        <?php $i++; ?>
-                </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
 
 
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    //Get the button:
-    mybutton = document.getElementById("myBtn");
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-</script>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
+
 
 
 
