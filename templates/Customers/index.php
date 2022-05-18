@@ -19,6 +19,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
         <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
+                <th><?= h('First Name') ?></th>
+                <th><?= h('Last Name') ?></th>
                 <th><?= h('username') ?></th>
                 <th><?= h('email') ?></th>
                 <th><?= h('phone') ?></th>
@@ -29,8 +31,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
             <tbody>
             <?php foreach ($customers as $customer): ?>
                 <tr>
+                    <td><?= h($customer->first_name) ?></td>
+                    <td><?= h($customer->last_name) ?></td>
                     <td><?= h($customer->username) ?></td>
-
                     <td><?= h($customer->email) ?></td>
                     <td><?= h($customer->phone) ?></td>
                     <td><?= h($customer->abn) ?></td>
