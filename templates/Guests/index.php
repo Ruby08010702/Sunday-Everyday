@@ -16,11 +16,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 <!-- Nav Item - User Information -->
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-        <a class="navbar-brand">Sunday Everyday</a>
+        <h6 class="navbar-guest">Sunday Everyday</h6>
         <div class="topnav">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
-                <li class="nav-item"><?= $this->Html->link(__('Login'), ['controller' => 'Staffs', 'action' => 'login'],['class'=>'nav-link']) ?>
+                <li class="nav-item-guest"><?= $this->Html->link(__('Login'), ['controller' => 'Staffs', 'action' => 'login'],['class'=>'nav-link']) ?>
                 </li>
             </ul>
 
@@ -43,6 +42,9 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
 
 
@@ -52,12 +54,12 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 <!-- Welcome-->
 <header class="masthead">
     <div class="container position-relative">
-        <!-- <img src="webroot\img\sundayEveryday_logo_black.png" />-->
+       <!-- <img class="sundayEverydayLogo-main" src="webroot\img\sundayEveryday_logo_black.png" /> -->
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="text-center text-black-50">
                     <!-- Page heading-->
-                    <h1 class="mb-5">Welcome</h1>
+                    <h1 class="mb-5"></h1> <!-- EMPTY -->
                 </div>
             </div>
         </div>
@@ -69,11 +71,8 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="text-Black mt-0">We've got what you need!</h2>
+                <h2 class="text-guest-header">Customer Portal</h2>
                 <hr class="divider divider-light" />
-                <p class="text-white-75 mb-4">Sunday Everyday is........
-                Here, you can find ........</p>
-                <a class="btn btn-warning btn-xl" href="#product">Get Started!</a>
             </div>
         </div>
     </div>
@@ -84,7 +83,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8 text-center">
-            <h2 class="text-Black mt-0">                                      </h2>
+            <h2 class="text-Black mt-0"></h2>
         </div>
     </div>
 </div>
@@ -92,7 +91,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
 
 <section class="testimonials text-center bg-light">
     <div class="container" id="product"">
-        <h2 class="mb-4">Products Available</h2>
+        <h2 class="text-guest-subheading">Current Products:</h2>
         <div class="row" style="margin-top: 60px">
             <?php $i = 1; ?>
             <?php foreach ($products as $product): ?>
