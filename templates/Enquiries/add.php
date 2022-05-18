@@ -17,7 +17,7 @@ $this->Form->setTemplates([ 'inputContainer' => '<div class="input {{type}}{{req
         {{content}} <span class="help">{{help}}</span></div>'
 ]);
 
-echo $this->Form->control('supplier_id', ['label' => 'Supplier Name:', 'options' => $suppliers]);
+echo $this->Form->control('supplier_id', ['label' => 'Product Name:', 'options' => $suppliers]);
 echo $this->Form->control('body', ['label' => 'Order Description:', 'pattern'=>'^[A-Za-z ]+$]{1-32}']);
 //echo $this->Form->control('email_sent');
 ?>

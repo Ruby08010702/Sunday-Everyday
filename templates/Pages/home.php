@@ -23,7 +23,7 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
         <!-- Table implementation: -->
         <div class="products index content">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800"><?= __('Under-Stock Products:') ?></h1>
+                <h1 class="h3 mb-0 text-red-800"><?= __('Under-Stock Products:') ?></h1>
                 <?=$this->Html->link(__('.'), ['controller'=>'Products','action' => 'understock']) ;
                 ?>
 
