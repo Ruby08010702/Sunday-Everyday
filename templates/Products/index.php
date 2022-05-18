@@ -86,9 +86,10 @@ echo $this->Html->script('/vendor/datatables/dataTables.bootstrap4.min.js',['blo
                                     <h5 class="modal-text" >Cost: $<?= h($product->cost) ?></h5>
                                     <h5 class="modal-text" >Retail Price: $<?= h($product->retail_price) ?></h5>
                                     <h5 class="modal-text" >Supplier: <?= h($product->supplier->business_name) ?></h5>
+
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row align-items-center">
+                                    <div class="modal-body">
+                                            <div class="row align-items-center">
                                         <div
                                             class="col"><?= $this->Html->image($product->image, ['style' => 'max-height: 150px; max-width: 150px']) ?>
                                             <div style="max-width: 900px; margin-top: 15px">
