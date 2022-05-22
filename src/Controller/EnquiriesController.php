@@ -55,7 +55,7 @@ class EnquiriesController extends AppController
         $enquiry = $this->Enquiries->newEmptyEntity();
         if ($this->request->is('post')) {
             $enquiry = $this->Enquiries->patchEntity($enquiry, $this->request->getData());
-            if ($enquiry = $this->Enquiries->save($enquiry)) {
+            if ($this->Enquiries->save($enquiry)) {
 
                 //send email
                 $mailer = new Mailer('default');
