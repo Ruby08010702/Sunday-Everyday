@@ -18,3 +18,8 @@ Important directories
 4.webroot
     a.img directory is where user save their uploaded images
     b.css-design for the website
+
+Naming Convention
+all the naming convention in this project follow the Cakephp nameing convention rules
+Following link shows more detail about conventions in Cakephp
+https://book.cakephp.org/4/en/intro/conventions.html
